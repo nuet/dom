@@ -1,0 +1,676 @@
+{php $CSS = array('index');}
+{template 'header'}
+
+
+<div class="oyw_banner_box">
+<div class="oyw_banner_box_bg_1">
+<div class="oyw_banner">
+  <img src="{DT_SKIN}/image/New_Index_Anli.jpg">
+</div>
+</div>
+</div>
+<div class="oyw_Login_box">
+<div class="oyw_Login"></div>
+{if $_username && $_groupid <=5}
+<div class="oyw_tm"><h3 class="clearfix"><span style="font-size:14px;font-family:微软雅黑; padding:3px 0px;;" class="fl">{$_username} {$MG[groupname]}，您好</span><span  style="padding-top:13px; margin-left:10px;">
+	<img src="{DT_STATIC}{$MODULE[2][moduledir]}/image/{if $user[vtruename]}v{else}u{/if}_truename.gif" style='padding-top: 3px;'width="16" height="16" title="{if $user[vtruename]}已通过{else}未通过{/if}真实姓名认证" align="absmiddle"/> <a href="{DT_STATIC}{$MODULE[2][moduledir]}/validate.php?action=truename" style='text-decoration: underline;'>实名</a> &nbsp;
+	
+</span></h3>
+<div class="oyw_user clear">
+  <div class="sjs_in_k">
+    <div class="sjs_in_k_1">余额:<b><big> {$_money}</big></b> 元<small>（锁定:{$user[locking]}元）</small></div>
+    
+    <div class="sjs_in_k_2">
+        <div class="sjs_in_k_2_l oy_floatlf">
+          <p>{$count2[count]}</p>
+          <span><a href="{$MODULE[2][linkurl]}">未付款项目</a></span>
+        </div>
+        <div class="sjs_in_k_2_b oy_floatlf">
+          <p>{$count1[count]}</p>
+          <span><a href="{$MODULE[2][linkurl]}">已付款项目</a></span>
+        </div>
+        <div class="sjs_in_k_2_r oy_floatlf">
+          <p>{$_credit}</p>
+          <span><a href="{$MODULE[2][linkurl]}credit.php">积分</a></span>
+        </div>
+    </div>
+  </div>
+  <div class="sjs_in_in clear">
+    <input type="submit"  onclick="Go('{$MODULE[2][linkurl]}');" id="J-login-btn" class="ui-button" style="font-size:14px;font-family:微软雅黑;" value="进入会员中心" >
+  </div>
+</div></div>
+ {elseif $_groupid >5}
+ <div class="oyw_tm"><h3 class="clearfix"><span style="font-size:14px;font-family:微软雅黑; padding:3px 0px;;" class="fl">{$_username} {$MG[groupname]}，您好</span><span  style="padding-top:13px; margin-left:10px;">
+<img src="{if $user[vcompany]}{$MODULE[2][linkurl]}/image/v_company.gif{else}{$MODULE[2][linkurl]}/image/u_company.gif{/if}" style='padding-top: 3px;'width="16" height="16" title="{if $user[vcompany]}已通过{else}未通过{/if}设计师认证" align="absmiddle"/>	{if $user[vcompany]}<img src="{DT_SKIN}image/vip_{$user[vip]}.gif" style='padding-top: 3px;'/>{else} <a href="{DT_STATIC}{$MODULE[2][moduledir]}/validate.php?action=company" style='text-decoration: underline;'>认证</a> &nbsp; {/if}
+	
+</span></h3>
+<div class="oyw_user clear">
+  <div class="sjs_in_k">
+    <div class="sjs_in_k_1">余额:<b><big> {$_money}</big></b> 元<small>（锁定:{$user[locking]}元）</small></div>
+    
+    <div class="sjs_in_k_2">
+        <div class="sjs_in_k_2_l oy_floatlf">
+          <p>{count($sj_all)}</p>
+          <span><a href="{$MODULE[2][linkurl]}">投标</a></span>
+        </div>
+        <div class="sjs_in_k_2_b oy_floatlf">
+          <p>{$sj_in[count]}</p>
+          <span><a href="{$MODULE[2][linkurl]}">入围</a></span>
+        </div>
+        <div class="sjs_in_k_2_r oy_floatlf">
+          <p>{$sj_last[count]}</p>
+          <span><a href="{$MODULE[2][linkurl]}">中标</a></span>
+        </div>
+    </div>
+  </div>
+  <div class="sjs_in_in clear">
+    <input type="submit"  onclick="Go('{$MODULE[2][linkurl]}');" id="J-login-btn" class="ui-button" style="font-size:14px;font-family:微软雅黑;" value="进入会员中心" >
+  </div>
+</div></div>
+ {else}
+<div class="oyw_tm"><h2 class="clearfix"><span style="font-size:18px;font-family:微软雅黑;" class="fl">欢迎登陆</span><span class="fr" style="padding-top:10px;">会员登陆</span></h2>
+<div class="oyw_user clear">
+<form method="post" action="{$MODULE[2][linkurl]}{$DT[file_login]}" id="Login" name="Login">
+<input name="forward" type="hidden" id="forward" value="{$CFG['url']}">
+<ul>
+<li><span>用户名:</span><em><input name="username" type="text" id="username" value="{$username}" placeholder='手机号/邮箱/会员名' autocomplete="off" autocorrect="off" autocapitalize="off"></em></li>
+<li><span>密&nbsp;&nbsp;&nbsp;&nbsp;码:</span><em><input name="password" type="password" class="inp"  id="password" value=""></em></li>
+<li><span></span><em style="padding-left:60px;*padding-left:55px;width:30px;height:10px;_padding-left:30px;"><input type="checkbox" style="width:20px;height:15px" name="cookietime" value="1" id="cookietime"  checked=""><label for="cookietime">记住我</label></em><em style="padding-left:10px;*padding-left:10px;width:30px;height:10px;_padding-left:10px;"><input type="checkbox" name="goto" style="width:30px;height:15px" value="1" id="goto"{if $MOD[login_goto]} checked{/if}/><label for="goto">进入会员中心</label></em></li>
+
+<li><a href="{$MODULE[2][linkurl]}{$DT[file_register]}"><img src="{DT_SKIN}/image/zc.jpg" width="110" height="27"></a><a  href="#" onclick="Dcheck();" style="padding-left:14px;"><img src="{DT_SKIN}/image/login.jpg" width="110" height="27"></a></p></li>
+<li class="pyw_wz"><p style="padding-top:6px;"><a href="{$MODULE[2][linkurl]}send.php">忘记密码</a> <a href="#">忘记用户名</a>  <a href="#">新手指南</a></li>
+
+</ul>
+
+</form>
+</div></div>
+ {/if}
+
+</div>
+</div>
+<div class="oyw_content">
+<!-- 内容第一个广告开始 -->
+<div class="oyw_content_gg1">
+  {ad(25)}
+</div>
+<!-- 内容第一个广告结束 -->
+<!-- 内容套餐展示一些吧开始 -->
+
+<div class="oyw_Show mt12 clearfix">
+<ul>
+<li>
+<h2 style="color:#38a200;font-size:20px;padding-bottom:5px;">展示网站建设</h2>
+<p style="color:#434343;">适用人群：公司刚成立或者需要需要展示企业和产品的客户</p>
+<p>定制特点： 设计师量身定制独特</p>
+<p>首页效果，强大后台智能管理。</p>
+<p style="color:#38a200">主推套餐：￥<strong style="font-size:25px;font-family:arial;">2680</strong> (标准型)</p>
+<p style="padding-top:6px;"><a href="#"><img src="{DT_SKIN}/image/con_box.jpg" width="138" height="36"></a></p>
+</li>
+<li>
+<h2 style="color:#ff6201;font-size:20px;padding-bottom:5px;">展示网站建设</h2>
+<p style="color:#434343;">适用人群：公司刚成立或者需要需要展示企业和产品的客户</p>
+<p>定制特点： 设计师量身定制独特</p>
+<p>首页效果，强大后台智能管理。</p>
+<p style="color:#ff6201">主推套餐：￥<strong style="font-size:25px;font-family:arial;">2680</strong> (标准型)</p>
+<p style="padding-top:6px;"><a href="#"><img src="{DT_SKIN}/image/con_box_01.jpg" width="138" height="36"></a></p>
+</li>
+<li>
+<h2 style="color:#00a9b4;font-size:20px;padding-bottom:5px;">展示网站建设</h2>
+<p style="color:#434343;">适用人群：公司刚成立或者需要需要展示企业和产品的客户</p>
+<p>定制特点： 设计师量身定制独特</p>
+<p>首页效果，强大后台智能管理。</p>
+<p style="color:#00a9b4">主推套餐：￥<strong style="font-size:25px;font-family:arial;">2680</strong> (标准型)</p>
+<p style="padding-top:6px;"><a href="#"><img src="{DT_SKIN}/image/con_box_02.jpg" width="138" height="36"></a></p>
+</li>
+<li class="last">
+<h2 style="color:#1bb6e7;font-size:20px;padding-bottom:5px;">展示网站建设</h2>
+<p style="color:#434343;">适用人群：公司刚成立或者需要需要展示企业和产品的客户</p>
+<p>定制特点： 设计师量身定制独特</p>
+<p>首页效果，强大后台智能管理。</p>
+<p style="color:#1bb6e7">主推套餐：￥<strong style="font-size:25px;font-family:arial;">2680</strong> (标准型)</p>
+<p style="padding-top:6px;"><a href="#"><img src="{DT_SKIN}/image/con_box_03.jpg" width="138" height="36"></a></p>
+</li>
+</ul>
+</div>
+<script>
+
+$(document).ready(function(){
+	  $('#anli li').click(function(){
+		  if(this.id){
+			  n=this.id;
+			  for(t=0;t<=8;t++){
+		  	    	if (t!=n){
+		  	    		var m=$("#sjs"+t+"");
+		  	    		m.html('');
+		  	    	}else{
+		  	    		m=$("#sjs"+n+"");
+		  	    		m.html('');
+		  	    		i=0;
+		  	    		loadMore(n);
+		  	    	}
+		  	    	
+		  	     }
+       }
+	        
+	  })
+	loadMore(4); 
+
+}); 
+ 
+var i=0;
+function loadMore(n)
+{
+
+
+    $.ajax({
+        url : 'data1.php?n='+n+'',
+        dataType : 'json',
+        success : function(json)
+        {
+        
+            if(typeof json == 'object')
+            {
+            	console.log(json);
+                var oProduct, $row, iHeight, iTempHeight;
+                for(var i=0, l=json.length; i<l; i++)
+                {
+                    oProduct = json[i];
+                     
+                    // 找出当前高度最小的列, 新内容添加到该列
+                    iHeight = -1;
+                    $('#sjs'+n+'').each(function(){
+                        iTempHeight = Number( $(this).height() );
+                        if(iHeight==-1 || iHeight>iTempHeight)
+                        {
+                            iHeight = iTempHeight;
+                            $row = $(this);
+                        }
+                    });
+                     
+                 
+                    $item = $('<li><div class="Index_Anli_zs_img"><a href=""><img src="{DT_SKIN}/image/Index_Anli_show1.fw.png" alt=""></a><div class="MoBanYello"><span class="Left"> <a href="" title>查看详情</a></span><span class="Right"><a href="">浏览网站</a></span></div></div><div class="GoSM">名称：上海科技创新有限公司</div><div class="JzTc">建站套餐：展示站1套餐</div></li>').hide();
+                    $row.append($item);
+                    $item.fadeIn();
+                }
+            }else{
+            	//Maya.MessageBox("已加载 <strong>全部</strong> ");
+            }
+        }
+    });
+}
+ 
+
+</script>
+<!-- 内容套餐展示一些结束咯 -->
+<!-- 内容展示案例开始了 -->
+<div class="Index_Anli_Show" id="Index_Anli_Show">
+  <div class="InAnL_title cf">
+    <span>定制案例展示</span>
+      <ul class="InAnL_title_list cf" id='anli'>
+        <li class="on" id="4">展示网站建设</li>
+        <li id="5">品牌网站建设</li>
+        <li id="6">营销网站建设</li>
+        <li id="8">LOGO设计</li>              
+      </ul>
+      <p><a href="">查看更多</a></p>
+    </div>
+    <div class="Index_Anli_wrap clear">
+        <!-- 展示网站建设 -->
+        <div class="Index_Anli_pro show">
+            <div class="Index_Anli_zs">
+              <ul class="Index_hind" id="sjs4">
+            
+                 
+              </ul>
+            </div>
+        </div>
+        <!-- 展示网站建设结束 -->
+        <!-- 品牌网站建设 -->
+        <div class="Index_Anli_pro">
+              <div class="Index_Anli_zs">
+              <ul class="Index_hind" id="sjs5">
+             
+      
+                 
+              </ul>
+            </div>
+        </div>
+        <!-- 品牌网站建设结束 -->
+        <!-- 营销网站建设 -->
+        <div class="Index_Anli_pro">
+              <div class="Index_Anli_zs">
+              <ul class="Index_hind" id="sjs6">
+                
+                 
+              </ul>
+            </div>
+        </div>
+        <!-- 营销网站建设结束 -->
+        <!-- LOGO设计 -->
+        <div class="Index_Anli_pro">
+                <div class="Index_Anli_zs">
+              <ul class="Index_hind" id="sjs8">
+           
+            
+                 
+              </ul>
+            </div>
+        </div>
+        <!-- LOGO设计结束 -->
+    </div>
+</div>
+<!-- 内容展示案例结束了 -->
+<!-- 首页第二个广告开始 -->
+<div class="oyw_content_gg1">
+ {ad(24)}
+</div>
+<!-- 首页第二个广告结束 -->
+<!-- 首页模版广告开始 -->
+<div class="Index_Moban_ban">
+    <div class="Index_Moban_ban_1">
+   {ad(23)}{ad(22)}{ad(21)}{ad(20)}
+    </div>
+</div>
+
+<!-- 首页模版展示开始 -->
+
+<div class="Index_Moban_Show" id="Index_Anli_Show">
+  <div class="InAnL_title cf">
+    <span>精品模版展示</span>
+      <ul class="InAnL_title_list cf Blue_mo">
+        <li class="on">企业形象网站</li>
+        <li>商城网站</li>
+        <li>全Flash网站</li>
+        <li>手机网站</li>              
+      </ul>
+      <p><a href="">查看更多</a></p>
+    </div>
+    <div class="Index_Anli_wrap clear">
+        <!-- 企业形象网站 -->
+        <div class="Index_Anli_pro show">
+            <div class="Index_Anli_zs">
+              <ul>
+                <li>
+                    <div class="Index_Moban_zs_img">
+                      <a href=""><img src="{DT_SKIN}/image/Index_Anli_show1.fw.png" alt=""></a>
+                      <!-- 鼠标指上显示 -->
+                        <div class="MoBanBlue">
+                         <span class="Left">
+                           <a href="" title>查看详情</a>
+                         </span>
+                         <span class="Right">
+                           <a href="">浏览网站</a>
+                         </span>
+                        </div>
+                      <!-- 鼠标指上显示结束 -->
+                    </div>
+                    <div class="GoSM">名称：上海科技创新有限公司</div>
+                    <div class="JzTc">建站套餐：展示站1套餐</div>
+                </li>
+                <li>
+                    <div class="Index_Anli_zs_img">
+                      <a href=""><img src="{DT_SKIN}/image/Index_Anli_show1.fw.png" alt=""></a>
+                      <!-- 鼠标指上显示 -->
+                        <div class="MoBanBlue">
+                         <span class="Left">
+                           <a href="" title>查看详情</a>
+                         </span>
+                         <span class="Right">
+                           <a href="">浏览网站</a>
+                         </span>
+                        </div>
+                      <!-- 鼠标指上显示结束 -->
+                    </div>
+                    <div class="GoSM">名称：上海科技创新有限公司</div>
+                    <div class="JzTc">建站套餐：展示站1套餐</div>
+                </li>
+                <li>
+                    <div class="Index_Anli_zs_img">
+                      <a href=""><img src="{DT_SKIN}/image/Index_Anli_show1.fw.png" alt=""></a>
+                      <!-- 鼠标指上显示 -->
+                        <div class="MoBanBlue">
+                         <span class="Left">
+                           <a href="" title>查看详情</a>
+                         </span>
+                         <span class="Right">
+                           <a href="">浏览网站</a>
+                         </span>
+                        </div>
+                      <!-- 鼠标指上显示结束 -->
+                    </div>
+                    <div class="GoSM">名称：上海科技创新有限公司</div>
+                    <div class="JzTc">建站套餐：展示站1套餐</div>
+                </li>
+                <li>
+                    <div class="Index_Anli_zs_img">
+                      <a href=""><img src="{DT_SKIN}/image/Index_Anli_show1.fw.png" alt=""></a>
+                      <!-- 鼠标指上显示 -->
+                        <div class="MoBanBlue">
+                         <span class="Left">
+                           <a href="" title>查看详情</a>
+                         </span>
+                         <span class="Right">
+                           <a href="">浏览网站</a>
+                         </span>
+                        </div>
+                      <!-- 鼠标指上显示结束 -->
+                    </div>
+                    <div class="GoSM">名称：上海科技创新有限公司</div>
+                    <div class="JzTc">建站套餐：展示站1套餐</div>
+                </li>
+                <li>
+                    <div class="Index_Anli_zs_img">
+                      <a href=""><img src="{DT_SKIN}/image/Index_Anli_show1.fw.png" alt=""></a>
+                      <!-- 鼠标指上显示 -->
+                        <div class="MoBanBlue">
+                         <span class="Left">
+                           <a href="" title>查看详情</a>
+                         </span>
+                         <span class="Right">
+                           <a href="">浏览网站</a>
+                         </span>
+                        </div>
+                      <!-- 鼠标指上显示结束 -->
+                    </div>
+                    <div class="GoSM">名称：上海科技创新有限公司</div>
+                    <div class="JzTc">建站套餐：展示站1套餐</div>
+                </li>
+                <li>
+                    <div class="Index_Anli_zs_img">
+                      <a href=""><img src="{DT_SKIN}/image/Index_Anli_show1.fw.png" alt=""></a>
+                      <!-- 鼠标指上显示 -->
+                        <div class="MoBanBlue">
+                         <span class="Left">
+                           <a href="" title>查看详情</a>
+                         </span>
+                         <span class="Right">
+                           <a href="">浏览网站</a>
+                         </span>
+                        </div>
+                      <!-- 鼠标指上显示结束 -->
+                    </div>
+                    <div class="GoSM">名称：上海科技创新有限公司</div>
+                    <div class="JzTc">建站套餐：展示站1套餐</div>
+                </li>
+                <li>
+                    <div class="Index_Anli_zs_img">
+                      <a href=""><img src="{DT_SKIN}/image/Index_Anli_show1.fw.png" alt=""></a>
+                      <!-- 鼠标指上显示 -->
+                        <div class="MoBanBlue">
+                         <span class="Left">
+                           <a href="" title>查看详情</a>
+                         </span>
+                         <span class="Right">
+                           <a href="">浏览网站</a>
+                         </span>
+                        </div>
+                      <!-- 鼠标指上显示结束 -->
+                    </div>
+                    <div class="GoSM">名称：上海科技创新有限公司</div>
+                    <div class="JzTc">建站套餐：展示站1套餐</div>
+                </li>
+                
+                 
+              </ul>
+            </div>
+        </div>
+        <!-- 企业形象网站设结束 -->
+        <!-- 商城网站 -->
+        <div class="Index_Anli_pro">
+              <div class="Index_Anli_zs">
+              <ul>
+                <li>
+                    <div class="Index_Moban_zs_img">
+                      <a href=""><img src="{DT_SKIN}/image/Index_Anli_show1.fw.png" alt=""></a>
+                      <!-- 鼠标指上显示 -->
+                        <div class="MoBanBlue">
+                         <span class="Left">
+                           <a href="" title>查看详情</a>
+                         </span>
+                         <span class="Right">
+                           <a href="">浏览网站</a>
+                         </span>
+                        </div>
+                      <!-- 鼠标指上显示结束 -->
+                    </div>
+                    <div class="GoSM">名称：上海科技创新有限公司</div>
+                    <div class="JzTc">建站套餐：展示站1套餐</div>
+                </li>
+                <li>
+                    <div class="Index_Anli_zs_img">
+                      <a href=""><img src="{DT_SKIN}/image/Index_Anli_show1.fw.png" alt=""></a>
+                      <!-- 鼠标指上显示 -->
+                        <div class="MoBanBlue">
+                         <span class="Left">
+                           <a href="" title>查看详情</a>
+                         </span>
+                         <span class="Right">
+                           <a href="">浏览网站</a>
+                         </span>
+                        </div>
+                      <!-- 鼠标指上显示结束 -->
+                    </div>
+                    <div class="GoSM">名称：上海科技创新有限公司</div>
+                    <div class="JzTc">建站套餐：展示站1套餐</div>
+                </li>
+                <li>
+                    <div class="Index_Anli_zs_img">
+                      <a href=""><img src="{DT_SKIN}/image/Index_Anli_show1.fw.png" alt=""></a>
+                      <!-- 鼠标指上显示 -->
+                        <div class="MoBanBlue">
+                         <span class="Left">
+                           <a href="" title>查看详情</a>
+                         </span>
+                         <span class="Right">
+                           <a href="">浏览网站</a>
+                         </span>
+                        </div>
+                      <!-- 鼠标指上显示结束 -->
+                    </div>
+                    <div class="GoSM">名称：上海科技创新有限公司</div>
+                    <div class="JzTc">建站套餐：展示站1套餐</div>
+                </li>
+                <li>
+                    <div class="Index_Anli_zs_img">
+                      <a href=""><img src="{DT_SKIN}/image/Index_Anli_show1.fw.png" alt=""></a>
+                      <!-- 鼠标指上显示 -->
+                        <div class="MoBanBlue">
+                         <span class="Left">
+                           <a href="" title>查看详情</a>
+                         </span>
+                         <span class="Right">
+                           <a href="">浏览网站</a>
+                         </span>
+                        </div>
+                      <!-- 鼠标指上显示结束 -->
+                    </div>
+                    <div class="GoSM">名称：上海科技创新有限公司</div>
+                    <div class="JzTc">建站套餐：展示站1套餐</div>
+                </li>
+                
+                 
+              </ul>
+            </div>
+        </div>
+        <!-- 商城网站结束 -->
+        <!-- 全Flash网站 -->
+        <div class="Index_Anli_pro">
+              <div class="Index_Anli_zs">
+              <ul>
+                <li>
+                    <div class="Index_Moban_zs_img">
+                      <a href=""><img src="{DT_SKIN}/image/Index_Anli_show1.fw.png" alt=""></a>
+                      <!-- 鼠标指上显示 -->
+                        <div class="MoBanBlue">
+                         <span class="Left">
+                           <a href="" title>查看详情</a>
+                         </span>
+                         <span class="Right">
+                           <a href="">浏览网站</a>
+                         </span>
+                        </div>
+                      <!-- 鼠标指上显示结束 -->
+                    </div>
+                    <div class="GoSM">名称：上海科技创新有限公司</div>
+                    <div class="JzTc">建站套餐：展示站1套餐</div>
+                </li>
+                <li>
+                    <div class="Index_Anli_zs_img">
+                      <a href=""><img src="{DT_SKIN}/image/Index_Anli_show1.fw.png" alt=""></a>
+                      <!-- 鼠标指上显示 -->
+                        <div class="MoBanBlue">
+                         <span class="Left">
+                           <a href="" title>查看详情</a>
+                         </span>
+                         <span class="Right">
+                           <a href="">浏览网站</a>
+                         </span>
+                        </div>
+                      <!-- 鼠标指上显示结束 -->
+                    </div>
+                    <div class="GoSM">名称：上海科技创新有限公司</div>
+                    <div class="JzTc">建站套餐：展示站1套餐</div>
+                </li>
+                <li>
+                    <div class="Index_Anli_zs_img">
+                      <a href=""><img src="{DT_SKIN}/image/Index_Anli_show1.fw.png" alt=""></a>
+                      <!-- 鼠标指上显示 -->
+                        <div class="MoBanBlue">
+                         <span class="Left">
+                           <a href="" title>查看详情</a>
+                         </span>
+                         <span class="Right">
+                           <a href="">浏览网站</a>
+                         </span>
+                        </div>
+                      <!-- 鼠标指上显示结束 -->
+                    </div>
+                    <div class="GoSM">名称：上海科技创新有限公司</div>
+                    <div class="JzTc">建站套餐：展示站1套餐</div>
+                </li>
+                <li>
+                    <div class="Index_Anli_zs_img">
+                      <a href=""><img src="{DT_SKIN}/image/Index_Anli_show1.fw.png" alt=""></a>
+                      <!-- 鼠标指上显示 -->
+                        <div class="MoBanBlue">
+                         <span class="Left">
+                           <a href="" title>查看详情</a>
+                         </span>
+                         <span class="Right">
+                           <a href="">浏览网站</a>
+                         </span>
+                        </div>
+                      <!-- 鼠标指上显示结束 -->
+                    </div>
+                    <div class="GoSM">名称：上海科技创新有限公司</div>
+                    <div class="JzTc">建站套餐：展示站1套餐</div>
+                </li>
+                
+                 
+              </ul>
+            </div>
+        </div>
+        <!-- 全Flash网站 -->
+        <!-- 手机网站 -->
+        <div class="Index_Anli_pro">
+              <div class="Index_Anli_zs">
+              <ul>
+                <li>
+                    <div class="Index_Moban_zs_img">
+                      <a href=""><img src="{DT_SKIN}/image/Index_Anli_show1.fw.png" alt=""></a>
+                      <!-- 鼠标指上显示 -->
+                        <div class="MoBanBlue">
+                         <span class="Left">
+                           <a href="" title>查看详情</a>
+                         </span>
+                         <span class="Right">
+                           <a href="">浏览网站</a>
+                         </span>
+                        </div>
+                      <!-- 鼠标指上显示结束 -->
+                    </div>
+                    <div class="GoSM">名称：上海科技创新有限公司</div>
+                    <div class="JzTc">建站套餐：展示站1套餐</div>
+                </li>
+                <li>
+                    <div class="Index_Anli_zs_img">
+                      <a href=""><img src="{DT_SKIN}/image/Index_Anli_show1.fw.png" alt=""></a>
+                      <!-- 鼠标指上显示 -->
+                        <div class="MoBanBlue">
+                         <span class="Left">
+                           <a href="" title>查看详情</a>
+                         </span>
+                         <span class="Right">
+                           <a href="">浏览网站</a>
+                         </span>
+                        </div>
+                      <!-- 鼠标指上显示结束 -->
+                    </div>
+                    <div class="GoSM">名称：上海科技创新有限公司</div>
+                    <div class="JzTc">建站套餐：展示站1套餐</div>
+                </li>
+                <li>
+                    <div class="Index_Anli_zs_img">
+                      <a href=""><img src="{DT_SKIN}/image/Index_Anli_show1.fw.png" alt=""></a>
+                      <!-- 鼠标指上显示 -->
+                        <div class="MoBanBlue">
+                         <span class="Left">
+                           <a href="" title>查看详情</a>
+                         </span>
+                         <span class="Right">
+                           <a href="">浏览网站</a>
+                         </span>
+                        </div>
+                      <!-- 鼠标指上显示结束 -->
+                    </div>
+                    <div class="GoSM">名称：上海科技创新有限公司</div>
+                    <div class="JzTc">建站套餐：展示站1套餐</div>
+                </li>
+                <li>
+                    <div class="Index_Anli_zs_img">
+                      <a href=""><img src="{DT_SKIN}/image/Index_Anli_show1.fw.png" alt=""></a>
+                      <!-- 鼠标指上显示 -->
+                        <div class="MoBanBlue">
+                         <span class="Left">
+                           <a href="" title>查看详情</a>
+                         </span>
+                         <span class="Right">
+                           <a href="">浏览网站</a>
+                         </span>
+                        </div>
+                      <!-- 鼠标指上显示结束 -->
+                    </div>
+                    <div class="GoSM">名称：上海科技创新有限公司</div>
+                    <div class="JzTc">建站套餐：展示站1套餐</div>
+                </li>
+                
+                 
+              </ul>
+            </div>
+        </div>
+        <!-- 手机网站结束 -->
+    </div>
+</div>
+
+</div> 
+ 
+<script type="text/javascript">
+
+function Dcheck() {
+	if(Dd('username').value == '') {
+		Maya.MessageBox("请输入 <strong>登录名称</strong> ");
+		Dd('username').focus();
+		return false;
+	}
+	if(Dd('password').value == '') {
+		Maya.MessageBox("请输入 <strong>密码</strong> ");
+		Dd('password').focus();
+		return false;
+	}
+	Login.submit();
+}
+
+</script>
+{template 'footer'}
+</body>
+</html>

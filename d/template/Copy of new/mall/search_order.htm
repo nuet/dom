@@ -1,0 +1,174 @@
+{template 'header'}
+<!-- 全站搜素案例结果开始 -->
+  <!-- 全站搜索条件选择开始 -->
+  <!-- 获取标签 -->
+  <script>
+  $(function(){       
+	    //案例展示hover效果
+	    $('.QuanZ_An_List .QuanZ_An_List_ul li').hover(function(){
+	        $(this).css("border-color","#ff6600");
+	        $(this).css("-moz-box-shadow","0px 0px 10px #909090");
+	        $(this).find('div div').css('display','block');
+	     
+	       
+	    },function(){
+	        $(this).css("border-color","#ccc");
+	         $(this).find('div div').css('display','none');
+	           
+	      
+	    });
+	    });
+
+	// 全站搜素页面案例展示结束
+
+	$(function(){       
+	    $('.QuanZ_An_List .QuanZ_An_List_ul li').hover(function(){
+	        $(this).css("-moz-box-shadow","0px 0px 10px #909090");
+	        $(this).find('div div').css('display','block');
+	         $(this).find('div img').css('filter','alpha(optacity=80)');
+	         $(this).find('div img').css('opacity','0.8');
+	       
+	    },function(){
+	        $(this).css("border-color","#ccc");
+	         $(this).find('div div').css('display','none');
+	        $(this).find('div img').css('filter','alpha(optacity=100)');
+	         $(this).find('div img').css('opacity','1.0');
+	           
+	      
+	    });
+	    });
+	// 展示收起
+	$(document).ready(function(){
+	$("#JS_shouqi_fliter").click(function(){//当点击触发silideToggle
+	$("#QuanZ_An_S_xz_sq").slideToggle("slow");
+	$(this).toggleClass("nav1"); return false;//触发后然后改变小图标方向，
+
+	});
+	});
+
+
+
+
+  </script>
+  
+  
+  <div class="QuanZ_An_Box">
+      <div class="QuanZ_An_S_T">
+        <div class="QuanZ_An_S_Nav">
+          <p> <a href="{$CFG[url]}">首页</a> > <a href="{$CFG[url]}mall/search_order.php">定制网站案例展示中心</a></p>
+          <div class="QuanZ_An_biaoqian" id="QuanZ_An_biaoqian">
+            <!-- get获取选择的值 -->
+            <span class="hide"><a style="cursor:pointer"></a></span>
+            <!-- get获取选择的值结束 -->
+          </div>
+        </div>
+        <div class="QuanZ_An_S_xz" id="QuanZ_An_S_xz_sq">
+          <div class="QuanZ_An_S_xz_h">
+            <div class="search_hy">
+              <span>行业：</span>
+             <p></p><ul class="QuanZ_An_Bq_a">
+             
+             {loop $sorts $i $r}
+             {if $i==$_GET[hy]}
+                       <li><a href="?hy={$i}&color={$color}&package={$package}" alt="摩恩建站22-{$r}" id="search_icon" title="{$r}" >{$r}</a>
+             {else}
+                       <li><a href="?hy={$i}&color={$color}&package={$package}" alt="摩恩建站-{$r}" title="{$r}" >{$r}</a>
+                {/if}
+  
+            {php $i++}
+            {if  $i%5==0  }
+            </li><p></p></ul></div><div class="search_hy1"><span></span> <p></p><ul class="QuanZ_An_Bq_a">
+            {else}
+            </li><p></p>
+            {/if}
+           	{/loop}
+              </ul>
+            </div>
+          <!-- 色系开始 -->
+          <div class="seach_color">
+            <span>色系：</span>
+            
+             <ul  id="QuanZ_An_color"  class="QuanZ_An_color QuanZ_An_Bq_a">
+              {loop $colors_all $i $c}
+                {if $c[key]==$_GET[color]}
+                   <li><a href="?hy={$hy}&color={$c[key]}&package={$package}" id="search_color_{$c[key]}" class="S_{$c[key]}"><i>{$c[name]}</i></a></li>
+                {else}
+                
+                    <li><a href="?hy={$hy}&color={$c[key]}&package={$package}" class="S_{$c[key]}"><i>{$c[name]}</i></a></li>
+                {/if}
+           
+              {/loop}
+               
+              </ul>
+           
+          </div>
+          <!-- 色系结束 -->
+          <!-- 套餐选择开始 -->
+          <div class="search_tc clear">
+            <span>套餐：</span>
+             <p>
+                <ul>
+                {loop $catids $i $cat}
+                  {if $cat[key]==$_GET[package]}
+                      <li><a href="?hy={$hy}&color={$color}&package={$cat[key]}"  id="search_icon">{$cat[name]}</a></li>
+                  {else}
+                      <li><a href="?hy={$hy}&color={$color}&package={$cat[key]}">{$cat[name]}</a></li>
+                  {/if}
+              
+                  {/loop}
+                <ul>
+             </p>
+          </div>
+          <!-- 套餐选择结束 -->
+        </div>
+      </div>
+      <div class="Q_toggle">
+      <div class="Q_bar"></div>
+            <div class="quan_nav nav1" id="JS_shouqi_fliter"></div>
+      </div>
+     
+      <!-- 全站搜索条件选择结束 -->
+  <!-- 搜索排序开始 -->
+  <div class="QuanZ_An_Pai">
+    <div class="QuanZ_An_Pai_t">
+      <p><span>案例排序：</span><a href="?hy={$hy}&color={$color}&package={$package}&order=0">默认</a> <a href="?hy={$hy}&color={$color}&package={$package}&order=1">更新</a> <a href="?hy={$hy}&color={$color}&package={$package}&order=2">人气</a></p>
+      <span>共找到<i>{$rs[num]}</i>个案例</span>
+    </div>
+  </div>
+  <div class="QuanZ_An_List">
+    <ul class="QuanZ_An_List_ul">
+    
+             {loop $trades $i $k} 
+                 <li>
+                    <div class="Index_Anli_zs_img">
+                      <a href="{$CFG[url]}mall/search_last.php?itemid={$k[itemid]}" target="_blank"><img src="{$k[thumb]}" alt="摩恩建站-{$k[title]}"></a>
+                      <!-- 鼠标指上显示 -->
+                        <div class="MoBanYello">
+                         <span class="Left">
+                           <a href="{$CFG[url]}mall/search_last.php?itemid={$k[itemid]}"target="_blank" title="摩恩建站-{$k[title]}">查看详情</a>
+                         </span>
+                         <span class="Right">
+                           <a href="{$k[url]}" target="_blank">浏览网站</a>
+                         </span>
+                        </div>
+                      <!-- 鼠标指上显示结束 -->
+                    </div>
+                    <div class="GoSM">名称：{$k[buyer_name]}</div>
+                    <div class="JzTc">建站套餐：{$k[title]}</div>
+                </li>
+             
+             {/loop}   
+            
+              
+                 
+              </ul>
+  </div>
+  <!-- 搜索排序结束 -->
+  <div class="QuanZ_An_Next">
+  {$pages}
+
+  </div>
+<!-- 全站搜素案例结果结束 -->
+  </div>
+  
+{template 'footer'}

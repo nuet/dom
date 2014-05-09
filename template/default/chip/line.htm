@@ -1,0 +1,27 @@
+var destoon_userid = {$_userid};
+var destoon_username = '{$_username}';
+var destoon_message = {$_message};
+var destoon_chat = {$_chat};
+var destoon_cart = substr_count(get_cookie('cart'), ',');
+var destoon_member = '';
+{if $_userid}
+destoon_member += '<div class="oyw_Land_r fr" style="padding-top:7px;"><a href="{$MODULE[2][linkurl]}line.php" title="{if $_online}在线，点击隐身{else}隐身，点击上线{/if}"><img src="{DT_SKIN}image/user_{if $_online}on{else}off{/if}line.png" width="10" height="10" align="absmiddle"/></a>&nbsp;&nbsp; <a href="{$MODULE[2][linkurl]}">会员中心</a> &nbsp;&nbsp;<a href="#">我的订单</a>&nbsp;&nbsp;<a href="#">我的收藏</a> &nbsp;&nbsp;<a href="#">付款方式</a>&nbsp;&nbsp; <a href="#">新手指南</a>&nbsp;&nbsp;<a href="{$MODULE[2][linkurl]}logout.php">退出</a></div>';
+{else}
+	{if $EXT[oauth]}
+	var oauth_site = '{get_cookie('oauth_site')}';
+	var oauth_user = '{get_cookie('oauth_user')}';
+	destoon_member += (oauth_user && oauth_site) ? '<img src="{DT_PATH}api/oauth/'+oauth_site+'/ico.png" align="absmiddle"/> 欢迎，<strong>'+oauth_user+'</strong> | <a href="{DT_PATH}api/oauth/'+oauth_site+'/index.php?time={$DT_TIME}">绑定帐号</a> | <a href="javascript:" onclick="oauth_logout();">注销登录</a>' : ' <a href="{$MODULE[2][linkurl]}{$DT[file_login]}">请登录</a> | <a href="{$MODULE[2][linkurl]}{$DT[file_register]}">免费注册</a> | <a href="{$MODULE[2][linkurl]}send.php">忘记密码?</a>';
+	{else}
+	destoon_member += '<div class="oyw_Land_r fr" style="padding-top:7px;"><a href="{$MODULE[2][linkurl]}{$DT[file_login]}">[请登录]</a>&nbsp;&nbsp;&nbsp;<a href="{$MODULE[2][linkurl]}{$DT[file_register]}">[免费注册]&nbsp;</a>&nbsp;&nbsp;<a href="{$MODULE[2][linkurl]}send.php">[忘记密码]</a>&nbsp;&nbsp;<a href="#">&nbsp;我的订单&nbsp;</a>&nbsp;&nbsp;<a href="#">我的收藏</a> &nbsp;&nbsp;&nbsp;付款方式</div>'
+	
+
+	{/if}
+{/if}
+$('#destoon_member').html(destoon_member);
+{if $DT[city]}
+$('#destoon_city').html('{$city_name}');
+{/if}
+{if isset($MODULE[16])}
+$('#destoon_cart').html(destoon_cart ? '<strong>'+destoon_cart+'</strong>' : 0);
+{/if}
+{if $_userid && $DT[pushtime]}window.setInterval('PushNew()',{$DT[pushtime]}*1000);{/if}

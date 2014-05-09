@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>  </title>
+<meta name="generator" content="editplus" />
+<meta name="author" content="" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+	<style type="text/css">
+		body {
+	margin:0;
+	padding:0;
+	background:url() top center no-repeat;
+	background-repeat: repeat;
+	background-image: url(images/bg.jpg);
+	background-color: #F0F0F0;
+}
+	</style>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" /></head>
+
+<body>
+	<div>
+	  <div align="center"><img src="{$img}" alt="" width="1900" height="800" border="0" usemap="#Map" onerror="alert('图片不存在');try{window.close();}catch(e){Go(DTPath);}" onload="if(this.width>900) this.width=900;" style="border:#CCCCCC 1px solid;padding:5px;" ondblclick="window.close();" oncontextmenu="return false;" onmousewheel="return zoomimg(this);"/>      </div>
+</div>
+</body>
+</html>
+
+
+<script type="text/javascript">
+function zoomimg(o) {
+  var zoom = parseInt(o.style.zoom, 10) || 100;
+  zoom += event.wheelDelta/12;
+  if(zoom > 100) zoom = 100;
+  if(zoom < 10) zoom = 10;
+  o.style.zoom = zoom+'%';
+  return false;
+}
+</script>

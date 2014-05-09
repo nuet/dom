@@ -1,0 +1,1179 @@
+
+
+.tts{
+	letter-spacing: 1px;
+font-weight: bold;
+background: #eeeeee;
+height: auto;
+line-height: 30px;
+margin: 10px 0px;
+color: #333333;
+padding-left: 10px;
+}
+.main dt {
+font-size: 16px;
+margin-top: 30px;
+margin-bottom: 20px;
+border-bottom: 1px dashed #ccc;
+}
+dt {
+height: 30px;
+line-height: 30px;
+font-size: 14px;
+font-weight: bold;
+background: url(./image/next_mini.png) 10px center no-repeat;
+padding-left: 25px;
+}
+.beian_c .u_btns{
+	border: 0 none;
+color: #FFFFFF;
+cursor: pointer;
+display: block;
+font-size: 14px;
+font-weight: bold;
+height: 31px;
+line-height: 31px;
+text-align: center;
+width: 124px;
+background: #FFD7AC;
+text-decoration: none;
+text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+vertical-align: middle;
+}
+.u_btns{
+	border: 0 none;
+color: #FFFFFF;
+cursor: pointer;
+display: block;
+font-size: 14px;
+font-weight: bold;
+height: 31px;
+line-height: 31px;
+text-align: center;
+width: 124px;
+background: #FFD7AC;
+text-decoration: none;
+text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+vertical-align: middle;
+}
+#zm span{
+	float:left;
+    width: 45px;
+}
+#beian_c{
+	background: #FFFFFF;
+width: 816px;
+}
+.tips-orange{
+background-color: #FFF3D7;
+border: 1px solid #FFD7AC;
+border-radius: 3px;
+}
+.bei_l{
+	width:265px;
+	height:100px;
+	float:left;
+	margin-right:7px;
+	border: 1px solid #ccc;
+	background:#CDDAEA;
+}
+.beian_c ul{
+display: block;
+width: 374px;
+float: left;
+padding: 16px 0 36px 27px;
+margin-bottom: 4px;
+border:1px solid #ccc;
+}
+.beian_c ul li{
+	line-height:30px;
+	width:374px;
+	
+}
+#beian_c .bd table{
+	margin-bottom:10px;
+}
+#beian_c dd label {
+line-height: 28px;
+margin-right: 10px;
+}
+#beian_c dd label {
+display: block;
+float: left;
+width: 200px;
+text-align: right;
+height: 26px;
+
+line-height: 26px;
+}
+#beian_c .inputbox_2 {
+width: 353px;
+margin: 0;
+padding: 4px;
+height: 22px;
+line-height: 22px;
+border: 1px solid #CCC;
+border-radius: 3px;
+float:left;
+-moz-border-radius: 3px;
+box-shadow: 0 1px 2px #f4f4f4 inset;
+vertical-align: middle;
+margin-right: 10px;
+color: #000033;
+}
+#beian_c .itemmsg {
+display: block;
+clear: both;
+float: none;
+margin-left: 220px;
+width: 500px;
+background: url(./image/beian/call_dot.gif) left 2px no-repeat;
+text-indent: 18px;
+color: #666;
+}
+#area_city{
+	width:816px;
+}
+#load_area_1 dd{
+	width: 600px;
+	height:30px;
+}
+.sheng_lable {
+margin: 0;
+padding: 0;
+display: block;
+float: left;
+width: 200px;
+background:#ccc;
+text-align: right;
+height: 30px;
+line-height:30px;
+}
+#load_area_1 dd i{
+	float:left;
+	line-height:30px;
+	height:30px;
+	margin-right: 10px;
+}
+#load_area_1{
+	display:block;
+}
+input.textbtn {
+background: #F30;
+padding: 0px 20px;
+border-radius: 3px;
+font-size: 14px;
+line-height: 30px;
+border: none;
+color: #fff;
+cursor: pointer;
+text-align: center;
+height: 30px;
+text-indent: 0px;
+}
+input.btnstyle {
+background: #1b75b8;
+padding: 0px 20px;
+border-radius: 3px;
+font-size: 14px;
+line-height: 30px;
+border: none;
+color: #fff;
+cursor: pointer;
+text-align: center;
+height: 30px;
+text-indent: 0px;
+}
+.beian_c dd div {
+margin: 0;
+padding: 0;
+display: inline-block;
+float: left;
+width: 250px;
+}
+#beian_c dl dd {
+margin-bottom: 15px;
+}
+.clearfix {
+display: block;
+}
+.clearfix:after {
+content: ".";
+display: block;
+height: 0;
+clear: both;
+visibility: hidden;
+}
+#new_beian{
+	margin-right:10px;
+}
+.bei_ul_hover{
+	background:#F7F7F7;
+}
+.beian-entry ul li {
+line-height: 28px;
+}
+.padding-b28 {
+padding-bottom: 28px;
+}
+.font24 {
+font-size: 24px;
+}
+.font-red {
+color: #e60012;
+}
+.bei_t{
+	width:265px;
+	
+}
+
+.beian-link {
+padding: 24px 0 15px;
+}
+
+/* 头部文件 */
+ul.top,.top li{
+	display:block;
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+ul.top{
+	margin:0 auto;
+	margin-top:10px;
+	clear:both;
+}
+ul.top{
+	display:block;
+	width:1000px;
+	background:url(./image/beian/beian_main_03.jpg) top no-repeat;
+}
+ul.top li{
+	float:left;
+	margin-top:11px;
+	height:100px;
+}
+
+ul.top li.left{
+	width:13px;
+	background:url(./image/beian/beian_main_05.jpg) left repeat-y;
+}
+ul.top li.right{
+	width:14px;
+	background:url(./image/beian/beian_main_09.jpg) right repeat-y;
+}
+ul.top .log{
+	width:319px;
+	background:url(./image/beian/beian_main_07.jpg) repeat-x;
+}
+ul.top .login{
+	width:432px;
+	background:url(./image/beian/beian_main_07.jpg) repeat-x;
+}
+ul.top .login .msg{
+	width:275px;
+	float:left;
+	margin:0; padding:0;
+	clear:left;
+}
+
+*html ul.top .login .sub{ margin-top:5px;}/*ie6*/
+*+html ul.top .login .sub{margin-top:5px;;}/*ie7*/
+ul.top .login .sub{
+	width:120px;
+	float:left;
+	margin:-20px 0 0 0; padding:0;
+	height:30px;
+	clear:right;
+}
+
+ul.top .login .msg label{
+	display:block;
+	float:left;
+	width:100px;
+	margin:0; padding:0;
+	height:30px;
+	line-height:30px;
+	text-align:right;
+}
+ul.top .login .msg input{
+	display:block;
+	float:left;
+	width:160px;
+	margin:0; padding:0;
+	margin-top:5px;
+	height:16px;
+}
+.topmenu{
+	margin:0 auto;
+	width:980px;
+	padding:0 10px;
+	background:url(./image/beian/beian_main_10.jpg) repeat-y;
+}
+/*.z_carmenu {
+	display:block;
+	margin:0 auto;
+	padding:0;
+	border-bottom:1px solid #CCC;
+}
+.z_carmenu li {
+	display:block;
+	width:70px;
+	float:left;
+	height:25px;
+	line-height:25px;
+	margin:0;
+	padding:0;
+	margin-left:10px;
+	padding-left:10px;
+	padding-right:10px;
+	text-align:center;
+	background-color:#dee6f1;
+	border-top:1px solid #CCC;
+	border-right:1px solid #CCC;
+	border-left:1px solid #CCC;
+	border-bottom:none;
+	cursor:pointer;
+	font-size:14px;
+	font-weight:bold;
+}
+.z_carmenu li.hover, .z_carmenu li.hover a,.z_carmenu li:hover {
+	height:26px;
+	margin-bottom:-1px;
+	background-color:#fff;	
+	color:#3e89c0;
+	cursor:auto;
+}*/
+.z_carmenu {
+	display:block;
+	margin:0 auto;
+	padding:0;
+	
+	padding-left:20px;
+	background: #eff3f6;
+	border-bottom:1px solid #4a97d0;
+	border-top:1px solid #e8edf1;
+}
+.z_carmenu li {
+	display:block;
+
+	float:left;
+
+	margin:0;
+
+	text-align:center;
+	background: #eff3f6;
+
+	border-right:1px solid #dfe4e8;
+
+
+	cursor:pointer;
+	font-size:14px;
+	font-weight:bold;
+}
+.z_carmenu li a{ display:inline-block;padding: 10px 25px;}
+.z_carmenu li a:hover{ color:#fff;background: #4a97d0;	}
+.z_carmenu li.hover, .z_carmenu li.hover a,.z_carmenu li:hover {
+
+	
+	background: #4a97d0;
+	color:#fff;
+	cursor:auto;
+
+	
+}
+
+/* 底部 */
+.bottom{
+	width:1000px;
+	height:10px;
+	margin:0 auto;
+	padding:0;
+	clear:both;
+	background:url(./image/beian/beian_main_12.jpg) 0 0 no-repeat;
+}
+/* 内容 */
+
+.mainnew{
+	width:972px;
+	margin:0 auto;
+	padding:0 14px;
+}
+.main:after,.main:before {
+	content:".";
+	display:block;
+	height:0;
+	clear:both;
+	visibility:hidden;
+}
+/*.inputbox_2 {
+	background-image: url(./image/beian/boxback.gif);
+	color: #000033;
+	text-decoration: none;
+	border: 1px solid #666666;
+	height:18px;
+	line-height:18px;
+}*/
+
+.inputbox_2{
+	width: 353px;
+margin: 0;
+padding: 4px;
+height: 22px;
+line-height: 22px;
+border: 1px solid #CCC;
+border-radius: 3px;
+-moz-border-radius: 3px;
+box-shadow: 0 1px 2px #f4f4f4 inset;
+vertical-align: middle;
+margin-right:10px;
+color: #000033;
+	}
+.inputbox_3 {
+	background-color:#FFC;	
+	color: #000033;
+	text-decoration: none;
+	border: 1px solid #666666;
+	height:18px;
+	line-height:18px;
+}
+.btn_blue {
+	background:url(./image/beian/blue_Submit.jpg);
+	width:282px;
+	height:54px;
+	cursor:pointer;
+	border:none;
+	background-repeat:no-repeat;
+	display:block;
+	font-weight:bold;
+	font-size:18px;
+	color:#EEE;
+	margin:0 auto;
+	padding:0;
+}
+.searchbutton
+{
+	width: 103px;
+	height: 29px;
+	background:url(./image/beian/SearchButton1.gif) center repeat-x #000;
+	color: White;
+	border:1px #000 solid;
+}
+.searchbutton:hover
+{
+	background-image:url(./image/beian/SearchButton2.gif)
+}
+.ButtonF {
+	font-size: 14px;
+	font-weight: bold;
+	background-image: url(/photo/button_f.gif);
+	background-repeat: no-repeat;
+	height: 28px;
+	width: 113px;
+	color: #3F4951;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+dd div {
+margin: 0;
+padding: 0;
+display: inline-block;
+float: left;
+width: 250px;
+}
+.errtitle {
+	margin:0;
+	padding:0;
+	display:none;
+	margin-top:3px;
+	background:url(./image/beian/stop_zxw.gif) #FFc left top no-repeat;
+	padding-left:20px;
+	display:block;
+	width:200px;
+	word-break:break-all;
+	word-wrap:break-word;
+}
+.errtitle1 {
+	margin:0;
+	padding:0;
+	display:none;
+	height:25px;
+	width:40px;
+	background:url(./image/beian/stop_zxw.gif) #fff left no-repeat;
+	border:none;
+	display:block;
+}
+.oktitle {
+	margin:0;
+	padding:0;
+	display:none;
+	height:25px;
+	width:40px;
+	background:url(./image/beian/note_ok.gif) #fff left no-repeat;
+	border:none;
+	display:block;
+}
+.oktitle1 {
+	margin:0;
+	padding:0;
+	display:none;
+	margin-top:3px;
+	background:url(./image/beian/note_ok.gif) #fff left top no-repeat;
+	border:1px #ccc solid;
+	padding-left:20px;
+	display:block;
+}
+.loadtitle {
+	margin:0;
+	padding:0;
+	display:none;
+	height:25px;
+	width:40px;
+	background:url(./image/beian/load1.gif) #fff left no-repeat;
+	border:none;
+	display:block;
+}
+/* 弹出提示框的样式 */
+#titlemsg, #regdomain #titlemsg div {
+	display:block;
+	margin:0;
+	padding:0;
+}
+#titlemsg {
+	position:absolute;
+	display:none;
+	z-index:999;
+	width:230px;
+	height:102px;
+	top:10px;
+	left:10px;
+}
+#titlemsg div#top_left {
+	background:url(./image/beian/top-left-t.gif) left top no-repeat;
+	width:220px;
+	height:32px;
+	float:left;
+	clear:left;
+}
+#titlemsg div#top_right {
+	background:url(./image/beian/top-right-t.gif) right top no-repeat;
+	width:10px;
+	height:32px;
+	float:right;
+	clear:right;
+}
+#titlemsg div#bottom_left {
+	background:url(./image/beian/bottom-left-t.gif) left bottom no-repeat;
+	width:220px;
+	height:70px;
+	float:left;
+	clear:left;
+}
+#titlemsg div#bottom_right {
+	background:url(./image/beian/bottom-right-t.gif) right bottom no-repeat;
+	width:10px;
+	height:70px;
+	float:right;
+	clear:right;
+}
+#titlemsg div#titletext {
+	position:absolute;
+	z-index:20;
+	left:20px;
+	top:10px;
+	color:#333;
+	height:80px;
+	border-bottom:2px #0066cc solid;
+	background:url(./image/beian/call_dot.gif) left top no-repeat;
+	text-indent:20px;
+}
+/* 密码强度 */
+.strength0 {
+	width:30px;
+	background:#cccccc;
+}
+.strength1 {
+	width:30px;
+	background:#ff0000;
+}
+.strength2 {
+	width:60px;
+	background:#ff5f5f;
+}
+.strength3 {
+	width:90px;
+	background:#56e500;
+}
+.strength4 {
+	background:#4dcd00;
+	width:120px;
+}
+.strength5 {
+	background:#399800;
+	width:150px;
+}
+#passwordStrength {
+	height:10px;
+	display:block;
+}
+#passwordDescription {
+	display:block;
+	text-align:left;
+	margin:0;
+	padding:0;
+	width:200px;
+	border-top:1px solid #333;
+	text-indent:0;
+}
+/* 遮挡层 */
+#floatBoxBg {
+	display:none;
+	width:100%;
+	height:100%;
+	background:#000;
+	position:absolute;
+	top:0;
+	left:0;
+}
+.floatBox {
+	border:#666 5px solid;
+	width:300px;
+	position:absolute;
+	top:50px;
+	left:40%;
+}
+.floatBox .title {
+	height:23px;
+	padding:7px 10px 0;
+	background:#333;
+	color:#fff;
+	display:none;
+}
+.floatBox .title h4 {
+	float:left;
+	padding:0;
+	margin:0;
+	font-size:14px;
+	line-height:16px;
+}
+.floatBox .title span {
+	float:right;
+	cursor:pointer;
+}
+.floatBox .content {
+	padding:20px 15px;
+	background:#fff;
+}
+/* 网站内容选项卡 */
+.menu1box{
+	display:block;
+	position:relative;
+	margin:0 auto;
+	height:180px;
+}
+.menu1box #menu_title{
+	position:absolute;
+	display:block;
+	z-index:2;
+	left:5px;
+	width:740px;
+}
+.menu1box #menu_title li{
+	display:block;
+	float:left;
+	border:1px solid #CCC;
+	border-bottom:none;
+	height:20px;
+	line-height:20px;
+	margin-top:5px;
+	padding-left:5px;
+	padding-right:5px;
+	cursor:pointer;
+	background:#FFF url(./image/beian/center_off.gif) top center no-repeat;
+}
+.menu1box #menu_title .addbox{
+	border:0;
+	background-color:#fff;
+	width:40px;
+	color:#06c;
+	
+}
+.menu1box #menu_title li.hover{
+	border:1px solid #999;	
+	border-bottom:none;
+	height:25px;
+	line-height:25px;
+	margin-top:1px;
+	background:#FFF url(./image/beian/center_on.gif) top center no-repeat;
+}
+.menu1box .menu_body{
+	display:block;
+	position:absolute;
+	top:26px;
+	border:1px solid #999;
+	padding:10px 0;
+	width:740px;
+}
+.btn_mini {
+	background:url(./image/beian/button_mini.jpg) no-repeat;
+	width:90px;
+	height:22px;
+	line-height:22px;
+	border:none;
+	font-size:12px;
+	color:#06C;
+	cursor:pointer;
+}
+#add_login{
+	display:none;
+	margin:10px auto; padding:0;
+}
+
+#add_login .login_title{
+	display:block;
+	text-align:left;
+	color:#06c;
+	border-bottom:1px #CCC dotted;
+	margin:1px 3px 5px 3px;
+	padding-left:20px;
+	background:url(./image/beian/Reg/grzl_11.gif) left no-repeat;
+
+}
+#add_login .input_info label{
+	display:block;
+	float:left;
+	width:80px;
+	height:25px;
+	line-height:25px;
+	text-align:right;
+}
+#add_login .input_info input{
+	display:block;
+	float:left;
+	width:160px;
+	margin:0; padding:0;
+	margin-top:1px;
+}
+#add_login .loading{
+	display:none;
+	text-align:center;
+}
+#add_login .botton_info{
+	display:block;
+	text-align:center;	
+	margin-top:10px;
+}
+.z_btn-submit {
+	display:block;
+	background:url(./image/beian/button_submit.jpg) no-repeat;
+	width:166px;
+	height:33px;
+	cursor:pointer;
+	margin:0 auto;
+	padding:0;
+	margin-top:5px;
+	border:none;
+	font-weight:bold;
+	font-size:14px;
+	color:#fff;
+	text-indent:-9999px;
+}
+.z_btn-upload {
+	display:block;
+	background:url(./image/beian/button_sc.gif) no-repeat;
+	width:166px;
+	height:33px;
+	cursor:pointer;
+	margin:0 auto;
+	padding:0;
+	margin-top:5px;
+	border:none;
+	font-weight:bold;
+	font-size:14px;
+	color:#fff;
+	text-indent:-9999px;
+}
+.z_btn-buy {
+	display:block;
+	background:url(./image/beian/buy_button_next.gif) no-repeat;
+	width:166px;
+	height:33px;
+	cursor:pointer;
+	margin:0 auto;
+	padding:0;
+	margin-top:5px;
+	border:none;
+	font-weight:bold;
+	font-size:14px;
+	color:#fff;
+	text-indent:-9999px;
+}
+.z_jingao {
+	display:block;
+	border:1px solid #C30;
+	background:url(./image/beian/Manager/jingao_1.png) #FF9 left no-repeat;
+	font-size:14px;
+	color:red;
+	font-weight:bold;
+	padding:10px 10px 10px 40px;
+}
+.z_bubblebox, .z_bubblebox li, .z_bubblebox div {
+	list-style-type:none;
+	display:block;
+	margin:0;
+	padding:0;
+	border:none;
+	width:auto;
+}
+.z_bubblebox .top {
+	background:url(./image/beian/bubble-2.jpg) #fff repeat-x;
+	height:15px;
+}
+* html .z_bubblebox .top {
+	margin-bottom:-3px;
+}
+*:first-child+html .z_bubblebox .top {
+	margin-bottom:-4px;
+}
+.z_bubblebox .t_left {
+	display:block;
+	margin:0;
+	padding:0;
+	border:none;
+	float:left;
+}
+.z_bubblebox .t_right {
+	display:block;
+	margin:0;
+	padding:0;
+	border:none;
+	float:right;
+}
+.z_bubblebox .mid {
+	background:url(./image/beian/bubble-5.jpg) right #fff repeat-y;
+	overflow:auto;
+	
+}
+.z_bubblebox .m_content {
+	background:url(./image/beian/bubble-4.jpg) left #fff repeat-y;
+	margin:0 19px 0 0;
+	padding:0 0 0 19px;
+	overflow:auto;
+	_height:1%;
+}
+.z_bubblebox .bottom {
+	background:url(./image/beian/bubble-7.jpg) #fff repeat-x;
+	height:29px;
+}
+.z_bubblebox .m_content ol, .z_bubblebox .m_content ol li {
+	display:block;
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+.jrbtnmsg {
+display: block;
+float: right;
+width: auto;
+font-size: 14px;
+font-weight: normal;
+color: #06c;
+background: url(./image/beian/Pointer.gif) left center no-repeat #FFF;
+padding-left: 40px;
+}
+.company{
+	display:none;
+}
+dd select, dd textarea {
+width: 363px;
+border-radius: 3px;
+border: 1px solid #CCC;
+border-radius: 3px;
+-moz-border-radius: 3px;
+}
+dd input, dd select, dd textarea {
+margin: 0;
+padding: 0;
+display: block;
+float: left;
+width: 300px;
+margin-top: 3px;
+}
+.z_bubblebox .m_content ol {
+	margin:0 auto;
+}
+.z_bubblebox .m_content ol li {
+	background:url(./image/beian/default/assess_icon.gif) 0 7px no-repeat;
+	padding-left:10px;
+	height:20px;
+	line-height:20px;
+	margin:0 auto;
+	color:#0066cc;
+}
+ul.mapbox{
+	display:block;
+	margin:0 auto 5px auto; padding:0;
+	background:url(./image/beian/bg_titieBox.gif);
+	width:816px;
+	height:60px;
+	
+}
+ul.mapbox li{
+	display:block;
+	float:right;
+	width:auto;
+	background:url(./image/beian/bg_box_title.gif) right 1px no-repeat;
+	height:56px;
+	line-height:55px;
+	text-align:center;
+	font-size:14px;
+	margin:0; padding:0 17px 0 0;
+}
+ul.mapbox li.hover{
+	font-weight:bold;
+	color:#C00;
+}
+ul.mapbox li.noimg{
+	background-image: none;
+	padding:0 8px 0 0;
+}
+ul.needupfile{
+	border:2px dotted #ccc;
+	padding:5px;
+	margin:5px;
+}
+ul.needupfile a{
+	color:#06c;
+}
+ul.needupfile li{
+	background:url(./image/beian/top_arrow.gif) left 3px no-repeat;
+	padding-left:12px;
+}
+ul.needupfile li.title{
+	text-align:center;
+	font-size:14px;
+	font-weight:bold;
+	color:#C00;
+	padding:0;
+	height:30px; line-height:30px;
+	background-image:none;
+}
+
+.Reg_form_red{
+float: left;
+width: 250px;
+height: 27px;
+background: #FFEBEB;
+border: 1px solid red;
+margin-right: 5px;float:left;
+display: block;
+line-height: 30px;
+padding: 0px 10px;
+}
+.part_item div{
+	float: left;
+
+}
+.Reg_form_black {
+
+width: 250px;
+height: 27px;
+background: #F7F7F7;
+float:left;
+border: 1px solid red;
+margin-right: 5px;
+display: block;
+line-height: 30px;
+padding: 0px 10px;
+}
+.buttonmsg{
+	display:block;
+	margin:10px 0 10px 0;
+	clear:both;
+	float:none;
+	text-align:center;
+	border-bottom:none;
+}
+.buttonmsg input{
+	float:none;
+	margin:0 auto;
+}
+.money_info{
+	background:url(./image/beian/money_mini_blue.png) left no-repeat;
+	height:30px; line-height:30px; padding-left:25px;
+	margin:10px 0 0 20px;
+	font-size:14px;
+	color:#06c;
+	
+}
+.linebox1,.linebox1 dt,.linebox1 dd{
+	display:block; list-style:none;
+	margin:0; padding:0;	
+}
+.linebox1{
+	width:900px;
+}
+.linebox1 dt {
+	font-size:14px;
+	font-weight:bold;
+	text-align:left;
+	padding:5px 0;
+	color:#000;
+}
+.linebox1 dd {
+	padding:5px 0;
+	border-bottom:1px #ccc dotted;
+}
+.linebox1 dd.clearfix label {
+	display:block;
+	float:left;
+	text-align:right;
+	width:120px;
+	font-size:14px;
+	color:#000;	
+	text-align:right;
+}
+.linebox1 dd.clearfix label input{
+	width:auto;
+}
+.linebox1 dd.clearfix label.msg {
+	width:auto;
+	text-align:left;
+	color:#333;
+	font-size:12px;
+	margin-left:8px;
+	font-weight:normal;
+}
+dl.linebox1 dd.linebottom{
+	display:block;
+	text-align:center;
+	padding:5px;
+	margin:2px 0;
+	clear:both;
+	border:none;
+	float:none;
+}
+dl.linebox1 dd.linebottom input{
+	float:none;	
+}
+.linebox1 dd.clearfix label.errtitle{
+	clear:both;
+	width:auto;
+	float:none;
+	margin:auto 8px;
+	padding:0;
+	padding-left:20px;
+	text-align:left;
+	font-size:12px;
+	height:auto;
+	line-height:15px;
+	
+}
+.errtitle2{
+	margin:0;
+	padding:0;
+	display:none;
+	margin-top:3px;
+	background:url(./image/beian/stop_zxw.gif) #FFc left top no-repeat;
+	padding-left:20px;
+	display:block;
+	width:auto;
+	
+}
+.linebox1 dd.clearfix .oktitle {
+	margin:0;
+	padding:0;
+	height:20px;
+	width:20px;	
+	background:url(./image/beian/note_ok.gif) #fff left no-repeat;
+	border:none;
+	display:block;
+	
+}
+.jUploader-button {
+	background: url(./image/beian/ipt2_bg.gif) #111111 no-repeat center center;
+	color: #FFFFFF;
+	display:block;
+	float:left;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+	width: 80px; height:30px;line-height:30px;
+}
+.jUploader-button-hover {
+	background-color: #111111;
+	color: #fff;
+}
+dd.qzsp_show{
+	display:block;
+}
+dd.qzsp_hide{
+	display:none;
+}
+.mainlayout{ margin:0 auto;}
+.mainlayout dt{font-size: 16px; margin-top:30px; margin-bottom:20px; border-bottom:1px dashed #ccc;}
+.mainlayout dl dd{ margin-bottom:15px;}
+.mainlayout dt.margin_top { margin-top:0px;}
+.mainlayout dd label{ line-height:28px; margin-right:10px;}
+select{ font-size:14px; padding:2px 0;font-family: "\5FAE\8F6F\96C5\9ED1", "Microsoft Yahei", tahoma,arial,"Hiragino Sans GB", "\5B8B\4F53";}
+#edicp {
+clear: both;
+margin-left: auto;
+margin-right: auto;
+width: 816px;
+text-align: left;
+}
+.part {
+clear: both;
+margin-left: auto;
+margin-right: auto;
+width: 816px;
+text-align: left;
+overflow: hidden;
+}.part_title {
+margin: 0px;
+padding: 5px;
+font-size: 14px;
+font-weight: bold;
+background-color: #EEE;
+border-top: 1px solid;
+border-bottom: 1px solid;
+}.part_content {
+float: left;
+width: 816px;
+margin: 0px;
+padding: 0px;
+}.part_item {
+clear: both;
+margin: 0px;
+width: 816px;
+}.item_1 {
+float: left;
+width: 90px;
+margin: 0px;
+padding: 5px;
+}.item_3 {
+float: left;
+width: 210px;
+margin: 0px;
+padding: 5px;
+padding-left: 10px;
+}.input1 {
+width: 160px;
+margin: 0px;
+}.item_4 {
+float: left;
+width: 450px;
+margin: 0px;
+padding: 5px;
+padding-left: 10px;
+}.item_2 {
+float: left;
+width: 180px;
+margin: 0px;
+padding: 5px;
+padding-left: 10px;
+}

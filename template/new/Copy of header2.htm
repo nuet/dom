@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset={DT_CHARSET}"/>
+<title>{if $seo_title}{$seo_title}{else}{if $head_title}{$head_title}{$DT[seo_delimiter]}{/if}{if $city_sitename}{$city_sitename}{else}{$DT[sitename]}{/if}{/if}</title>
+{if $head_keywords}
+<meta name="keywords" content="{$head_keywords}"/>
+{/if}
+{if $head_description}
+<meta name="description" content="{$head_description}"/>
+{/if}
+{if $head_mobile}
+<meta http-equiv="mobile-agent" content="format=xhtml; url={$head_mobile}"> 
+<meta http-equiv="mobile-agent" content="format=html5; url={$head_mobile}">
+{/if}
+<meta name="generator" content="{$CFG['url']}"/>
+<link rel="shortcut icon" type="image/x-icon" href="{DT_STATIC}favicon.ico"/>
+<link rel="bookmark" type="image/x-icon" href="{DT_STATIC}favicon.ico"/>
+{if $head_canonical}
+<link rel="canonical" href="{$head_canonical}"/>
+{/if}
+{if $EXT[archiver_enable]}
+<link rel="archives" title="{$DT[sitename]}" href="{$EXT[archiver_url]}"/>
+{/if}
+<link href="{DT_SKIN}/global.css" rel="stylesheet" type="text/css">
+{if $moduleid>4}<link rel="stylesheet" type="text/css" href="{DT_SKIN}{$module}.css"/>{/if}
+{if $CSS}
+{loop $CSS $css}
+<link rel="stylesheet" type="text/css" href="{DT_SKIN}{$css}.css"/>
+{/loop}
+{/if}
+<link rel="stylesheet" type="text/css" href="{DT_SKIN}style.css"/>
+<link rel="stylesheet" type="text/css" href="{DT_SKIN}New_Index.css"/>
+{if !DT_DEBUG}<script type="text/javascript">window.onerror=function(){return true;}</script>{/if}
+<script type="text/javascript" src="{DT_STATIC}lang/{DT_LANG}/lang.js"></script>
+<script type="text/javascript" src="{DT_STATIC}file/script/config.js"></script>
+<script type="text/javascript" src="{DT_STATIC}file/script/common.js"></script>
+<script type="text/javascript" src="{DT_STATIC}file/script/page.js"></script>
+<script type="text/javascript" src="{DT_STATIC}file/script/admin.js"></script>
+<script type="text/javascript" src="{DT_STATIC}file/script/jianzhan.js"></script>
+<script type="text/javascript" src="{DT_STATIC}file/script/member.js"></script>
+<link rel="stylesheet" type="text/css" href="{DT_SKIN}MoBan_Ye_Index.css"/>
+ <script  src="{$CFG[url]}file/script/Maya.MessageBox/Maya.MessageBox.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="{$CFG[url]}file/script/Maya.MessageBox/Maya.MessageBox.css">
+ <script  src="{$CFG[url]}file/script/mayabox/Maya.Box.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="{$CFG[url]}file/script/mayabox/style.css">
+{if $lazy}<script type="text/javascript" src="{DT_STATIC}file/script/jquery.lazyload.js"></script>{/if}
+{if $JS}
+{loop $JS $js}
+<script type="text/javascript" src="{DT_STATIC}file/script/{$js}.js"></script>
+{/loop}
+{/if}
+{php $searchid = ($moduleid > 3 && $MODULE[$moduleid]['ismenu'] && !$MODULE[$moduleid]['islink']) ? $moduleid : 5;}
+<script type="text/javascript">
+{if $moduleid==1 && $EXT[wap_enable] && $EXT[wap_goto]}
+GoMobile('{$EXT[wap_url]}');
+{/if}
+var searchid = {$searchid};
+{if $itemid && $DT[anticopy]}
+document.oncontextmenu=function(e){return false;};
+document.onselectstart=function(e){return false;};
+{/if}
+</script>
+<!--[以上为系统关键代码，除非您明确其含义，否则请勿修改或删除，否则会导致系统错误]-->
+<!--[模板中所有带id的元素，请勿修改或删除，否则会导致部分JS代码无法运行]-->
+<!--[以上类似的注释，在编译模板时，系统会自动移除，不会显示在实际的页面中]-->
+
+<script type="text/javascript">
+function gocity(s) {
+Go('{$CFG['url']}index.php?action=go&'+s);
+}
+</script>
+
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<link href="{DT_SKIN}/oy.ddy.css" rel="stylesheet" type="text/css">
+<link href="{DT_SKIN}/user.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="{DT_STATIC}/file/script/jquery-1.8.1.min.js"></script>
+<script type="text/javascript" src="{DT_STATIC}/file/script/tab.js"></script>
+<link rel="stylesheet" type="text/css" href="{DT_STATIC}{$MODULE[2][moduledir]}/image/style.css"/>
+</head>
+
+<body>
+<div class="oyw_header">
+<div class="oyw_top">
+<div class="oyw_Land">
+<div class="oyw_Land_l fl" style="width:650px;">
+<ul>
+<li><script type="text/javascript">addFav('收藏本页');</script> |</li>
+<li><span style="padding-right:6px;"><img src="{DT_SKIN}/image/oyw_pic_03.jpg" width="10" height="13"></span><a href="{$EXT[wap_url]}mobile.php">手机版</a> |</li>
+{if $MODULE[99]}<li class="h_cart"><a href="{$MODULE[99][linkurl]}cart.php" rel="nofollow">购物车</a>(<span class="head_t" id="destoon_cart">0</span>) |</li>{/if}
+<li> <span style="padding-right:6px;"><img src="{DT_SKIN}/image/oyw_pic_06.jpg" width="12" height="11"></span>
+		<span id="destoon_member1"></span>
+ 
+</ul>
+
+ </div>
+	<div class="f_r" id="destoon_member"></div>
+</div>
+</div>
+<div class="MoBanLogo" id="MoBanLogo">
+<!-- logo图片开始 -->
+<!-- logo图片结束 -->
+  <div class="MoBanLogoImg1">
+  <a href="{$CFG[url]}">
+    <img src="{$DT[logo]}" alt="{$DT[title]}"></a>
+  </div>
+  
+  <div class="oyw_city u_fl">
+	<!-- 显示隐藏div城市 -->
+	
+	<div class="oyw_city_def">{if $DT[city]}<li class="h_city">[<span id="destoon_city">{$city_name}</span>]</li>{/if}</div>
+	<div class="oyw_city_show" id="oyw_city_showa" onmousemove="cityshow()" onmouseout="cityhide()"><span><a href=""  >[切换城市]</a></span></div>
+	<div class="oyw_city_qh" id="oyw_city_qh" onmousemove="cityshow()" onmouseout="cityhide()" >
+		<div class="oyw_city_qh_hot">
+			<span>热门:</span>
+			<ul>
+			 <li><a href="javascript:gocity('areaid=2')">上海</a></li>
+			 <li><a href="javascript:gocity('areaid=1')">北京</a></li>
+			 <li><a href="javascript:gocity('areaid=20')">广州</a></li>
+			 <li><a href="javascript:gocity('areaid=35')">深圳</a></li>
+			 <li><a href="javascript:gocity('')">全国</a></li>
+			 </ul>
+		</div>
+		<div class="oyw_city_qh_hb">
+			<span>华北东北:</span>
+			<ul>
+				 <li><a href="javascript:gocity('areaid=1')">北京</a></li>
+				<li><a href="javascript:gocity('areaid=50')">大连</a></li>
+				<li><a href="javascript:gocity('areaid=49')">沈阳</a></li>
+				<li><a href="javascript:gocity('areaid=48')">天津</a></li>
+				<li><a href="javascript:gocity('areaid=46')">哈尔滨</a></li>
+			</ul>
+		</div>
+		<div class="oyw_city_qh_hd">
+			<span>华东地区:</span>
+			<ul>
+				<li><a href="javascript:gocity('areaid=2')">上海</a></li>
+				<li><a href="javascript:gocity('areaid=47')">南京</a></li>
+				<li><a href="javascript:gocity('areaid=45')">苏州</a></li>
+				<li><a href="javascript:gocity('areaid=44')">杭州</a></li>
+				<li><a href="javascript:gocity('areaid=42')">无锡</a></li>
+				<li><a href="javascript:gocity('areaid=43')">厦门</a></li>
+				<li><a href="javascript:gocity('areaid=41')">宁波</a></li>
+				<li><a href="javascript:gocity('areaid=40')">青岛</a></li>
+				<li><a href="javascript:gocity('areaid=39')">济南</a></li>
+				<li><a href="javascript:gocity('areaid=38')">合肥</a></li>
+				<li><a href="javascript:gocity('areaid=37')">福州</a></li>
+			</ul>
+		</div>
+		<div class="oyw_city_qh_zxb">
+			<span>中部西部:</span>
+			<ul>
+				<li><a href="javascript:gocity('areaid=36')">郑州</a></li>
+				<li><a href="javascript:gocity('areaid=53')">武汉</a></li>
+				<li><a href="javascript:gocity('areaid=52')">成都</a></li>
+				<li><a href="javascript:gocity('areaid=4')">重庆</a></li>
+				<li><a href="javascript:gocity('areaid=51')">西安</a></li>
+			</ul>
+		</div>
+		<div class="oyw_city_qh_hnd">
+			<span>华南地区:</span>
+			<ul>
+				<li><a href="javascript:gocity('areaid=20')">广州</a></li>
+				<li><a href="javascript:gocity('areaid=35')">深圳</a></li>
+			</ul>
+		</div>
+
+	</div>
+</div>
+  <form action="{$CFG['url']}mall/search_order.php" method="get">
+  <div class="MoBanLogoSea1">
+     	
+         <input type="hidden" name="package" value='{$package}'/>
+        <input type="text" name="item" class="MYkeyWord1"  placeholder="请输入要搜索的关键字"/> 
+    <input type="submit" class="MYsubmit1" value="案例搜索">
+    <p><a href="">上海摩恩网站科技</a><a href="">展示网站建设</a></p>
+  </div>
+  </form>
+  <!-- 搜索框结束 -->
+  <!-- 联系方式 -->
+  <!-- 联系方式结束 -->
+  <div class="MoBanLogoLi">
+    <img src="{DT_SKIN}image/header_online.gif" alt="">
+    <p><a href="{$CFG[url]}group/search_order.php">高级搜索</a><a href="">新手上路</a></p>
+  </div>
+  <!-- 联系方式结束 -->
+</div>
+
+
+<div class="oyw_main_box clear">
+<div class="oyw_main">
+<div class="oyw_main_l">
+<ul>
+<li><a href="{$MODULE[2][linkurl]}" class="hover u_ind_zx">会员中心</a></li>
+<li><a href="{$CFG[url]}mall/list.php?catid=4">展示网站建设</a></li>
+<li><a href="{$CFG[url]}mall/list.php?catid=5">品牌网站建设</a></li>
+<li><a href="{$CFG[url]}mall/list.php?catid=6">营销网站建设</a></li>
+<li><a href="{$CFG[url]}mall/list.php?catid=7">手机网站建设</a></li>
+<li><a href="{$MODULE[100][linkurl]}">Logo设计</a></li>
+
+</ul>
+</div>
+<!-- dd -->
+
+<div class="oyw_main_rxia fr" id="oyw_main_rxia">
+<ul id="jsddm">
+	<li class="jsddm_4_li"><a href="{$MODULE[17][linkurl]}">模版建站</a>
+		<ul >
+			<li><a href="{$MODULE[17][linkurl]}list.php?catid=41">企业模版</a></li>
+              <li><a href="{$MODULE[17][linkurl]}list.php?catid=42">商城模版</a></li>
+              <li><a href="{$MODULE[17][linkurl]}list.php?catid=43">Flash模版</a></li>
+                <li><a href="{$MODULE[17][linkurl]}list.php?catid=44">&nbsp;&nbsp;手机模版&nbsp;&nbsp;<em></em></a></li>
+		</ul>
+	</li>
+	<li class="jsddm_6_li"><a href="" class="jsddm_6" id="parent">域名主机邮箱 <i>|</i></a>
+		<ul >
+			<li><a href="#">域名主机邮箱</a></li>
+			<li><a href="#">域名主机邮箱</a></li>
+			<li><a href="#">域名主机邮箱</a></li>
+			<li><a href="#">域名主机邮箱</a></li>
+			<li><a href="#">域名主机邮箱</a></li>
+		</ul>
+	</li>
+</ul>
+
+</div>
+<script>
+	function omover(navbg){
+		 var parent = document.getElementById("parent");
+		 parent.className = parent.className + " cur";  //添加classname
+	}
+</script>
+</div>
+
+</div>

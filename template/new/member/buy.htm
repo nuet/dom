@@ -1,0 +1,76 @@
+{template 'header1', $module}
+<script type="text/javascript">c(2);var errimg = '{DT_SKIN}image/nopic50.gif';</script>
+
+	
+	
+	<form method="post" action="buy.php" onsubmit="return check();" id="dform">
+	<input type="hidden" name="forward" value="{$CFG[url]}member/my.php?mid=6"/>
+	<input type="hidden" name="action" value="{$action}"/>
+	<input type="hidden" name="step" value="{$step}"/>
+	<input type="hidden" name="itemid" value="{$itemid}"/>
+	<table cellspacing="1" cellpadding="8" class="tb">
+	<tr>
+	<td class="tl">当前操作</td>
+	<td class="tr f_red f_b">订单支付</td>
+	</tr>
+	<tr>
+	<td class="tl">订单单号</td>
+	<td class="tr">T{$item[itemid]} {if $DT[trade]}({$DT[trade_nm]}订单单号:{$item[trade_no]}){/if}</td>
+	</tr>
+	<tr>
+	<td class="tl">定制名称</td>
+	<td class="tr"><a href="{$CFG[url]}/buy/show.php?itemid={$item[itemid]}" target="_blank" class="t">{$item[title]}</a></td>
+	</tr>
+	<tr>
+	<td class="tl">需求类型</td>
+	<td class="tr">{$CAT[catname]}</a></td>
+	</tr>
+	
+
+	<tr>
+	<td class="tl">下单时间</td>
+	<td class="tr">{$item[adddate]}</td>
+	</tr>
+	
+	<tr>
+	<td class="tl">我的备注</td>
+	<td class="tr">{$item[note]}</td>
+	</tr>
+	
+	<tr>
+	<td class="tl">实付金额</td>
+	<td class="tr f_red">￥{$item[amount]}</td>
+	</tr>
+	<tr>
+	<td class="tl">帐户余额</td>
+	<td class="tr f_blue">￥{$_money}</td>
+	</tr>
+	<tr>
+	<td class="tl"><span class="f_red">*</span> 支付密码</td>
+	<td class="tr">{template 'password', 'chip'}&nbsp;<span id="dpassword" class="f_red"></span></td>
+	</tr>
+
+	<tr>
+	<td class="tl"> </td>
+	<td class="tr">
+	<input type="submit" name="submit" value=" 确 定 " class="btn"/>&nbsp;&nbsp;<input type="button" value=" 返 回 " class="btn" onclick="history.back(-1);"/>
+	</td>
+	</tr>
+	</table>
+	</form>
+	<script type="text/javascript">
+	function check() {
+		if(Dd('password').value == '') {
+			Dmsg('请填写支付密码', 'password');
+			return false;
+		}
+		return confirm('您确认此订单，并立即支付吗？');
+	}
+	</script>
+	<script type="text/javascript">s('trade');m('action_order');</script>
+	<!--一次性付款 end -->
+
+  
+
+
+{template 'footer', $module}

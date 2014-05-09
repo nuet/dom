@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+{if $item[ys]==1}
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$item[title]}的演示站</title>
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<script type="text/javascript" src="{DT_STATIC}/file/script/jquery-1.8.1.min.js"></script>
+	<link href="{DT_SKIN}/global.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="{DT_SKIN}MoBanShow.css"/>
+	<script type="text/javascript" src="/file/script/p.js"></script>
+	<script type="text/javascript" src="{DT_STATIC}file/script/view_mb.js"></script>
+ <script  src="{$CFG[url]}/file/script/mayabox/Maya.Box.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="{$CFG[url]}/file/script/mayabox/style.css">
+</head>
+<style>
+#ifr-tplpreview{width:100%;height:0;border:none;overflow-x:hidden;}
+</style>
+<body>
+<div class="MYanshi" id="MYanshi_s">
+  <div class="MYanshi_LOGO">
+    <span class="MYanshi_L_span0"><img src="{DT_SKIN}image/MYanshi_LOGO2.gif" alt=""></span>
+    <span class="MYanshi_L_span1">模版编号：{dsubstr(strip_tags($item[title]),5,'')}</span>
+    <span class="MYanshi_L_span2">设计师：<i>{$item[company]}</i></span>
+    <span class="MYanshi_L_span3">请选择要查看的页面演示</span>
+    <span class="MYanshi_L_span4">
+       <ul>
+      <li class="Blue"><a href="{$CFG[url]}/group/view.php?itemid={$item[itemid]}" target="_parent"  class="Blue">演示站</a>
+        <li class="Blue"><a href="{$CFG[url]}/group/view.php?itemid={$item[itemid]}&t=1" target="_parent">模版特色 </a>
+       </ul>
+    </span>
+    <div class="MYanshi_L_span5"style="width: 570px;">
+      <i>温馨提示：网站截屏演示，模板与图片效果一样，可以放心购买。</i>
+      
+      <a href="{$CFG[url]}/group/show.php?itemid={$item[itemid]}">立即订购</a>
+      <a id="j-tplpreview-order2" href="#" onclick="gz()"  style="width:80px;margin-left:10px;background:#28ABDD" title="立即购买">+加入收藏</a>
+    </div>
+  </div>
+  <div class="MYanshi_heder">
+    <div class="tplpreview-w-handler">
+    <div id="j-tplpreview-handler" class="tplpreview-handler">
+      <div class="expand"><a id="j-tplpreview-expand" class="close" href="javascript:void(0);" title="收缩">收缩</a></div>
+      <div class="MB_Sh_LJGM order hide"><a id="j-tplpreview-order2" href="{$CFG[url]}/group/show.php?itemid={$item[itemid]}" title="立即购买">立即购买</a></div>
+    </div>
+  </div>
+  </div>
+</div>
+{if $_GET[t]==1}
+<div class="MYanshi_page">
+{$item[content]}
+</div>
+{else}
+<iframe id="ifr-tplpreview" src="{$pic[url]}" j_load="{$pic[url]}" frameborder="0" name="mainFrame" scrolling="yes"></iframe>
+{/if}
+
+</body>
+<script>
+function gz(){
+	new Maya.Box({
+		text : "模版收藏",
+		url : "{$CFG[url]}/group/gz.php?itemid={$itemid}",
+		width :330,
+		height : 150,
+		iframeAuto: false,
+        iframeScroll: false,
+	});	
+}
+
+</script>
+
+<!--[if lte IE 8]>
+<script>
+//<![CDATA[
+//按钮的hover效果
+$('button').hover(function(){$(this).addClass('hover');}, function(){$(this).removeClass('hover');});
+//]]>
+</script>
+<![endif]-->
+</html>
+
+
+
+{elseif $item[ys]==2}
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$item[title]}的演示站</title>
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<script type="text/javascript" src="{DT_STATIC}/file/script/jquery-1.8.1.min.js"></script>
+<link href="{DT_SKIN}/global.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="{DT_STATIC}file/script/view_mb.js"></script>
+<link rel="stylesheet" type="text/css" href="{DT_SKIN}MoBanShow.css"/>
+ <script  src="{$CFG[url]}/file/script/mayabox/Maya.Box.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="{$CFG[url]}/file/script/mayabox/style.css">
+
+<script>
+$(function(){
+	var h=$(".MYanshi_L_span4").height();
+	if(h>31){
+		$(".MYanshi_LOGO").css("height",h+'px');
+		}
+})
+</script>
+</head>
+<body>
+<!-- 模版展示 -->
+<div class="MYanshi" id="MYanshi_s" >
+  <div class="MYanshi_LOGO">
+    <span class="MYanshi_L_span0"><img src="{DT_SKIN}image/MYanshi_LOGO2.gif" alt=""></span>
+    <span class="MYanshi_L_span1">模版编号：{dsubstr(strip_tags($item[title]),5,'')}</span>
+    <span class="MYanshi_L_span2">设计师：<i>{$item[company]}</i></span>
+    <span class="MYanshi_L_span3">请选择要查看的页面演示</span>
+    <span class="MYanshi_L_span4" style="width:689px;display:block">
+       <ul>
+       {loop $view_pics $i $k}
+     
+         <li><a href="{$CFG[url]}/group/view.php?itemid={$k[itemid]}&pic={$k[id]}"  
+       
+         {if $k[id]==$_GET[pic] } 
+         class="Blue"
+         {elseif !$_GET[pic] }
+          {if $i==0} class="Blue" {else}  class="Yellow"  {/if}
+         {else} 
+         class="Yellow"
+         {/if} 
+        >{$k[title]}</a></li>
+        {/loop}
+        <li class="Blue"><a href="{$CFG[url]}/group/view.php?itemid={$k[itemid]}&pic={$k[id]}&t=1">模版特色 </a>
+       </ul>
+       
+    </span>
+   <div class="MYanshi_L_span5"style="width: 570px;">
+      <i>温馨提示：网站截屏演示，模板与图片效果一样，可以放心购买。</i>
+      
+      <a href="{$CFG[url]}/group/show.php?itemid={$item[itemid]}">立即订购</a>
+      <a id="j-tplpreview-order2" href="#" onclick="gz()"  style="width:80px;margin-left:10px;background:#28ABDD" title="立即购买">+加入收藏</a>
+    </div>
+  </div>
+  <div class="MYanshi_heder">
+    <div class="tplpreview-w-handler">
+    <div id="j-tplpreview-handler" class="tplpreview-handler">
+      <div class="expand"><a id="j-tplpreview-expand" class="close" href="javascript:void(0);" title="收缩">收缩</a></div>
+      <div class="MB_Sh_LJGM order hide"><a id="j-tplpreview-order2" href="{$CFG[url]}/group/show.php?itemid={$item[itemid]}" title="立即购买">立即购买</a></div>
+    </div>
+  </div>
+  </div>
+</div>
+<div style="width:100%;height:auto"> 
+<div class="MYanshi_page" style="width:1500px;">
+
+
+{if $_GET[t]==1 }
+{$item[content]}
+{else}
+ <img src="{$pic[pic]}" alt="">
+{/if}
+
+</div>
+<div>
+<script>
+function gz(){
+	new Maya.Box({
+		text : "模版收藏",
+		url : "{$CFG[url]}/group/gz.php?itemid={$itemid}",
+		width :330,
+		height : 150,
+		iframeAuto: false,
+        iframeScroll: false,
+	});	
+}
+
+</script>
+
+</body>
+</html>
+
+{/if}

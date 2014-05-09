@@ -1,0 +1,533 @@
+<?php defined('IN_DESTOON') or exit('Access Denied');?><?php include template('header', $module);?>
+<div class="menu">
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td class="tab" id="add"><a href="usr_chg.php?action=add"><span>申请发票</span></a></td>
+<td class="tab_nav">&nbsp;</td>
+<td class="tab" id="home"><a href="usr_chg.php"><span>我的发票</span></a></td>
+</tr>
+</table>
+</div>
+<?php if($action == 'add') { ?>
+<div id="main" class="mt20">
+ <div id="content">
+<style>
+
+.mb10 span{
+width:600px;
+height:auto;
+display:block;
+}
+.fp_btn{
+display: inline-block;
+vertical-align: middle;
+zoom: 1;
+background:#fe6100;
+border: none;
+width: 123px;
+height: 28px;
+float:right;
+color: #FFF;
+text-decoration: none;
+overflow: hidden;
+text-align: center;
+line-height: 28px;
+}
+.m10{margin-bottom: 10px!important;
+        margin-top: 10px!important;}
+.tips-orange{
+background-color: #FFF3D7;
+border: 1px solid #FFD7AC;
+border-radius: 3px;
+}
+
+#stype{
+border:solid 1px #ffcc00; width:100px; height:20px;overflow:hidden;
+}
+.select_t{
+width:115px;height:25px; margin-left:-1px; margin-top:-1px;
+ }
+input[type=text]:focus,input[type=password]:focus,textarea:focus,textarea:hover,input:hover{
+transition:border linear .2s,box-shadow linear .5s;
+-moz-transition:border linear .2s,-moz-box-shadow linear .5s;
+-webkit-transition:border linear .2s,-webkit-box-shadow linear .5s;
+-o-transition:border linear .2s,-webkit-box-shadow linear .5s;
+outline:none;border-color:rgba(24, 160, 215, 0.74);
+box-shadow:0 0 8px rgba(24, 160, 215, 0.74);
+-moz-box-shadow:0 0 8px rgba(24, 160, 215, 0.74);
+-webkit-box-shadow:0 0 8px rgba(24, 160, 215, 0.74);
+-o-box-shadow:0 0 8px rgba(24, 160, 215, 0.74);
+}
+.fomXBox{
+width: 790px;
+height: auto;
+}
+.fomXBox .pro1Title{
+height: 30px;
+margin-bottom: 20px;
+}
+.fomXBox   input,.fomXBox  textarea{
+margin: 0;
+padding: 0;
+    float:left;
+}
+.fomXBox .pro1{
+height: 30px;
+margin-bottom: 20px;
+}
+.fomXBox span{
+width: 220px;
+display: block;
+height: 30px;
+text-align: center;
+float: left;
+}
+.fomXBox .pro1 p{
+float: left;
+height: 30px;
+display: block;
+line-height: 30px;
+}
+.pro1Title span i{
+color: red;
+padding-right: 10px;
+}
+.fomXBox .pro1 span i{
+color: red;
+padding-right: 10px;
+}
+.company{
+display:none;
+}
+.tts{
+letter-spacing: 1px;
+font-weight: bold;
+background:#FFD7AC;
+height: 30px;
+line-height: 30px;
+margin:10px 0px;
+color: #FFFFFF;
+padding-left: 10px;
+}
+.u_btn{
+border: 0 none;
+color: #FFFFFF;
+cursor: pointer;
+display: block;
+font-size: 14px;
+font-weight: bold;
+height: 31px;
+line-height: 31px;
+text-align: center;
+width: 124px;
+background: #FE6100;
+text-decoration: none;
+text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+vertical-align: middle;
+}
+#zm span{
+float:left;
+    width: 45px;
+}
+</style>
+<script>
+function otype(m){
+if(m=='0'){
+$('.person').css("display","block");
+$('.company').css("display","none");
+}else{
+$('.person').css("display","none");
+$('.company').css("display","block");
+}
+}
+</script>
+<div class="tips-orange pd10">
+  <span>1、发票统一采用快递方式进行邮寄，单次开票金额大于等于480元免快递费，开票金额小于480元支付10元/封，或选择“顺风到付”。快递费用请直接充值到当前会员名下，届时可申请的开票金额为产品费用+快递费。</span><br>
+  <span>2、发票一般为每月开出两次，增值税专用发票每月末最后1周停止开出，放在下个月初开出。遇到发票用完且在月初，因需报税后才可申领新发票，则开票会有延迟，请勿催促！ </span><br>
+  <span>3、非一般纳税人开出为增值税普通发票，一般纳税人开出为增值税专用发票。如您是一般纳税人请在发票申请当日提交证明至pay@omooo.com或传真到：4008875666-658588，证明文件三选一：1、有一般纳税人条形章的税务登记证；2、一般纳税人资格证书；3、给自身客户开出的增值税专用发票复印件。在之前申请发票时已经提供过，可不用再提供。</span><br>
+  <span>4、由于增值税专用发票只有在开票当月才可以做退票处理，所以您收到发票后务必让财务在当月进行认证抵扣，如果出现不能认证请在当月通知我们，可重新开票。如果隔月进行认证不能抵扣，我司不再做退票处理，但此发票还是可以用于财务做账。请务必提醒财务！</span><br>
+  <span>5、跨年度发票不可以再申请，如：2012年充值款项，最迟申请时间为：2012年12月31日。会员等级为合作伙伴的价格均不含税，如需要申请发票需要增加6%的税点。</span><br></div>
+<p class="m10">
+
+</p>
+<div class="tts">申请发票</div>
+<form method="post" action="usr_chg.php" onsubmit="return check();">
+<input type="hidden" name="action" value="<?php echo $action;?>"/>
+<div class="fomXBox">
+<div class="pro1Title">
+<span><i>*</i>类型</span>
+<div>
+<select class="select_t" name="post[type]">
+<option value="0">个人</option>
+<option value="1">企业</option>
+</select>
+</div>
+</div>
+<div class="pro1Title">
+<span><i>*</i>发票类型</span>
+<div>
+<select class="select_t" id="fptype" name="post[fptype]" onchange="otype(this.options[this.options.selectedIndex].value)">
+<option value="0">增值税普通发票</option>
+<option value="1">增值税专用发票</option>
+</select>
+</div>
+</div>
+<div class="pro1">
+<span><i>*</i>发票抬头</span>
+<div>
+<input type="text" size="45" name="post[taitou]" id="taitou" value="<?php echo $taitou;?>"/><span id="dtaitou" class="f_red"></span>
+    </div>
+</div>
+<div class="pro1">
+<span><i>*</i>发票金额</span>
+<div>
+   <input type="text" size="25" name="post[money]" id="money" value="<?php echo $money;?>"/>(可索取发票总额：
+<em style="font-family: microsoft yahei" class="fs20 tgreen" id="invoice_money"><?php echo $wkfpmoney;?></em>元 
+已开发票总额：
+<em style="font-family: microsoft yahei" class="fs20 tgreen" id="invoice_money"><?php echo $p['yfpmoney'];?></em>元 )<span id="dmoney" class="f_red"></span>
+</div>
+</div>
+<div class="person">
+
+<div class="pro1">
+<span><i>*</i>身份证号</span>
+<div>
+<input type="text" size="25" name="post[idcard]" id="idcard" value="<?php echo $idcard;?>"/><span id="didcard" class="f_red"></span>
+</div>
+</div>
+</div>
+<div class="company">
+<div class="pro1">
+<span><i>*</i>纳税人识别号</span>
+<div>
+<input type="text" size="45" name="post[cnumber]" id="cnumber" value="<?php echo $cnumber;?>"/><span id="dcnumber" class="f_red"></span>
+</div>
+</div>
+<div class="pro1">
+<span><i>*</i>开户银行名称</span>
+<div>
+<input type="text" size="45" name="post[cbank]" id="cbank" value="<?php echo $cbank;?>"/><span id="dcbank" class="f_red"></span>
+</div>
+</div>
+
+<div class="pro1">
+<span><i>*</i>开户银行帐号</span>
+<div>
+<input type="text" size="45" name="post[cbankno]" id="cbankno" value="<?php echo $cbankno;?>"/><span id="dcbankno" class="f_red"></span>
+</div>
+</div>
+<div class="pro1">
+<span><i>*</i>一般纳税人资质证明</span>
+<div id="zm">
+<input name="post[thumb]" type="text" size="45" id="thumb" value="<?php echo $thumb;?>" readonly/><span onclick="Dthumb(<?php echo $moduleid;?>,<?php echo $MOD['thumb_width'];?>,<?php echo $MOD['thumb_height'];?>, Dd('thumb').value, true);" class="jt">[上传]</span><span onclick="_preview(Dd('thumb').value);" class="jt">[预览]</span><span onclick="Dd('thumb').value='';" class="jt">[删除]</span>
+<span id="dthumb" style="width: 120px;" class="f_red"></span>
+</div>
+</div>
+<div class="pro1">
+<span><i>*</i>注册场所地址</span>
+<div>
+<input type="text" size="45" name="post[caddress]" id="caddress" value="<?php echo $caddress;?>"/><span id="dcaddress" class="f_red"></span>
+</div>
+</div>
+<div class="pro1">
+<span><i>*</i>注册固定电话</span>
+<div>
+<input type="text" size="45" name="post[cmob]" id="cmob" value="<?php echo $cmob;?>"/><span id="dcmob" class="f_red"></span>
+</div>
+</div>
+</div>
+<div class="pro1">
+<span><i></i>备注</span>
+<div>
+<textarea name="post[mynote]" id="mynote" cols="40" rows="3" /></textarea><span id="dmynote" class="f_red"></span>
+</div>
+</div>
+</div>
+<div class="tts">快递信息</div>
+<div style="padding:20px;margin:10px 40px 20px 40px;" class="c_b px13">
+<table cellpadding="10" cellspacing="0" width="100%">
+<tr>
+<td width="100"><span class="f_red">&nbsp;</span> 常用地址：</td>
+<td class="px13" bgcolor="#F9F9F9">
+<?php if($address) { ?>
+<?php if(is_array($address)) { foreach($address as $k => $v) { ?>
+<div>
+<?php if($k == 0) { ?><span class="f_r"><a href="<?php echo $MODULE['2']['linkurl'];?>address.php?action=add" target="_blank">[新增地址]</a>&nbsp;&nbsp;<a href="<?php echo $MODULE['2']['linkurl'];?>address.php" target="_blank">[管理地址]</a></span><?php } ?>
+<input type="radio" name="addr" id="addr_<?php echo $k;?>" value="<?php echo $v['address'];?>|<?php echo $v['postcode'];?>|<?php echo $v['truename'];?>|<?php echo $v['mobile'];?>|<?php echo $v['telephone'];?>" onclick="Adr(this.value);"<?php if($k == 0) { ?> checked<?php } ?>
+/><label for="addr_<?php echo $k;?>"> <?php echo $v['postcode'];?> <?php echo $v['address'];?> (<?php echo $v['truename'];?>) <?php echo $v['mobile'];?></label></div>
+<div class="b5"></div>
+<?php } } ?>
+<?php } else { ?>
+<strong>暂无常用收货地址</strong>&nbsp;&nbsp;<a href="<?php echo $MODULE['2']['linkurl'];?>address.php?action=add" target="_blank">[新增地址]</a>&nbsp;&nbsp;<a href="<?php echo $MODULE['2']['linkurl'];?>address.php" target="_blank">[管理地址]</a>
+<?php } ?>
+</td>
+</tr>
+<tr>
+<td><span class="f_red">*</span> 收货地址：</td>
+<td><input type="text" size="60" name="add[address]" id="address" value="<?php echo $user['address'];?>"/> <span id="daddress" class="f_red"></span></td>
+</tr>
+<tr>
+<td><span class="f_red">*</span> 邮政编码：</td>
+<td><input type="text" size="10" name="add[postcode]" id="postcode" value="<?php echo $user['postcode'];?>"/> <span id="dpostcode" class="f_red"></span></td>
+</tr>
+<tr>
+<td><span class="f_red">*</span> 真实姓名：</td>
+<td><input type="text" size="10" name="add[truename]" id="truename" value="<?php echo $user['truename'];?>"/> <span id="dtruename" class="f_red"></span></td>
+</tr>
+<tr>
+<td><span class="f_red">*</span> 手机号码：</td>
+<td><input type="text" size="20" name="add[mobile]" id="mobile" value="<?php echo $user['mobile'];?>"/> <span id="dmobile" class="f_red"></span></td>
+</tr>
+<tr>
+<td><span class="f_red">&nbsp;</span> 电话号码：</td>
+<td><input type="text" size="20" name="add[telephone]" id="telephone" value="<?php echo $user['telephone'];?>"/> <span id="dtelephone" class="f_red"></span></td>
+</tr>
+<tr> 
+   <td><span class="f_red">&nbsp;</span> 邮寄方式：</td>
+     <td valign="center" colspan="3" class="ctdright"> 
+      <input id="check-1" type="radio" name="post[restyle]" value="1" checked=""><label for="check-1" title="免快递费">免快递费（发票金额大于<span class="cheng1">480元</span>）</label>   
+      <br>
+<input id="check-2" type="radio" name="post[restyle]" value="2"><label for="check-2" title="快递到付">顺丰到付（顺丰不到地区勿选）</label>
+           <br>
+<input id="check-3" type="radio" name="post[restyle]" value="3"><label for="check-3" title="快递费10元">快递费10元
+          （发票金额低于<span class="cheng1">480元</span>,会员名下必须有足够的款项</label>
+                                  ）</td>
+                        </tr>
+                        <tr>
+<td></td>
+<td><input type="submit" value="提交" name="submit" class="u_btn" ></td>
+</tr>
+</table>
+</div>
+
+</form>
+<script type="text/javascript">s('usr_chg');m('add');</script>
+<script>
+function Adr(s) {
+var t = s.split('|');
+try {
+Dd('address').value = t[0];
+Dd('postcode').value = t[1];
+Dd('truename').value = t[2];
+Dd('mobile').value = t[3];
+Dd('telephone').value = t[4];
+}
+catch (e) {}
+}
+<?php if($address) { ?>Adr(Dd('addr_0').value);<?php } ?>
+</script>
+<?php } else { ?>
+<form action="usr_chg.php">
+<div class="tt">
+&nbsp;<?php echo $fields_select;?>&nbsp;
+<?php echo $type_select;?>&nbsp;
+<input type="text" size="50" name="kw" value="<?php echo $kw;?>" title="关键词"/>&nbsp;
+<?php echo $status_select;?>&nbsp;
+<?php echo $order_select;?>&nbsp;
+<input type="submit" value=" 搜 索 " class="btn"/>&nbsp;
+<input type="button" value=" 重 置 " class="btn" onclick="Go('usr_chg.php');"/>
+</div>
+</form>
+<div class="bd">
+<table cellpadding="1" cellspacing="0" class="tb">
+<tr>
+<th width="80">类别</th>
+<th>发票抬头</th>
+<th width="60">发票金额</th>
+<th width="80">快递公司</th>
+<th width="80">快递单号</th>
+<th width="60">快递状态</th>
+<th width="75">申请时间</th>
+<th width="75">处理时间</th>
+<th width="90" style="">状态</th>
+</tr>
+<?php if(is_array($lists)) { foreach($lists as $k => $v) { ?>
+<tr align="center"<?php if($k%2==1) { ?> bgcolor="#FAFAFA"<?php } ?>
+>
+<td><?php echo $v['fptypes'];?></td>
+<td align="left" style="padding:0 8px 0 8px;" class="f_b f_dblue"><?php echo $v['taitou'];?></td>
+<td class="f_blue f_b px11" ><?php echo $v['money'];?></td>
+<td class="px11"><?php echo $v['kdcompany'];?></td>
+<td class="px11"><?php echo $v['tradeid'];?></td>
+<td class="px11"><?php echo $v['expr'];?></td>
+<td class="px11"><?php echo $v['addtime'];?></td>
+<td class="px11"><?php echo $v['maketime'];?></td>
+<td><?php echo $v['statu'];?></td>
+</tr>
+<?php if($v['fptype']==0) { ?>
+<tr <?php if($k%2==1) { ?> bgcolor="#FAFAFA"<?php } ?>
+>
+<td colspan="9" class="f_gray">
+<span class="f_r">
+</span>
+&nbsp;
+<strong>身份证号码：&nbsp;</strong><?php echo $v['idcard'];?>&nbsp;
+</td>
+</tr>
+<?php } else { ?>
+<tr <?php if($k%2==1) { ?> bgcolor="#FAFAFA"<?php } ?>
+>
+<td colspan="9" class="f_gray">
+<span class="f_r">
+</span>
+&nbsp;
+<strong>开户银行名称&nbsp;</strong><?php echo $v['cbank'];?>&nbsp;&nbsp;
+<strong>开户银行帐号&nbsp;</strong><?php echo $v['cbankno'];?>&nbsp;&nbsp;
+</td>
+</tr>
+<tr <?php if($k%2==1) { ?> bgcolor="#FAFAFA"<?php } ?>
+>
+<td colspan="9" class="f_gray">
+<span class="f_r">
+</span>
+&nbsp;
+<strong>注册场所地址&nbsp;</strong><?php echo $v['caddress'];?>&nbsp;&nbsp;
+<strong>注册电话&nbsp;</strong><?php echo $v['cmob'];?>&nbsp;&nbsp;
+</td>
+</tr>
+<?php } ?>
+<tr<?php if($k%2==1) { ?> bgcolor="#FAFAFA"<?php } ?>
+>
+<td colspan="9" class="f_gray">
+<span class="f_r">
+</span>
+&nbsp;
+<strong>备注：</strong><?php echo $v['mynote'];?>
+</td>
+</tr>
+<tr<?php if($k%2==1) { ?> bgcolor="#FAFAFA"<?php } ?>
+>
+<td colspan="9" class="f_gray">
+<span class="f_r">
+</span>
+&nbsp;
+<strong>收件地址：&nbsp;</strong><?php echo $v['address'];?>&nbsp;
+<strong>收件人：&nbsp;</strong><?php echo $v['truename'];?>&nbsp;
+<strong>收件人手机：&nbsp;</strong><?php echo $v['mobile'];?>&nbsp;
+</td>
+</tr>
+<?php } } ?>
+<style>
+tr{
+height:30px;
+
+}
+td{
+ 
+        
+         height:30px;
+}
+</style>
+<?php if($groups) { ?>
+<tr align="center">
+<td height="30">&nbsp;</td>
+<td><strong>小计</strong></td>
+<td class="f_blue f_b px11"><?php echo $money;?></td>
+<td colspan="6" align="left" class="f_red">&nbsp;&nbsp;提示：如果交易中有任何问题，请与网站联系</td>
+</tr>
+<?php } ?>
+</table>
+</div>
+<div class="pages"><?php echo $pages;?></div>
+<script type="text/javascript">s('usr_chg');m('home');</script>
+<?php } ?>
+<?php if($action=='add') { ?>
+<script type="text/javascript">
+function check() {
+var t=$('#fptype option:selected').val();
+
+if(Dd('taitou').value.length < 2) {
+Dmsg('请填写发票抬头', 'taitou');
+return false;
+}
+f=Dd('money').value;
+if(f==""){
+Dmsg('请填写发票金额', 'money');
+return false;
+}else if(f<'0'){
+Dmsg('不能为负数', 'money');
+return false;
+     }else{
+if(isNaN(f)){
+Dmsg('请填写正确的发票金额', 'money');
+return false;
+}
+}
+var l;
+var f;
+if(t=='0'){
+
+if(!Dd('idcard').value.match(/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/)) {
+Dmsg('请填写正确的身份证号码', 'idcard');
+return false;
+}
+
+}else{
+
+f = 'cnumber';
+l = Dd(f).value.length;
+if(l < 5) {
+Dmsg('请填写纳税人识别号', f);
+return false;
+}
+f = 'cbank';
+l = Dd(f).value.length;
+if(l < 5) {
+Dmsg('请填写开户银行名称', f);
+return false;
+}
+f = 'cbankno';
+l = Dd(f).value.length;
+if(l < 5) {
+Dmsg('请填写开户银行帐号', f);
+return false;
+}
+f = 'thumb';
+l = Dd(f).value.length;
+if(l < 5) {
+Dmsg('请上传资质证明', f);
+return false;
+}
+f = 'caddress';
+l = Dd(f).value.length;
+if(l < 5) {
+Dmsg('请填写注册场所地址', f);
+return false;
+}
+f = 'cmob';
+l = Dd(f).value.length;
+if(l < 5) {
+Dmsg('请填写注册场所固定电话', f);
+return false;
+}
+}
+
+f = 'address';
+l = Dd(f).value.length;
+if(l < 5) {
+Dmsg('请填写收货地址', f);
+return false;
+}
+f = 'postcode';
+l = Dd(f).value.length;
+if(l < 6) {
+Dmsg('请填写邮政编码', f);
+return false;
+}
+f = 'truename';
+l = Dd(f).value.length;
+if(l < 2) {
+Dmsg('请填写真实姓名', f);
+return false;
+}
+f = 'mobile';
+l = Dd(f).value.length;
+if(l < 11) {
+Dmsg('请填写手机号码', f);
+return false;
+}
+return true;
+}
+</script>
+<?php } ?>
+<?php include template('footer', $module);?>

@@ -1,0 +1,361 @@
+{template 'header'}
+
+<form action="?f" method="post" name="order_form">
+<div class="oyw_content_ddy">
+    <div class="oyw_Show_ddy mt12 clearfix">
+    	<div class="oyw_Show_ddy_xbn">
+        	<img src="{DT_SKIN}/image/oy_ddy_top.gif">
+        </div>
+        <div class="oyw_Show_ddy_form">
+        	<div class="oyw_Show_ddy_form_top"><span><ul><li>·您的位置：</li><li>首页 </li>><li> <a href="">商城 > </a></li><li><a href="">提交订单</a></li></ul></span></div>
+        
+        <!--欧意订单表单填写第一排-->
+        <div class="clear"></div>
+        <div class="oyw_Show_ddy_form_one">
+            <!--欧意订单表单填写左面-->
+            <div class="oyw_Show_ddy_form_left oy_floatlf">
+            	<div class="oyw_Show_ddy_form_left_tc">
+                	<div class="oyw_Show_ddy_form_left_tc_img">
+                    	<img src="{DT_SKIN}/image/oy_queren_info.gif">
+                    </div>
+                    <div class="oyw_Show_ddy_form_left_tc_info">
+                      <div class="oyw_Show_ddy_form_left_tc_info1">
+                      	<div class="oyw_Show_ddy_form_left_tc_info_1 oy_floatlf mgtp10"><b>您选择的套餐：</b></div>
+                        <div class="oyw_Show_ddy_form_left_tc_info_2 oy_floatlf mgtp10"><div style="height:30px;">{$item[title]}<br/></div>
+                        
+                        </div>
+                        </div>
+                      <div class="oyw_Show_ddy_tcnr clear">
+                        <div class="oyw_Show_ddy_form_left_tc_info_1 oy_floatlf "><b>套餐内容:</b></div>
+                        <div class="oyw_Show_ddy_form_left_tc_info_2 oy_floatlf ">
+                        {$item[content]}
+                        </div>
+                      </div>
+                    </div>
+                
+                </div>
+                          <!-- 语言版本选择 -->
+                <div class="oyw_Show_ddy_form_left_lanuge mgtp10">
+                    <div class="oyw_Show_ddy_form_left_zf_img">
+                      <img src="{DT_SKIN}/image/oy_is_wap.gif">
+                    </div>
+                    <div class="oyw_Show_ddy_form_left_lanuge_bg mgtp10">
+                        <div class="oyw_Show_ddy_form_left_lanuge_1">
+                          <b>中文版本:</b>
+                          <input type="checkbox" name="language" value="cnjt" checked >中文简体
+                          <input type="checkbox" name="language" value="cnft">中文繁体
+                          （中文增加一个版本增加 <i>20%</i>费用）
+                        </div>
+                        <div class="oyw_Show_ddy_form_left_lanuge_2">
+                          <b>外语版本:</b>
+                          <input type="checkbox" name="language" value="English">英文版本
+                          <input type="checkbox" name="language" value="Japanese">日文版本
+                          <input type="checkbox" name="language" value="Russian">俄文版本
+                          <input type="checkbox" name="language" value="other">其他版本<br/>
+                          （外语增加一个版本增加 <i>50%</i>费用,不含翻译，如需要翻译请联系客户经理）
+                        </div>
+                        <div class="oyw_Show_ddy_form_left_lanuge_1">
+                          <i>注：在此选择的所有语言版本页面设计和功能要完全一致，否则请勿选择，请联系客户经理商谈。</i>
+                        </div>
+                        
+                    </div>
+                </div>
+                <!-- 选择移动网站 -->
+                <div class="oyw_Show_ddy_form_left_wap mgtp10">
+                    <div class="oyw_Show_ddy_form_left_zf_img">
+                      <img src="{DT_SKIN}/image/oy_is_wap.gif">
+                      </div>
+                      <div class="oyw_Show_ddy_form_left_wap_bg">
+                          <div class="oyw_Show_ddy_form_left_wap_l oy_floatlf">
+                              <div class="oyw_Show_ddy_form_left_wap_l_t">
+                                <input type="radio" value="nowap" name="iswap" onclick="alter('0', '0')" checked>不需要
+                              </div>
+                              <div class="oyw_Show_ddy_form_left_wap_l_sh">
+                                  <span><br>&nbsp;所有设备访问PC站</span><br/><br>
+                                  <img src="{DT_SKIN}/image/oy_wap_img_pc.gif" alt=""></span>
+                              </div>
+                          </div>
+                              <div class="oyw_Show_ddy_form_left_wap_b oy_floatlf">
+                              <div class="oyw_Show_ddy_form_left_wap_b_t">
+                                <input type="radio" value=mob1 name="iswap"  onclick="alter('{$item[mobprice]}', 'mob1')">手机站(+<b>{$item[mobprice]}</b>元)
+                              </div>
+                              <div class="oyw_Show_ddy_form_left_wap_b_sh">
+                                  <span><br>&nbsp;&nbsp;PC站+手机站<br/><br>
+                                  <img src="{DT_SKIN}/image/oy_wap_img_pc.gif" alt=""> <img src="{DT_SKIN}/image/oy_wap_img_phone.gif" alt=""></span>
+                              </div>
+                          </div>
+                              <div class="oyw_Show_ddy_form_left_wap_r oy_floatlf">
+                              <div class="oyw_Show_ddy_form_left_wap_r_t">
+                                <input type="radio" value="mob2" name="iswap" onclick="alter('{$item[resprice]}', 'mob2')"><span>响应试网站(+<b>{$item[resprice]}</b>元)</span>
+                              </div>
+                              <div class="oyw_Show_ddy_form_left_wap_r_sh">
+                                  <span><br/>&nbsp;&nbsp;PC站+平板+手机<br/><br>
+                                  <img src="{DT_SKIN}/image/oy_wap_img_pc.gif" alt=""><img src="{DT_SKIN}/image/oy_wap_img_pad.gif" alt=""><img src="{DT_SKIN}/image/oy_wap_img_phone.gif" alt=""></span>
+                              </div>
+                          </div>
+                      </div>
+                </div>
+                <!-- 支付方式 -->
+                <div class="oyw_Show_ddy_form_left_zf mgtp10">
+                		<div class="oyw_Show_ddy_form_left_zf_img">
+                    	<img src="{DT_SKIN}/image/oy_is_fapiao.gif">
+                    </div>
+                    <div class="oyw_Show_ddy_form_left_zf_info">
+                    	<div class="oyw_Show_ddy_form_left_zf_info_1">支付方式：
+                          <span>         
+                              <input type="radio" name="playxz" value="0" onclick="fk('0')" checked/>一次性付款&nbsp;
+                              <input type="radio" name="playxz" value="1"  onclick="fk('1')"/>阶段性付款（50%首付款，30%首页确认款，20%尾款）
+                          </span>
+                      </div>
+                      <div class="oyw_Show_ddy_form_left_zf_info_2">发票申请：
+                          <span>         
+                              <input type="radio" name="fapiaosq" value="1" onclick="bill('1')"checked/>需要发票&nbsp;&nbsp;&nbsp;&nbsp;
+                              <input type="radio" name="fapiaosq" value="0" onclick="bill('0')"/>不需要发票（套餐价即减8%的税额）
+                          </span>
+                      </div>
+                      <div class="oy_fp_sm">注：申请发票客户，一次性付款后即可开具发票，阶段性付款则需付清所有款项再一次性开具发票。</div>
+                    </div>
+                </div>
+               
+            </div>
+            <!--欧意订单表单填写右面-->
+             <div class="oyw_Show_ddy_form_right oy_floatlf">
+                <div class="oyw_Show_ddy_form_right_x">
+                  <div class="oyw_Show_ddy_form_right_x_t">
+                    <span>您所购买的套餐的价格</span>
+                  </div>
+                  <div class="oyw_Show_ddy_form_right_x_t2">
+                    <span>套餐原价：<b>{$item[price]}</b>元<small>（默认含税）</small></span>
+                  </div>
+                  <div class="oyw_Show_ddy_form_right_x_t3">
+                    <div class="pdtp10"><span><strong>实际付款:</strong><b id="total_amount">{$item[price]}</b>元</span></div>
+                    
+                        <div class="oyw_Show_ddy_form_right_x_t3_1 oy_floatlf pdlf20"><strong>包含:</strong></div>
+                        <div class="oyw_Show_ddy_form_right_x_t3_2 oy_floatlf">
+                          <ul>
+                              <li>首付款<span id="pay_1">0</span>&nbsp;&nbsp;元</li>
+                              <li>首页确认款<span id="pay_2">0</span>&nbsp;&nbsp;元</li>
+                              <li>余额<span>{$_money}</span>&nbsp;&nbsp;元</li>
+                              <li>含税<span id="pay_3">0</span>&nbsp;&nbsp;元</li>
+                          </ul>
+                        </div>
+                    
+                  </div>
+                </div>
+            </div>
+        </div>
+         <!--欧意订单表单填写确认客户信息-->
+       <div class="oyw_Show_ddy_form_two clear">
+        <div class="oyw_Show_ddy_form_two_img"></div>
+               <div class="oyw_Show_ddy_form_two_bg">
+           <div class="pdtp10">
+              <input type="hidden" id="fp_yz" name="fp_yz" value="1" />
+              <input type="hidden" id="price" name="price" value="{$item[price]}" />
+              <input type="hidden" id="itemid" name="itemid" value="{$item[itemid]}" />
+              <input type="hidden" name="order_yz" value="1"/>
+          
+            </div>
+          
+            <div class="pdtp10">
+              <div class="qrkh_info oy_floatlf">公司或网站名称：</div><div><input class="inputTextbk" type="text" size="55" name="post[name]" id="name" value="{$user[name]}" /><span id="dname" class="f_red"></div>
+            </div>
+
+            <div class="pdtp10">
+                <div class="qrkh_info oy_floatlf">行    业：</div><div>
+                <select name='post[hy_sort]'  classs="select_o mgtp10"  onchange='location.href=this.options[this.selectedIndex].value;'>
+              
+				  {loop $sorts $i $r}
+				  <option value='{$i}' {if $i==$user[hy_sort]} selected {/if}>{$r}</option>
+				    {/loop}
+				 
+                  </select>
+                </div>
+            </div>
+      
+           
+            <div class="pdtp10">
+            <div class="qrkh_info oy_floatlf">地    区：</div><div>
+              {ajax_area_select('add[areaid]', '请选择', $user[areaid])} <input type="text" size="50" style='width:233px;' name="post[address]" id="address" value="{$user[address]}"/> <span id="daddress" class="f_red"></span>
+            </div>
+            </div>
+            <div class="pdtp10">
+                <div class="qrkh_info oy_floatlf">公司电话：</div><div><input class="inputTextbk" type="text" size="55" name="post[telephone]" id="telephone" value="{$user[telephone]}" /> <span id="dtelephone" class="f_red"></span></div>
+            </div>
+            <div class="pdtp10">
+                <div class="qrkh_info oy_floatlf">联系人：</div><div><input class="inputTextbk" type="text" size="55" name="post[truename]"  id="truename" value="{$user[truename]}" /> <span id="dtruename" class="f_red"></span></div>
+            </div>
+            <div class="pdtp10">
+                <div class="qrkh_info oy_floatlf">联系方式:</div><div><input class="inputTextbk" type="text" size="55" name="post[mobile]" id="mobile"  value="{$user[mobile]}" /> <span id="dmobile" class="f_red"></span></div>
+            </div>
+          </div>
+       </div>
+         <!--欧意订单表单填写客户备注信息-->
+       
+        <!--提交区域-->
+        <div class="oy_tj clear">
+          <div class="oy_tj_l">
+             <p> <a href="#" onclick="check();"><img src="{DT_SKIN}/image/oy_tijiao_dd.gif" onClick=""></a>
+            </p>
+            
+          </div><div class="clear">
+          <div class="oy_tj_l oy_floatlf"><p>提交订单卖家确认后，支付费用</p></div>
+          </div>
+        </div>
+        
+    </div>
+    </div>
+</div>
+</form>
+<!--欧意订单页面内容结束-->
+
+{load('guest.js')}
+<script type="text/javascript">
+function check() {
+
+	var l;
+	var f;
+	f = 'name';
+	l = Dd(f).value.length;
+	if(l < 2) {
+		Dmsg('请填写公司名称', f);
+		return false;
+	}
+	f = 'address';
+	l = Dd(f).value.length;
+	if(l < 2) {
+		Dmsg('请填写街道地址', f);
+		return false;
+	}
+
+	f = 'truename';
+	l = Dd(f).value.length;
+	if(l < 2) {
+		Dmsg('请填写联系人', f);
+		return false;
+	}
+	f = 'mobile';
+	l = Dd(f).value.length;
+	if(l < 11) {
+		Dmsg('请填写手机号码', f);
+		return false;
+	}
+
+	if($("input:checkbox[name='language']:checked").length <= 0){
+		alert('至少需要选择一个');
+		return false;
+	}
+
+	var truthorder = window.confirm("您确认填写信息无误，提交此订单吗？");
+	  if (truthorder) {  
+		document.order_form.submit();
+	 } else{
+		return false;
+	}
+		
+	
+	  
+}
+
+</script>
+<script>
+$(function(){
+	$("#pay_3").text(({$item[price]}*0.08).toFixed(2));
+	
+
+	
+})
+function fk(i){
+	if(i==0){
+		$("#pay_1").text(0);
+		$("#pay_2").text(0);
+	
+	}else{
+		var pay_1 =$("#total_amount")[0].firstChild.data*0.5;
+		var pay_2 =$("#total_amount")[0].firstChild.data*0.3;
+		$("#pay_1").text(pay_1.toFixed(2));
+		$("#pay_2").text(pay_2.toFixed(2));			
+	}
+}
+
+
+
+function alter(i, t) {
+	mount={$item[price]};
+		if(t == 'mob1') {
+		 var mob_price=i;
+		} else if(t == 'mob2'){
+		 var mob_price=i;
+		}else{
+	      var mob_price=i;
+		}
+		  mount=parseFloat(mob_price)+ parseFloat(mount);
+
+		var fapiao=$("input[name='fapiaosq']:checked").val();
+		if(fapiao=='0'){
+			mount=mount*0.92;
+			$("#pay_3").text(0);
+		}else{
+		$("#pay_3").text((mount*0.08).toFixed(2));
+		}
+	  $('#total_amount')[0].innerHTML =mount ;
+	  $("#price").val(mount);
+	  var style=$("input[name='playxz']:checked").val();
+	  if(style=='0'){
+		  fk('0');
+	  }else{
+		  fk('1');
+	  }
+	 
+}
+function bill(i) {
+var count=$('#total_amount')[0].innerHTML;
+var mob=$("input[name='iswap']:checked").val();
+var fapiao=$("input[name='fapiaosq']:checked").val();
+if($("#fp_yz").val()==i){
+	return false;
+}else{
+	if(mob=='noswap'){
+		if(i==1){
+			count={$item[price]};
+			  $("#pay_3").text((count*0.08).toFixed(2));
+		}else{
+			count={$item[price]}*0.92;
+			$("#pay_3").text(0);
+		}
+	 }else if(mob=='mob1'){
+	  if(i==1){
+		  count=count/0.92;
+		  $("#pay_3").text((count*0.08).toFixed(2));
+	  }else{
+		  count=count*0.92;
+			$("#pay_3").text(0);
+	  }
+	}else{
+		 if(i==1){
+			  count=count/0.92;
+			  $("#pay_3").text((count*0.08).toFixed(2));
+		  }else{
+			  count=count*0.92;
+				$("#pay_3").text(0);
+		  }
+	}
+
+
+		
+		$('#total_amount')[0].innerHTML =count.toFixed(2) ; 	
+		$("#price").val(count.toFixed(2));
+}
+
+$("#fp_yz").val(fapiao);
+
+var style=$("input[name='playxz']:checked").val();
+if(style=='0'){
+	  fk('0');
+}else{
+	  fk('1');
+}
+}
+  </script>
+
+
+{template 'footer'}

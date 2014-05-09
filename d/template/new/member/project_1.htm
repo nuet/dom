@@ -1,0 +1,196 @@
+{template 'header2'}
+<div class="u_wsxq">
+	<div class="u_wsxq_baner">
+		<img src="{DT_SKIN}/image/u_wsxq_ban.jpg" alt="">
+	</div>
+	<div class="u_mbxdh">
+		<span>·您的位置：<a href="">首页</a> > <a href="">商城</a> > <a href="">提交订单</a> > <a href="">完善网站需求</a></span>
+	</div>
+	<!-- 订单详情 -->
+
+
+
+	<div class="u_ddxqsw">
+		<div class="u_ddxqsw_t"><span>订单详情</span></div>
+		<div class="u_ddxqsw_con">
+			<div class="u_ddxqsw_con_l">
+				<span><b>公司名称：</b>{$td[buyer_name]}（{$td[title]}）</span>
+				<span><b>订单编号：</b>{$td[itemid]}</span>
+				<span><b>所在地区：</b>{$td[areaid]}</span>
+			
+				<span><b><i>项目状态：</i></b>{$td[status_zt]}（<i>已付款{$td[ready_money]}元  </i>）</span>
+			</div>
+			<div class="u_ddxqsw_con_r">
+				<span><b>订单总金额：</b><i><b>{$td[amount]}元</b></i></span>
+				<span><b>订单时间：</b>{$td['adddate']}</span>
+				<span><b>行业：</b>{$td[hy_sort]}</span>
+			<span><a href="message.php?action=send&touser={$td[buyer]}" target="_blank"><img src="{DT_SKIN}/image/fasongzhanneixin.gif" alt=""></a>&nbsp;<a href="chat.php?touser={$td[buyer]}&mid=16&itemid={$td[itemid]}"  target="_blank"><img src="{DT_SKIN}/image/onlingoutong.gif" alt=""></a></span>
+			</div>
+		</div>
+	</div>
+	<!-- 订单详情 结束-->
+	<!-- 建站资料开始 -->
+
+	<!-- 建站资料选项卡 -->
+	
+	
+  <div class="js_case clear">
+    <div class="js_title cf">
+	
+      <ul class="js_title-list cf">
+     <li><a href="project.php?itemid={$itemid}&action=update&step=upload_5&forward={$_GET[forward]}">建站资料</a></li>
+        <li><a href="project.php?itemid={$itemid}&action=update&step=index&forward={$_GET[forward]}">首页设计</a></li>
+        <li  class="on"><a href="project.php?itemid={$itemid}&action=update&step=lm&forward={$_GET[forward]}">栏目页及内页设计</a></li>
+       <li><a href="project.php?itemid={$itemid}&action=update&step=design&forward={$_GET[forward]}">PSD上传</a></li>
+        <li><a href="project.php?itemid={$itemid}&action=update&step=last&forward={$_GET[forward]}">网站上线</a></li>
+      </ul>
+    </div>
+    <div class="product-wrap">
+     <!--建站资料-->
+     <div class="js_product" >
+
+     </div>
+<div class="js_product ">
+
+</div>
+<div class="js_product show">
+	<form method="post" action="project.php" id="dform">
+	<input type="hidden" name="forward" value="{$CFG[url]}/member/project.php?itemid={$itemid}&action={$action}&step={$step}"/>
+	<input type="hidden" name="action" value="{$action}"/>
+	<input type="hidden" name="step" value="{$step}"/>
+	<input type="hidden" name="itemid" value="{$itemid}"/>
+	<input type="hidden" value="" name="picid" id="picid">
+	<input type="hidden" name="confirm_order" value="1"/>
+        <div class="u_jzzl_lanmuneiye" id="u_jzzl_lanmuneiye">
+        
+          		<div class="u_jzzl_index_sj_k" id="u_jzzl_index_sj_k">
+          		<!--      /*0423新的设计师栏目及内页设计稿*/ -->
+<div class="SJS_lanmugao">
+  <div class="SJS_lanmugao_title">
+    <p><b>栏目页及内页设计稿：</b><a href=""><i>(点击图片下链接可以模拟网页浏览)</i></a></p>
+  </div>
+  <div class="SJS_lanmugao_title_x"></div>
+  <div class="SJS_lanmugaolist">
+    <ul>
+     {loop $lms $i $v}
+                {if $td[status]==5}
+                               <li>
+                                    <div class="">
+            
+                                    <input type="hidden" name="pot[thumb{$v[id]}]" id="thumb{$v[id]}" value="1"/>
+                                   <img src="{$v[upload]}" alt="" id="showthumb{$v[id]}" onclick="Dalbum('{$v[id]}',{$moduleid},{$MOD1[thumb_width]},{$MOD1[thumb_height]}, Dd('showthumb{$v[id]}').value, true);"/>
+                                    <span>{$v[note]}</span>
+                                    </div>
+                                   <p><a href="{$CFG[url]}extend/view_pic.php?img={$v[upload]}" target="_blank" >模拟网页浏览>></a></p>
+                                </li>
+                                
+                                  {else}
+                                  <li>
+                                    <div class="">
+                                   <img src="{$v[upload]}" alt="" id="showthumb{$v[id]}"/>
+                                    <span>{$v[addtime]}</span>
+                                    </div>
+                                   <p><a href="{$CFG[url]}extend/view_pic.php?img={$v[upload]}" target="_blank" >模拟网页浏览>></a></p>
+                                </li>
+                                  {/if}
+                                
+                             
+           {/loop}
+    </ul>
+  </div>
+</div>
+<div class="SJS_lanmugao clear">
+  <div class="SJS_lanmugao_title">
+    <p><b>首页最终稿：</b><a href=""><i>(点击图片下链接可以模拟网页浏览)</i></a></p>
+  </div>
+  <div class="SJS_lanmugao_title_x"></div>
+  <div class="SJS_lanmugaolist">
+    <ul>
+  <li>
+                                    <div class="">
+                                    <a href="{$CFG[url]}extend/view_pic.php?img={$index_last[upload]}" target="_blank"><img src="{$index_last[upload]}" alt=""></a>
+                                    <span>{$index_last[addtime]}</span>
+                                    </div>
+                                   <p><a href="{$CFG[url]}extend/view_pic.php?img={$index_last[upload]}" target="_blank">模拟网页浏览>></a></p>
+                                    
+                                </li>
+    </ul>
+  </div>
+</div>
+<!-- /*0423新的设计师栏目及内页设计稿 end*/ -->
+          		
+          
+               
+                <div class="u_shejisTiJ_ZuoPin_time clear">
+                  <div class="u_shejisTiJ_ZuoPin_time_t"><b>栏目页及内页提交：<i>内页提交倒计时：4天11小时13分05秒</i></b></div>
+                  <div class="u_shejisTiJ_ZuoPin_lanmu">
+                    <div class="u_shejisTiJ_ZuoPin_lanmu_p">
+                      <p>注：栏目页及内页设计稿确认后，网站将进入程序开发阶段，此时页面将不再变动，如果需要变动将收取一定的费用。如需变动页面内容，请联系客服。同意请点击页面确认。</p>
+                    </div>
+                    {if $td[status]==5 && $td[y]==1}
+                    <div class="u_shejisTiJ_ZuoPin_lanmu_cont">
+                      <div class="u_shejisTiJ_ZuoPin_lanmu_cont_l">
+                        <b>栏目名称</b> <input type="text" name="pot[titledb0]" id="title" placeholder="栏目名称" value="{$title}"/>  
+                      </div>
+                      <div class="u_shejisTiJ_ZuoPin_lanmu_cont_m">
+                        <span> <input type="hidden" name="post[upload]" id="thumb" value="{$thumb}"/></b><span><img src="{if $thumb}{$thumb}{else}{DT_SKIN}image/waitpic.gif{/if}" width="100" height="100" id="showthumb" title="预览图片" alt="" onclick="if(this.src.indexOf('waitpic.gif') == -1){_preview(Dd('showthumb').src, 1);}else{Dalbum('',{$moduleid},{$MOD1[thumb_width]},{$MOD1[thumb_height]}, Dd('thumb').value, true);}"/>
+	                     <div style='height: 10px;line-height: 20px;padding-left: 16px;'><img src="{DT_STATIC}{$MODULE[2][moduledir]}/image/img_upload.gif" width="12" height="12" title="上传" onclick="Dalbum('',{$moduleid},{$MOD1[thumb_width]},{$MOD1[thumb_height]}, Dd('thumb').value, true);"/>&nbsp;&nbsp;<img src="{DT_STATIC}{$MODULE[2][moduledir]}/image/img_select.gif" width="12" height="12" title="选择" onclick="selAlbum('');"/>&nbsp;&nbsp;<img src="{DT_STATIC}{$MODULE[2][moduledir]}/image/img_delete.gif" width="12" height="12" title="删除" onclick="delAlbum('','wait');"/></div></span>
+                      </div>
+                      <div class="u_shejisTiJ_ZuoPin_lanmu_cont_r">
+                       	<p> <input type="checkbox" value="1" name="sendsms" >短信通知客户 (我的可用短信 <i> {$_sms} </i>条)</p>
+                      <p> 支持文件格式：jpg</p>
+                      </div>
+                      <div class="u_shejisTiJ_ZuoPin_lanmu_cont_btn">
+                        <input type="submit" value="提交" name="submit">
+                      </div>
+                    </div>
+                    {else}
+                    {/if}
+                  </div>
+                </div>
+               
+              
+          </div></form>
+          </div>
+          
+          
+  
+	  
+</div>
+<div class="js_product">
+
+</div>
+<div class="js_product"></div>
+     
+    </div>
+  </div>
+		<!-- 建站资料选项卡 结束-->
+
+	<!-- 建站资料结束 -->
+<script>
+
+$(function(){   
+	  $('.SJS_lanmugaolist ul li').hover(function(){
+	        
+	      
+	        $(this).find('span').css('display','block');
+	        $(this).find('div img').css('filter','alpha(optacity=70)');
+	        $(this).find('div img').css('opacity','0.7');
+	       
+	    },function(){
+	      
+	        $(this).find('span').css('display','none');
+	         $(this).find('div img').css('opacity','1');
+	        $(this).find('div img').css('filter','alpha(opacity=100)');
+	      
+	      
+	    });
+	    });
+
+	</script>
+
+{template 'footer'}
+
+
+
+

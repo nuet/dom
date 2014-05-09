@@ -1,0 +1,44 @@
+{template 'header', 'member'}
+<script type="text/javascript">c(3);</script>
+
+<form method="post" action="home.php" id="dform">
+<input type="hidden" name="tab" id="tab" value="{$tab}"/>
+<div id="Tabs0" style="display:;">
+<table cellspacing="1" cellpadding="6" class="tb">
+<tr>
+<td class="tl">擅长设计风格</td>
+<td class="tr f_gray"><input  name="setting[announce]" id="announce" value="{$announce}" style="width:500px;">
+</tr>
+<tr>
+<td class="tl">自定义形象照片(286*187)</td>
+<td class="tr"><input name="setting[logo]" type="text" size="60" id="logo" value="{$logo}" readonly/>&nbsp;&nbsp;<span onclick="Dthumb({$moduleid},0,0, Dd('logo').value, true, 'logo');" class="jt">[上传]</span>&nbsp;&nbsp;<span onclick="_preview(Dd('logo').value);" class="jt">[预览]</span>&nbsp;&nbsp;<span onclick="Dd('logo').value='';" class="jt">[删除]</span></td>
+</tr>
+
+<tr>
+<td class="tl">访问次数</td>
+<td class="tr">
+<input type="radio" name="setting[show_stats]" value="1" id="s_s_1"{if $show_stats==1} checked{/if}/><label for="s_s_1"> 显示</label>&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="radio" name="setting[show_stats]" value="0" id="s_s_0"{if $show_stats==0} checked{/if}/><label for="s_s_0"> 不显示</label> 
+</td>
+</tr>
+</table>
+</div>
+
+
+<table cellspacing="1" cellpadding="6" class="tb">
+<tr>
+<td class="tl">&nbsp;</td>
+<td class="tr" height="30"><input type="submit" name="submit" value=" 保 存 " class="btn"/>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr>
+</table>
+</form>
+{load('clear.js')}
+<script type="text/javascript">
+s('homepage');
+{if $tab}
+Tab({$tab});
+{else}
+m('Tab0');
+{/if}
+</script>
+{template 'footer', 'member'}

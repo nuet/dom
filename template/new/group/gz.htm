@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>欧易网模版 —— Yellow</title>
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<script type="text/javascript" src="{DT_STATIC}/file/script/jquery-1.8.1.min.js"></script>
+<link href="{DT_SKIN}/global.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="{DT_STATIC}file/script/view_mb.js"></script>
+<link rel="stylesheet" type="text/css" href="{DT_SKIN}MoBanShow.css"/>
+ <script  src="{$CFG[url]}/file/script/Maya.MessageBox/Maya.MessageBox.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="{$CFG[url]}/file/script/Maya.MessageBox/Maya.MessageBox.css">
+<style>
+*{padding:0;margin:0}
+body {
+	width:170px;
+font: 12px/150% Arial,Verdana,"\5b8b\4f53";
+color: #666;
+background: #fff;
+_background-image: url(about:blank);
+_background-attachment: fixed;
+}.tips p a {
+color: #005EA7;
+}
+
+.tips p {
+padding-left: 70px;
+}
+#has.tips h2 {
+height: 43px;
+background: url({DT_SKIN}/image/icon_sigh.jpg) 0 0 no-repeat;
+}
+
+.tips h2 {
+height: 40px;
+padding-left: 70px;
+background: url({DT_SKIN}/image/icon_correct.jpg) no-repeat 10px 0;
+line-height: 40px;
+font-size: 14px;
+color: #090;
+}
+
+#has.tips {
+height: 60px;
+}
+
+.tips {
+width: 490px;
+padding: 10px;
+margin-top: 15px;
+position: relative;
+}
+.tips em {
+color: #999;
+}
+
+em {
+font-style: normal;
+}
+#attention-tags {
+width: 468px;
+background: #fffdee;
+border: 1px solid #edd28b;
+padding: 10px;
+margin: 0 10px;
+}
+
+.att-tag-list {
+padding-bottom: 5px;
+height: auto!important;
+height: 58px;
+max-height: 58px;
+overflow: hidden;
+margin-bottom: 1px;
+clear: both;
+_height: 32px;
+overflow: hidden;
+}
+
+#tag_num2 {
+height: 30px!important;
+_padding-bottom: 0;
+}
+.att-tag-list li {
+float: left;
+
+}.att-tag-new input {
+width: 100px;
+height: 14px;
+line-height: 14px;
+padding: 4px 6px;
+border: 1px solid #EED289;
+cursor: text;
+_vertical-align: top;
+}
+.att-tag-new span {
+display: inline-block;
+height: 20px;
+line-height: 20px;
+padding: 3px 10px;
+color: #005AA0;
+cursor: pointer;
+_vertical-align: top;
+}
+.att-tag-list li a:hover, .att-tag-list .current {
+border: 2px solid #c00;
+padding: 0 9px;
+text-decoration: none;
+}
+.att-tag-list {
+padding-bottom: 5px;
+height: auto!important;
+height: 58px;
+max-height: 58px;
+overflow: hidden;
+margin-bottom: 1px;
+margin-top:5px;
+clear: both;
+_height: 32px;
+overflow: hidden;
+}
+.mt, .smt {
+cursor: default;
+}#attention-tags h4 {
+float: left;
+}
+.m, .mt, .mc, .mb, .sm, .smt, .smc, .smb {
+overflow: hidden;
+zoom: 1;
+}
+#attention-tags .att-tag-btn {
+overflow: hidden;
+}.att-tag-btn {
+padding-left: 160px;
+}
+.att-tag-btn a {
+float: left;
+margin-right: 10px;
+width: 57px;
+height: 30px;
+line-height: 30px;
+background:yellow;
+font-size: 14px;
+text-align: center;
+}
+.att-tag-list li a {
+float: left;
+height: 20px;
+padding: 1px 10px;
+border: 1px solid #eed289;
+margin-right: 10px;
+overflow: hidden;
+}
+body {
+     overflow-x : hidden;   去掉横条
+     overflow-y : hidden;   去掉竖条
+}
+</style>
+</head>
+
+
+<body marginwidth="0" marginheight="0">
+{if $_username}
+
+{if !$favorite}
+<div id="reset" class="tips">
+ <h2>{$msg}</h2>
+        <p>
+            <em>您已收藏了<span id="productCount">{$count}</span>个模版，
+            <a target="_blank" href="{$CFG[url]}/member/favorite.php"><font color="blue">查看我的收藏&gt;&gt;</font></a>
+            </em>
+        </p>
+  </div>
+
+
+{else}
+<div id="has" class="tips" >
+ <h2>
+            <span id="error_msg"><font color="#ff8000">{$msg}</font></span>
+        </h2>
+        <p>
+            <em>
+            <a target="_blank" href="{$CFG[url]}/member/favorite.php"><font color="blue">查看我的收藏&gt;&gt;</font></a>
+            </em>
+        </p>
+
+</div>
+{/if}
+{else}
+<div id="has" class="tips" >
+ <h2>
+            <span id="error_msg"><font color="#ff8000">{$msg}</font></span>
+        </h2>
+        <p>
+            <em>
+            <a  href="#" onclick='top.location.href="{$CFG[url]}/member/login.php?forward={$forward}"'><font color="blue">立刻登陆&gt;&gt;</font></a>
+            </em>
+        </p>
+
+</div>
+
+
+{/if}    
+ 
+
+
+
+</body>
+</html>

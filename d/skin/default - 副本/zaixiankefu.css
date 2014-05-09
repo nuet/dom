@@ -1,0 +1,50 @@
+@charset "utf-8";
+/*    Tool
+    ----------------------------------------------- =*/
+.kefutool_wrap {
+	font-size:12px;
+	font-weight:normal;
+	position:absolute;
+	right:5px;
+	top: 451px;
+	z-index:40;
+	position: fixed; 
+
+}
+.kefutool_wrap1,.kefutool_wrap2,.kefutool_wrap3{
+	width: 62px;
+	height: 62px;
+	margin-top: 5px;
+	background: #ddd;
+	background-image: url(./image/zaixiankefu.png);
+	background-repeat: no-repeat;
+}
+.kefutool_wrap1:hover,.kefutool_wrap2:hover,.kefutool_wrap3:hover{
+	cursor: pointer;
+}
+.kefutool_wrap1{
+	
+	background-position: 0 0;
+}
+.kefutool_wrap1:hover{
+	
+	background-position: -99px 0;
+}
+.kefutool_wrap2{
+	
+	background-position: 0 -80px;
+}
+.kefutool_wrap2:hover{
+	
+	background-position: -99px -80px;
+}
+.kefutool_wrap3{
+		display:none;
+	background-position: 0 -158px;
+}
+.kefutool_wrap3:hover{
+	
+	background-position: -99px -158px;
+}
+/*= -----------------------------------------------
+/*工具 end*/

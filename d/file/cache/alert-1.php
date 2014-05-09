@@ -1,0 +1,1 @@
+<?php defined('IN_DESTOON') or exit('Access Denied'); return array ('title' => '摩恩建站-企业网站定制专家[贸易提醒]','total' => '30','num' => '5','sql' => 'AND vip>0','ord' => 'addtime DESC','template' => '',); ?>

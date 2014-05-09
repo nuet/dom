@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset={DT_CHARSET}"/>
+<title>{if $seo_title}{$seo_title}{else}{if $head_title}{$head_title}{$DT[seo_delimiter]}{/if}{if $city_sitename}{$city_sitename}{else}{$DT[sitename]}{/if}{/if}</title>
+{if $head_keywords}
+<meta name="keywords" content="{$head_keywords}"/>
+{/if}
+{if $head_description}
+<meta name="description" content="{$head_description}"/>
+{/if}
+{if $head_mobile}
+<meta http-equiv="mobile-agent" content="format=xhtml; url={$head_mobile}"> 
+<meta http-equiv="mobile-agent" content="format=html5; url={$head_mobile}">
+{/if}
+<meta name="generator" content="DESTOON B2B - www.destoon.com"/>
+<link rel="shortcut icon" type="image/x-icon" href="{DT_STATIC}favicon.ico"/>
+<link rel="bookmark" type="image/x-icon" href="{DT_STATIC}favicon.ico"/>
+{if $head_canonical}
+<link rel="canonical" href="{$head_canonical}"/>
+{/if}
+{if $EXT[archiver_enable]}
+<link rel="archives" title="{$DT[sitename]}" href="{$EXT[archiver_url]}"/>
+{/if}
+<link href="{DT_SKIN}/global.css" rel="stylesheet" type="text/css">
+{if $moduleid>4}<link rel="stylesheet" type="text/css" href="{DT_SKIN}{$module}.css"/>{/if}
+{if $CSS}
+{loop $CSS $css}
+<link rel="stylesheet" type="text/css" href="{DT_SKIN}{$css}.css"/>
+{/loop}
+{/if}
+<link rel="stylesheet" type="text/css" href="{DT_SKIN}style.css"/>
+{if !DT_DEBUG}<script type="text/javascript">window.onerror=function(){return true;}</script>{/if}
+<script type="text/javascript" src="{DT_STATIC}lang/{DT_LANG}/lang.js"></script>
+<script type="text/javascript" src="{DT_STATIC}file/script/config.js"></script>
+<script type="text/javascript" src="{DT_STATIC}file/script/common.js"></script>
+<script type="text/javascript" src="{DT_STATIC}file/script/page.js"></script>
+<script type="text/javascript" src="{DT_STATIC}file/script/city.js"></script>
+{if $lazy}<script type="text/javascript" src="{DT_STATIC}file/script/jquery.lazyload.js"></script>{/if}
+{if $JS}
+{loop $JS $js}
+<script type="text/javascript" src="{DT_STATIC}file/script/{$js}.js"></script>
+{/loop}
+{/if}
+{php $searchid = ($moduleid > 3 && $MODULE[$moduleid]['ismenu'] && !$MODULE[$moduleid]['islink']) ? $moduleid : 5;}
+<script type="text/javascript">
+{if $moduleid==1 && $EXT[wap_enable] && $EXT[wap_goto]}
+GoMobile('{$EXT[wap_url]}');
+{/if}
+var searchid = {$searchid};
+{if $itemid && $DT[anticopy]}
+document.oncontextmenu=function(e){return false;};
+document.onselectstart=function(e){return false;};
+{/if}
+</script>
+<!--[以上为系统关键代码，除非您明确其含义，否则请勿修改或删除，否则会导致系统错误]-->
+<!--[模板中所有带id的元素，请勿修改或删除，否则会导致部分JS代码无法运行]-->
+<!--[以上类似的注释，在编译模板时，系统会自动移除，不会显示在实际的页面中]-->
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+
+<script type="text/javascript" src="{DT_STATIC}/file/script/jquery-1.8.1.min.js"></script>
+<script type="text/javascript" src="{DT_STATIC}/file/script/tab.js"></script>
+
+</head>
+
+<body>
+<div class="oyw_header">
+<div class="oyw_top">
+<div class="oyw_Land">
+<div class="oyw_Land_l fl" style="width:580px;">
+<ul>
+<li><script type="text/javascript">addFav('收藏本页');</script> |</li>
+<li><span style="padding-right:6px;"><img src="{DT_SKIN}/image/oyw_pic_03.jpg" width="10" height="13"></span><a href="{$EXT[wap_url]}mobile.php">手机版</a> |</li>
+<li> <span style="padding-right:6px;"><img src="{DT_SKIN}/image/oyw_pic_06.jpg" width="12" height="11"></span>
+	{if $_username}
+<a href="{$MODULE[2][linkurl]}message.php">站内信({if $_message}<strong style='color:red'>{$_message}</strong>{if $_sound}'+sound('message_{$_sound}')+'{/if}{else}0{/if})</a>   {if $DT[im_web]} | <a href="{$MODULE[2][linkurl]}chat.php">新对话(<span class="head_t" id="destoon_chat">{if $_chat}<strong>{$_chat}</strong>'+sound('chat_new')+'{else}0{/if}</span>)</a>{/if} | 您好，<i style='color:red'>{$_truename}&nbsp;</i>！欢迎来到摩恩建站平台！</li>
+	 {else} 
+	 	 (0)    您好，客人！欢迎来到摩恩建站平台！ </li>
+	 {/if}
+ 
+</ul>
+
+ </div>
+	<div class="f_r" id="destoon_member"></div>
+</div>
+</div>
+<div class="oyw_logo">
+<h1 class="fl"><a href="{$CFG['url']}"><img src="{DT_SKIN}/image/oyw_pic_18.jpg" width="347" height="64"></a></h1>
+<div class="oyw_search fr">
+<div class="Menubox">
+  <ul class="fl clearfix">
+  <li id="one1" onMouseOver="setTab('one',1,4)" class="hover" >促销</li>
+  <li id="one2" onMouseOver="setTab('one',2,4)" >品牌站</li>
+  <li id="one3" onMouseOver="setTab('one',3,4)" class="last " >营销站</li>
+  <li id="one4" onMouseOver="setTab('one',4,4)" class="last" >Logo设计</li>
+  </ul>
+  <div class="dianhua fr">
+  <h3>客服电话：<i style="color:#ff6d13;font-family:arial;font-size:18px;">400-651-5550</i><span style="padding-left:6px;"><img src="{DT_SKIN}/image/oyw_pic_11.jpg" width="21" height="18"></span><span><img src="{DT_SKIN}/image/oyw_pic_12.jpg" width="20" height="19"></span></h3>
+  </div>
+  </div>
+ <div class="Contentbox clear">
+  <ul>
+  <li id="con_one_1" class="hover">
+  <div class="oyw_sousu fl">
+  <form action="{$CFG['url']}mall/search_order.php" method="post">
+  <input name="item" type="text" class="input_txt fl">
+    <input name="cartid" type="hidden" value=1>
+  <input name="submit" type="submit" class="input_btn fr" value="">
+  </form>
+  </div>
+  <div class="oyw_Senior fr">
+  <p style="padding-bottom:8px;">高级搜索</p>
+  <p>帮助中心</p>
+  </div>
+  </li>
+  <li id="con_one_2" style="display:none">  <div class="oyw_sousu fl">
+  <form action="{$CFG['url']}mall/search_order.php" method="post">
+  <input name="item" type="text" class="input_txt fl">
+    <input name="cartid" type="hidden" value=2>
+  <input name="submit" type="submit" class="input_btn fr" value="">
+  </form>
+  </div>
+  <div class="oyw_Senior fr">
+  <p style="padding-bottom:8px;">高级搜索</p>
+  <p>帮助中心</p>
+  </div></li>
+  <li id="con_one_3" style="display:none">  <div class="oyw_sousu fl">
+  <form action="{$CFG['url']}mall/search_order.php" method="post">
+  <input name="item" type="text" class="input_txt fl">
+    <input name="cartid" type="hidden" value=3>
+  <input name="submit" type="submit" class="input_btn fr" value="">
+  </form>
+  </div>
+  <div class="oyw_Senior fr">
+  <p style="padding-bottom:8px;">高级搜索</p>
+  <p>帮助中心</p>
+  </div></li>
+  <li id="con_one_4" style="display:none">  <div class="oyw_sousu fl">
+  <form action="{$CFG['url']}mall/search_order.php" method="post">
+  <input name="item" type="text" class="input_txt fl">
+    <input name="cartid" type="hidden" value=4>
+  <input name="submit" type="submit" class="input_btn fr" value="">
+  </form>
+  </div>
+  <div class="oyw_Senior fr">
+  <p style="padding-bottom:8px;">高级搜索</p>
+  <p>帮助中心</p>
+  </div></li>
+  </ul>
+  
+  </div>
+
+</div>
+</div>

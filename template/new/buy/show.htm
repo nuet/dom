@@ -1,0 +1,285 @@
+{template 'header'}
+<link href="{DT_SKIN}GeXing.css" rel="stylesheet" type="text/css">
+<!-- 头部结束-->
+<!-- 个性需求 -->
+<div class="G_XBox">
+  <div class="G_X_Bbg">
+     <div class="G_XBox_baner">
+       <img src="{DT_SKIN}image/G_XBox_baner_img.jpg" alt="">
+     </div>
+  </div>
+  <div class="G_X_XQ">
+    <div class="G_X_XQ_JD1">
+      {if $item[ifpays]==1 && $item[status]==3}
+         <img src="{DT_SKIN}image/G_X_XQ_JD3.jpg" alt="">
+      {else}
+         <img src="{DT_SKIN}image/G_X_XQ_JD3.jpg" alt="">
+      {/if}
+   
+    </div>
+    <!-- 需求进度二 -->
+
+    <div class="G_X_XQ2">
+        <div class="G_X_XQ2_lf" id="G_X_XQ2_lf">
+            <div class="G_X_XQ3_lf">
+              <div class="G_X_XQ3_lfTitle">
+                您的需求：{$item[title]}&nbsp;
+              </div>
+              <div class="GEXpub_preview_info">
+
+                <table>
+                  <tbody>
+                    <tr>
+                      <th>需求类型：</th>
+                      <td>{$CAT[catname]}</td>
+                    </tr>
+                    <tr>
+                      <th>详细描述：</th>
+                      <td>{$item[content]}</td>
+                    </tr>
+                    <tr>
+                      <th>联系方式：</th>
+                      <td class="mutli-content-td">
+                       {if $item[mobile]} <div>{$item[mobile]}（手机）</div>{/if}
+                        <div>{$item[pack]}（QQ）</div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="dashed"> <i></i></div>
+                {if $item[ifpays]==0 && $item[status]==3}
+                <table class="GXXQsum_price_wrap">
+                  <tbody>
+                    <tr>
+                      <th>总　　计：</th>
+                      <td> 
+                      <div class="GXDZnoticemsg">
+                      <strong >{$item[amount]}<i>元</i></strong><span>项目工期：<i><i>{$item[day]}</i>天</i></span>
+                      </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="GXDZtongyi_wrap">
+                  <p> <input type="checkbox" name="nopay" id="nopay" >
+                      <label for="tongyi">同意并遵守<a href="" >《摩恩网需求发布与处理规则》</a></label>
+                  </p>
+                </div>
+                <div class="GXDZquerenJiaGe_wrap">
+                  <div class="GXDZquerenJiaGe_Btn">
+                 <form method="post" action="{$CFG[url]}/member/buy.php" id="dform" onSubmit="return check()">
+				<input type="hidden" name="post[typeid]" value="0" >
+				<input type="hidden" name="action" value="add"/>
+				<input type="hidden" name="mid" value="6"/>
+				<input type="hidden" name="pay" value="1"/>
+				<input type="hidden" name="itemid" value="{$itemid}"/>
+				<input type="hidden" name="post[catid]" value="{$catid}"/>
+				<input type="hidden" name="forward" value="{$forward}"/>
+                   <input type="submit" name="submitm"class="GXDZ_a_btn Blue" id="GXDZ_a_btn_Blue" value="确认支付">
+                    </form>
+                  </div>
+                </div>
+               {elseif $item[ifpays]==1 && $item[status]==3}
+                <table class="GXXQsum_price_wrap">
+                  <tbody>
+                    <tr>
+                      <th>总　　计：</th>
+                      <td> 
+                      <div class="GXDZnoticemsg">
+                      <strong >{$item[amount]}<i>元</i></strong><span>项目工期：<i><i>{$item[day]}</i>天</i></span>
+                      </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+               
+                <div class="GXDZquerenJiaGe_wrap">
+                  <div class="GXDZquerenJiaGe_Btn">
+                 <form method="post" action="?" id="dform" onSubmit="return check()">
+				<input type="hidden" name="post[typeid]" value="0" >
+				<input type="hidden" name="action" value="add"/>
+				<input type="hidden" name="mid" value="6"/>
+				<input type="hidden" name="pay" value="1"/>
+				<input type="hidden" name="itemid" value="{$itemid}"/>
+				<input type="hidden" name="post[catid]" value="{$catid}"/>
+				<input type="hidden" name="forward" value="{$forward}"/>
+				<input type="hidden" name="submit1" value="1"/>  
+                   <input type="submit" name="submit"class="GXDZ_a_btn Blue" id="GXDZ_a_btn_Blue" value="已付款">
+                    </form>
+                  </div>
+                </div>
+                 {else}
+                  <table class="GXXQsum_price_wrap">
+                  <tbody>
+                    <tr>
+                      <th>总　　计：</th>
+                      <td> 
+                      <div class="GXDZnoticemsg">
+                      <strong >等待预估<i></i></strong><span>预估价格：<i><i>{$item[price]}</i>元</i></span>
+                      </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="GXDZtongyi_wrap">
+                  <p><input type="checkbox" name="nopay" id="nopay" >
+                      <label for="tongyi">同意并遵守<a href="" >《摩恩网需求发布与处理规则》</a></label>
+                  </p>
+                </div>
+                <div class="GXDZquerenJiaGe_wrap">
+                  <div class="GXDZquerenJiaGe_Btn">
+                    <a href="#" class="GXDZ_a_btn Grey" id="GXDZ_a_btn_Blue" onclick="checks()">确认支付</a>
+                    <a href="" class="GXDZ_a_btn Grey">等待客服定价</a>
+                  </div>
+                </div>
+                {/if}
+                 
+                  
+                <!-- 特效 -->
+                <div class="GEui_poptip ui_user_body Getips_green">
+            <div class="ui-poptip-arrow" style="left: 57px; right: auto;"><i></i></div>
+            <div class="ui-poptip-body">
+                <p class="infos">建议您提前托管赏金。<br>赏金托管后，提升需求信用度，可以吸引更多优秀服务商参与。<br>80%以上的买家选择了提前托管赏金赏金托管后，提升需求信用度，可以吸引更多优秀服务商参与。<br></p><img src="{DT_SKIN}image/tuikuan.png" alt="退款保证">
+            </div>
+            <script>
+                $(function(){       
+    
+                      $('#GXDZ_a_btn_Blue').hover(function(){
+                      $('.Getips_green').css('border','1px solid red');
+     
+
+             
+              },function(){
+                $('.Getips_green').css('border','1px solid #7CCFE0');
+           
+      
+			    });
+			    });
+            </script>
+        </div>
+                <!-- 特效end -->
+              </div>
+            </div>
+        </div>
+        <div class="G_X_XQ2_rt" id="G_X_XQ2_rt">
+            <div class="G_X_XQ2_rt1">
+            <div class="G_X_XQ3rt1">
+             <div id="j-hostreason" class="host-reason">
+               <dl>
+                 <dt class="title">为什么要托管赏金</dt>
+                 <dd class="reason-1">
+                   <div class="highlight">更多优秀服务商参与</div>
+                   <div>托管赏金后，可提升需求信用度，吸引更多优秀服务商参与。</div>
+                   <div>80%以上的买家选择了提前托管赏金。</div>
+                 </dd>
+                 <dd class="reason-2">
+                   <div class="highlight">交易有担保</div>
+                   <div>托管赏金将冻结在您的账户中，满意后再支付给中标威客</div>
+                 </dd>
+                 <dd class="reason-3">
+                   <div class="highlight">退款有保证</div>
+                   <div>聚焦800万专业威客，找不到合适的服务商，无条件全额退款</div>
+                 </dd>
+                 <dd class="reason-4">
+                   <div class="highlight">我们专业，值得信赖</div>
+                   <div>已累计解决需求上百万，支付赏金超过2亿元人民币，是全球最大的服务交易平台</div>
+                 </dd>
+               </dl>
+             </div>
+             </div>
+            </div>
+            <div class="G_X_XQ2_rt2">
+              <p>发需求前，<br/>可以先联系我们的在线客服，可以电话或者加我们的企业QQ</p>
+            </div>
+            <div class="G_X_XQ2_rt3">
+              <p class="font24">400-651-5550</p>
+              <p class="font24">021-51875581</p>
+              <p><i>周一至周六9:00-18:00</i></p>
+            </div>
+            <!-- qq客服 -->
+
+            <div class="G_X_XQ2_rt4QQ">
+              <p><a href="" ></a></p>
+              <p><a href=""></a></p>
+            </div>
+            <!-- qq客服 end-->
+        </div>
+
+    </div>
+    <div class="G_X_XQ2_CJhelp">
+      <div class="G_X_XQ2_CJhelpH2">
+        <a href="">更多</a>
+        <h2>常见问题：</h2>
+      </div>
+        <ul>
+          <li class="faq-q">我在摩恩网络上交易有安全保障吗？</li>
+          <li class="faq-a">
+            <span class="faq-a-label">答：</span>
+            <ul>
+              <li>1）您发布需求后先支付项目首付款，对项目满意后，再支付项目尾款；如项目我们无法完成，保证退回全部款项，保障您的交易效果。</li>
+              <li>
+                2）我们是公司合作第三方资源经营，可以与您签订项目合同，保证项目进度。
+              </li>
+              
+            </ul>
+          </li>
+          
+          <li class="faq-q">我该怎么填写我的需求？</li>
+          <li class="faq-a">
+            <span class="faq-a-label">答：</span>
+            <ul>
+              <li>您可以：</li>
+              <li>1）参考需求模版，将自己的需求描述清楚，可以使用上传附件进行说明。</li>
+              <li>2）尽量用简单、明了的语言来表述自己的需求。</li>
+              <li>3）实在难以表述清楚的，可以联系摩恩网络的客服人员协助</li>
+            </ul>
+          </li>
+        </ul>
+    </div>
+    <!-- 需求进度二end -->
+  </div>
+</div>
+<!-- 个性需求 end -->
+<!-- div高度自适应 -->
+<script type="text/javascript">
+window.onload=function()
+{
+ var divLeft=document.getElementById("G_X_XQ2_rt");
+ var divRight=document.getElementById("G_X_XQ2_lf");
+ if(divLeft.offsetHeight>divRight.offsetHeight){}
+ else{
+  divLeft.style.height=divRight.offsetHeight+"px";
+  }
+ 
+ }
+
+function check(){
+	 if(Dd("nopay").checked==0){
+	    	alert('请遵守《摩恩网需求发布与处理规则》');
+	    	return false;
+	 }
+	 var m1 = {$_money};
+     var m2 = {$item[amount]};
+
+		var m3 = parseFloat(m2) - parseFloat(m1);
+		if(m2 > m1) {
+			if(confirm('账户余额不足，需充值'+m3+'{$DT[money_unit]}，是否立即充值？')) {
+				window.open('{$MODULE[2][linkurl]}charge.php?action=pay&amount='+m3);
+			}
+			return false;
+		}
+}
+
+</script>
+<script>
+function checks(){
+	 if(Dd("nopay").checked==0){
+	    	alert('请遵守《摩恩网需求发布与处理规则》');
+	    	return false;
+	 }
+	 alert('请耐心等待客服定价');
+			return false;
+	
+}
+</script>
+{template 'footer'}

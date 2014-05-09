@@ -1,0 +1,190 @@
+{template 'header_mb'}
+<script type="text/javascript" src="{DT_STATIC}/file/script/search_mb.js"></script>
+<div class="M_YQiYe_Bg">
+<div class="M_YQiYe_Box {$pclass}">
+  <div class="M_YQiYe">
+    <img src="{DT_SKIN}image/{$pimg}" alt="">
+  </div>
+ <div class="MoBan_yBn_login_box">
+      <div class="MoBan_yBn_login1">   
+      </div>
+    {if $_username && $_groupid <=5}
+<div class="oyw_tm2"><h3 class="clearfix"><span style="font-size:14px;font-family:微软雅黑; padding:3px 0px;;" class="fl">{$_truename} {$MG[groupname]}，您好</span><span  style="padding-top:13px; margin-left:10px;">
+	<img src="{DT_STATIC}{$MODULE[2][moduledir]}/image/{if $user[vtruename]}v{else}u{/if}_truename.gif" style='padding-top: 3px;'width="16" height="16" title="{if $user[vtruename]}已通过{else}未通过{/if}真实姓名认证" align="absmiddle"/> <a href="{DT_STATIC}{$MODULE[2][moduledir]}/validate.php?action=truename" style='text-decoration: underline;'>实名</a> &nbsp;
+	
+</span></h3>
+<div class="oyw_user clear">
+  <div class="sjs_in_k">
+    <div class="sjs_in_k_1">余额:<b><big> {$_money}</big></b> 元<small>（锁定:{$user[locking]}元）</small></div>
+    
+    <div class="sjs_in_k_2">
+        <div class="sjs_in_k_2_l oy_floatlf">
+          <p>{$count2[count]}</p>
+          <span><a href="{$MODULE[2][linkurl]}">未付款项目</a></span>
+        </div>
+        <div class="sjs_in_k_2_b oy_floatlf">
+          <p>{$count1[count]}</p>
+          <span><a href="{$MODULE[2][linkurl]}">已付款项目</a></span>
+        </div>
+        <div class="sjs_in_k_2_r oy_floatlf">
+          <p>{$_credit}</p>
+          <span><a href="{$MODULE[2][linkurl]}credit.php">积分</a></span>
+        </div>
+    </div>
+  </div>
+  <div class="mt5 clear">
+    <input type="submit"  onclick="Go('{$MODULE[2][linkurl]}');" id="J-login-btn" class="NewBui_button NewM_Y_Q_Logh NewM_Y_Q_LoghColY" style="font-size:14px;background:#FF9400;font-family:微软雅黑;" value="进入会员中心" >
+  </div>
+</div></div>
+   
+   {elseif $_groupid >5}
+       <div class="oyw_tm2"><h3 class="clearfix"><span style="font-size:14px;font-family:微软雅黑; padding:3px 0px;;" class="fl">{$_company} {$MG[groupname]}，您好</span><span  style="padding-top:13px; margin-left:10px;">
+<img src="{if $user[vcompany]}{$MODULE[2][linkurl]}/image/v_company.gif{else}{$MODULE[2][linkurl]}/image/u_company.gif{/if}" style='padding-top: 3px;'width="16" height="16" title="{if $user[vcompany]}已通过{else}未通过{/if}设计师认证" align="absmiddle"/>	{if $user[vcompany]}<img src="{DT_SKIN}image/vip_{$user[vip]}.gif" style='padding-top: 3px;'/>{else} <a href="{DT_STATIC}{$MODULE[2][moduledir]}/validate.php?action=company" style='text-decoration: underline;'>认证</a> &nbsp; {/if}
+	
+</span></h3>
+<div class="oyw_user clear">
+  <div class="sjs_in_k">
+    <div class="sjs_in_k_1">余额:<b><big> {$_money}</big></b> 元<small>（锁定:{$user[locking]}元）</small></div>
+    
+    <div class="sjs_in_k_2">
+        <div class="sjs_in_k_2_l oy_floatlf">
+          <p>{count($sj_all)}</p>
+          <span><a href="{$MODULE[2][linkurl]}">投标</a></span>
+        </div>
+        <div class="sjs_in_k_2_b oy_floatlf">
+          <p>{$sj_in[count]}</p>
+          <span><a href="{$MODULE[2][linkurl]}">入围</a></span>
+        </div>
+        <div class="sjs_in_k_2_r oy_floatlf">
+          <p>{$sj_last[count]}</p>
+          <span><a href="{$MODULE[2][linkurl]}">中标</a></span>
+        </div>
+    </div>
+  </div>
+  <div class="mt5 clear">
+    <input type="submit"  onclick="Go('{$MODULE[2][linkurl]}');" id="J-login-btn"class="NewBui_button NewM_Y_Q_Logh NewM_Y_Q_LoghColY"  style="font-size:14px;background:#FF9400;font-family:微软雅黑;" value="进入会员中心" >
+  </div>
+</div></div>
+      
+      {else}
+      <div class="MoBan_yBn_login_tm1">
+         <form method="post" action="{$MODULE[2][linkurl]}{$DT[file_login]}" id="Login" name="Login">
+		<input name="forward" type="hidden" id="forward" value="{$CFG['url']}/group/list.php?catid={$_GET[catid]}">
+        <div class="MoBan_yBn_login_tm_1">
+          <span class="H18">欢迎登录</span><span class="H12">会员登录</span>
+        </div>
+        <div class="MoBan_yBn_login_tm_2">
+          <span>用户名:</span><input name="username" type="text" id="username" value="" placeholder="手机号/邮箱/会员名" autocomplete="off" autocorrect="off" autocapitalize="off">
+        </div>
+        <div class="MoBan_yBn_login_tm_2">
+          <span>密&nbsp;&nbsp;&nbsp;&nbsp;码:</span><input type="password" name="password" value="">
+        </div>
+        <div class="MoBan_yBn_login_tm_3">
+          <span></span>
+          <p>
+          <a href="{$MODULE[2][linkurl]}send.php">忘记用户名></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="{$MODULE[2][linkurl]}send.php">忘记密码></a>
+          </p>
+          
+        </div>
+        <div class="MoBan_yBn_login_tm_4 clear">
+           <input type="button" value="注&nbsp;&nbsp;册" class="Mgui" name=""  onclick="window.open('{$MODULE[2][linkurl]}{$DT[file_register]}')">
+          <input type="submit" value="登&nbsp;&nbsp;录" class="MyellB" name="">
+        </div>
+        </form> 
+      
+      
+      </div>
+      {/if}
+  </div>
+</div>
+</div>
+
+ <div class="QuanZ_An_Box">
+      <div class="QuanZ_An_S_T">
+        <div class="QuanZ_An_S_Nav"style="background:#FFF">
+          <p> <a href="{$CFG[url]}">首页</a> > <a href="{$CFG[url]}/group/list.php?catid={$pid}">{$pname}</a></p>
+          <div class="QuanZ_An_biaoqian" id="QuanZ_An_biaoqian"style="background:#FFF">
+            <!-- get获取选择的值 -->
+            <span class="hide"><a style="cursor:pointer"></a></span>
+            <!-- get获取选择的值结束 -->
+          </div>
+        </div>
+        <div class="QuanZ_An_S_xz" id="QuanZ_An_S_xz_sq">
+          <div class="QuanZ_An_S_xz_h">
+            <div class="search_hy">
+              <span><a href="{$CFG[url]}group/list.php?catid={$pid}&color={$_GET[color]}">全部类别：</a></span>
+             <p></p><ul class="QuanZ_An_Bq_a">
+            {loop $maincat $i $v}
+             {if $v[catid]==$catid }
+            
+                       <li><a href="{$CFG[url]}group/list.php?catid={$v[catid]}&color={$_GET[color]}" alt="摩恩建站22-{$r}" id="search_icon" title="{$r}" >{set_style($v[catname],$v[style])}({$v[item]})</a>
+             {else}
+         
+                       <li><a href="{$CFG[url]}group/list.php?catid={$v[catid]}&color={$_GET[color]}" alt="摩恩建站-{$r}" title="{$r}" >{set_style($v[catname],$v[style])}({$v[item]})</a>
+                {/if}
+            {php $i++}
+            
+            {if  $i%5==0 }
+            </li><p></p></ul></div><div class="search_hy1"><span></span> <p></p><ul class="QuanZ_An_Bq_a">
+            {else}
+            </li><p></p>
+            {/if}
+           	{/loop}
+              </ul>
+            </div>
+          <!-- 色系开始 -->
+          <div class="seach_color">
+            <span>全部色系：</span>
+            
+             <ul  id="QuanZ_An_color"  class="QuanZ_An_color QuanZ_An_Bq_a">
+              {loop $colors_all $i $c}
+                {if $c[key]==$_GET[color]}
+                   <li><a href="{$CFG[url]}group/list.php?catid={$_GET[catid]}&color={$c[key]}" id="search_color_{$c[key]}" class="S_{$c[key]}"><i>{$c[name]}</i></a></li>
+                {else}
+                
+                    <li><a href="{$CFG[url]}group/list.php?catid={$_GET[catid]}&color={$c[key]}" class="S_{$c[key]}"><i>{$c[name]}</i></a></li>
+                {/if}
+           
+              {/loop}
+               
+              </ul>
+           
+            </div>
+          </div>
+          <!-- 色系结束 -->
+          <!-- 套餐选择开始 -->
+         </div>
+         <div class="search_tc clear">
+           </div></div>
+          <!-- 套餐选择结束 -->
+          
+    <div class="Q_toggle">
+      <div class="Q_bar clear"></div>
+            <div class="quan_nav nav1" id="JS_shouqi_fliter"></div>
+            
+      </div>
+     
+     
+     
+      <!-- 全站搜索条件选择结束 -->
+  <!-- 搜索排序开始 -->
+  <div class="QuanZ_An_Pai">
+    <div class="QuanZ_An_Pai_t">
+      <p><span>案例排序：</span><a href="?catid={$_GET[catid]}&color={$_GET[color]}">默认</a> <a href="?catid={$_GET[catid]}&color={$_GET[color]}&o=1">更新</a> <a href="?catid={$_GET[catid]}&color={$_GET[color]}&o=2">人气</a></p>
+      <span>共找到<i>{$items}</i>个案例</span>
+    </div>
+  </div>
+   <div class="QuanZ_An_List">
+    <ul class="QuanZ_An_List_ul">
+    {if $tags}{template 'list-'.$module, 'tag'}{/if}      
+  </ul></div>
+  <!-- 搜索排序结束 -->
+  <div class="QuanZ_An_Next">
+  {$pages}
+
+  </div>
+<!-- 全站搜素案例结果结束 -->
+  </div></div>
+
+{template 'footer'}

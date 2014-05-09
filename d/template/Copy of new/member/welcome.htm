@@ -1,0 +1,91 @@
+{template 'header'}
+<script  src="{$CFG[url]}/file/script/mayabox/Maya.Box.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="{$CFG[url]}/file/script/mayabox/style.css">
+    <form action="{$DT[file_register]}" id="register" name="register" method="post" target="send" >
+<!-- 会员注册页面 -->
+<div class="u_regist_box">
+<!-- 纯DIV+CSS简单实现Tab选项卡左右切换 -->
+ 
+   <div id="content_wrapper">
+    
+    <div id="u_example">
+           
+			<input name="action" type="hidden" id="action" value="{crypt_action('register')}"/>
+			<input name="forward" type="hidden" value="{$forward}"/>
+			<input name="submit_register" type="hidden" value="1"/>
+			<input name="post[regid]" type="hidden" value="5"/>
+            <ul class="u_regist_nav">
+                <li class="u_current"><a href="{$MODULE[2][linkurl]}{$DT[file_register]}?r=0" class="current" >客户注册</a></li>
+                <li class=""><a href="{$MODULE[2][linkurl]}{$DT[file_register]}?r=1">设计师注册</a></li>
+               
+            </ul>
+            
+            <div class="list-wrap">
+              <div id="featured">
+                    
+                      <div class="u_regist_kehu">
+                          <div class="u_regist_kehu_lf">
+                              <div class="u_regist_kehu_lf_img">
+                                <img src="{DT_SKIN}image/u_regist_img3.gif" alt="">
+                              </div>
+                              <div class="u_regist_kehu_lf_from">
+                                <div class="u_regist_kehu_lf_from_cg">
+                                  <div class="u_regist_kehu_lf_from_cg_1">
+                                  {if $_groupid > 5}
+                                     <span><i>尊敬的:{$_truename} 设计师</i> ,恭喜注册成功！</span>
+                                   {else}
+                                   <span><i>尊敬的:{$_truename} 会员</i> ,恭喜注册成功！</span>
+                                   {/if}
+                                  </div>
+                                  <div class="u_regist_kehu_lf_from_cg_2">
+                                    <input type="button" onclick="Go('index.php');"value="进入管理中心" name="" class="u_fl">
+                                    <input type="button" onclick="Go('{$CFG['url']}');"value="回到首页" name="" class="u_fl">
+                                  </div>
+                                </div>
+                               
+                                
+                               
+                              </div>
+                          </div>
+                           <div class="u_regist_kehu_rt">
+                            <div class="u_regist_kehu_rt1">>>已经是会员？<a href="{$DT[file_login]}">请登录</a></div>
+                            <div class="u_regist_kehu_rt2">
+                              <input type="button" value="登录"  onclick="Go('{$DT[file_login]}');"class="">
+                            </div>
+                            <div class="u_regist_kehu_rt3">>>忘记密码？请点击 <a href="send.php"><i>这里找回</i></a></div>
+                          </div>
+                      </div>
+                    
+                  
+                  
+                </div>
+              
+         
+         </div> <!-- END Tabs (Example) -->
+
+  
+    
+    </div>
+</div>
+</div>
+</form>
+
+
+<!-- 会员注册页面结束 -->
+
+<script>
+window.onload = function ()
+{
+     document.body.onkeydown=function(event)
+    {
+        if(event.keyCode==13)
+        {
+            
+            return false;
+        }
+    }
+}
+</script>
+
+
+{template 'footer'}

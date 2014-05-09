@@ -1,0 +1,37 @@
+{template 'header', $template}
+<div class="dsn" id="pos_show">您当前的位置：<a href="{$COM[linkurl]}">首页</a> &raquo; <a href="{$MENU[$menuid][linkurl]}">{$MENU[$menuid][name]}</a>{if $itemid} &raquo; {$title}{/if}</div>
+{if $itemid}
+<div class="main_head"><div><strong>{$title}</strong></div></div>
+<div class="main_body">
+	<div class="lh18 px13">{$content}</div>
+</div>
+{else}
+<div class="main_head"><div><strong>{$MENU[$menuid][name]}</strong></div></div>
+<div class="main_body">
+	<div class="lh18 px13">
+	<table width="98%" cellpadding="3" cellspacing="3" align="center">
+	<tr>
+	<td><img src="{$COM[thumb]}" align="right" style="margin:5px 0 5px 10px;padding:5px;border:#C0C0C0 1px solid;"/>{$content}</td>
+	</tr>
+	</table>
+	</div>
+</div>
+{if $video}
+<div class="main_head"><div><strong>形象视频</strong></div></div>
+<div class="main_body">
+	{load('player.js')}
+	<center><script type="text/javascript">document.write(player('{$video}',480,400,'',0));</script></center>
+</div>
+{/if}
+
+<div class="main_head"><div><strong>公司档案</strong></div></div>
+
+{if $could_comment && in_array($moduleid, explode(',', $EXT['comment_module']))}
+<div id="comment_div" style="display:;">
+	<div class="main_head"><div><span class="f_r px12">共<span id="comment_count">0</span>条&nbsp;&nbsp;</span><strong><span id="message_title">相关评论</span></strong></div></div>
+	<div class="main_body"><script type="text/javascript">Df('{$MODULE[3][linkurl]}comment.php?mid={$moduleid}&itemid={$COM[userid]}', 'id="destoon_comment" style="width:100%;"');</script></div>
+</div>
+{/if}
+
+{/if}
+{template 'footer', $template}

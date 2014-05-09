@@ -1,0 +1,22 @@
+{loop $tags $i $t} 
+ {php $t[price] = str_replace('.00', '', $t[price]);}
+{php $t[marketprice] = str_replace('.00', '', $t[marketprice]);}
+                 <li>
+                    <div class="Index_Anli_zs_img">
+                      <a href="{$t[linkurl]}" target="_blank"><img src="{$t[thumb]}" alt="摩恩建站-{$t[title]}"></a>
+                      <!-- 鼠标指上显示 -->
+                        <div class="MoBanBlue">
+                         <span class="Left">
+                           <a href="{$t[linkurl]}"target="_blank" title="摩恩建站-{$t[title]}">查看详情</a>
+                         </span>
+                         <span class="Right">
+                           <a href="{$t[url]}" target="_blank">浏览网站</a>
+                         </span>
+                        </div>
+                      <!-- 鼠标指上显示结束 -->
+                    </div>
+                    <div class="GoSM">名称：{$t[title]}</div>
+                    <div class="JzTc">行业：{$t[cname]}</div>
+                </li>   
+  {/loop}   
+

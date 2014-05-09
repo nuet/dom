@@ -1,0 +1,120 @@
+</td>
+</tr>
+</table>
+</div>
+<div class="clear"></div>
+<div style="width:100%"><div class="New_foot">
+  <div class="New_foot_nav">
+    <div class="New_foot_nav_tc">
+      <span>公司信息</span>
+      <ul>
+        <li><a href="">关于我们</a></li>
+        <li><a href="">设计与开发团队</a></li>
+        <li><a href="">最新公告</a></li>
+        <li><a href="">联系地址</a></li>
+      </ul>
+    </div>
+    <div class="New_foot_nav_tc2">
+      <span>定制项目套餐</span>
+      <ul>
+        <li><a href="">企业展示网站建设</a></li>
+        <li><a href="">企业品牌网站建设</a></li>
+        <li><a href="">企业营销网站建设</a></li>
+        <li><a href="">LOGO设计</a></li>
+      </ul>
+    </div>
+    <div class="New_foot_nav_tc3">
+      <span>模版网站分类</span>
+      <ul>
+        <li><a href="">企业模版网站</a></li>
+        <li><a href="">商城模版网站</a></li>
+        <li><a href="">全FLash模版网站</a></li>
+        <li><a href="">手机模版网站</a></li>
+      </ul>
+    </div>
+    <div class="New_foot_nav_tc4">
+      <span>定制建站流程</span>
+      <ul>
+        <li><a href="">首页面设计</a></li>
+        <li><a href="">栏目页及内页设计</a></li>
+        <li><a href="">程序开发</a></li>
+        <li><a href="">站点上线</a></li>
+      </ul>
+    </div>
+    <div class="New_foot_nav_tc5">
+      <span>帮助中心</span>
+      <ul>
+        <li><a href="">常见问题</a></li>
+        <li><a href="">公开课</a></li>
+        <li><a href="">付款方式</a></li>
+        <li><a href="">隐私说明</a></li>
+      </ul>
+    </div>
+    <div class="New_foot_nav_tc6">
+      <span>上海摩恩网络科技有限公司</span>
+      <ul>
+        <li>全国热线服务电话：</li>
+        <li><a href=""><i>400-651-5550</i></a></li>
+        <li><a href="">邮箱：kefu@omoooo.com</a></li>
+        <li><a href="">企业QQ:4006515550</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="New_foot_cop">
+    <div class="New_foot_cop_u">
+
+        <ul>
+          <li><a href="">关于摩恩</a>  |  </li>
+          <li><a href="">摩恩博客</a>  |  </li>
+          <li><a href="">人才招聘</a>  |  </li>
+          <li><a href="">使用条款</a>  |  </li>
+          <li><a href="">隐私政策</a>  |  </li>
+          <li><a href="">法律申明</a>  |  </li>
+          <li><a href="">网站导航</a>  |  </li>
+          <li><a href="">站长统计</a>  |  </li>
+          <li>最佳分辨率：1024 * 786 </li>
+        </ul>
+    </div>
+    <div class="New_foot_cop_info clear">
+      <p><i>Copyright 2003-2014 OMOOO.ALL Rights Reserved. </i>上海摩恩网络科技有限公司 版权所有</p>
+      <p><a href="">沪ICP备07024853号</a></p>
+    </div>
+    <div class="New_foot_cop_link">
+      <p><a href="#"><img src="{DT_SKIN}/image/pic_01.gif" width="111" height="40"></a><a href="#"><img src="{DT_SKIN}/image/pic_02.gif" width="44" height="40"></a><a href="#"><img src="{DT_SKIN}/image/pic_03.gif" width="45" height="40"></a><a href="#"><img src="{DT_SKIN}/image/pic_04.gif" width="45" height="40"></a><a href="#"><img src="{DT_SKIN}/image/pic_05.gif" width="38" height="40"></a><a href="#"><img src="{DT_SKIN}/image/pic_06.gif" width="36" height="40"></a><a href="#"><img src="{DT_SKIN}/image/pic_07.gif" width="90" height="40"></a></p>
+    </div>
+  </div>
+</div></div>
+
+<!--[系统关键代码，请勿删除]-->
+<div id="back2top" class="back2top">
+	<a href="javascript:void(0);" title="返回顶部">&nbsp;</a>
+</div>
+<script type="text/javascript">
+{if $destoon_task}
+show_task('{$destoon_task}');
+{else}
+{php include DT_ROOT.'/api/task.inc.php';}
+{/if}
+{if $lazy}$(function(){$("img").lazyload();});{/if}
+$('#back2top').click(function() {
+	$("html, body").animate({scrollTop:0}, 200);
+});
+</script>
+
+<script type="text/javascript">
+if(document.body.clientHeight > Dd('main').scrollHeight) Dd('main').style.height=document.body.clientHeight+'px';
+if(get_cookie('m_side') == 11 && Dd('side_oh').className == 'side_h') {Dh('side');Dd('side_oh').className = 'side_s';}
+var destoon_message = {$_message};
+var destoon_chat = {$_chat};
+{if $_message && $_sound}
+if(window.location.href.indexOf('message.php') == -1) $('#destoon_space').html(sound('message_{$_sound}'));
+{/if}
+{if $_chat}
+if(window.location.href.indexOf('chat.php') == -1) $('#destoon_space').html(sound('chat_new'));
+{/if}
+{if $_userid && $DT[pushtime]}
+window.setInterval('PushNew()',{$DT[pushtime]}*1000);
+{/if}
+</script>
+</body>
+</html>

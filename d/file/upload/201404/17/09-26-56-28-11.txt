@@ -1,0 +1,209 @@
+
+          {if $list}
+             <div class="u_rtwo">
+          <div class="u_rtwo_t"><b>定制套餐项目 &nbsp;></b>
+            <span>
+              <form action="?" name="" id="" method="post">
+              <input type="text" class="u_spmc_ddh" name="item" palceholder="订单编号 订单日期 " onFocus="if (this.value==this.defaultValue) this.value='';" 
+onblur="if (this.value=='') this.value=this.defaultValue;">
+              <input type="submit" id="wdxmmc" class="u_btn" value="查询">
+              </form>
+              </span>
+          </div>
+          {loop $list $i $rm}
+          <div class="u_rtwo_2_big">
+            <div class="u_rtwo_2">
+              <div class="u_rtwo_2_1 u_fl u_pt10"><span>项目信息</span></div>
+              <div class="u_rtwo_2_2 u_fl u_pt10"><span>项目价格</span></div>
+              <div class="u_rtwo_2_3 u_fl u_pt10"><span>付款方式</span></div>
+              <div class="u_rtwo_2_4 u_fl u_pt10"><span>实付款</span></div>
+              <div class="u_rtwo_2_5 u_fl u_pt10"><span>项目状态</span></div>
+              <div class="u_rtwo_2_6 u_fl u_pt10"><span>交易操作</span></div>
+            </div>
+          <div class="u_rtwo_3 u_clear_d">
+            <div class="u_rtwo_2_1 u_fl u_pt10">
+              <div class="u_rtwo_2_1_1"><b>订单编号:</b> {$rm[itemid]}</div>
+              <div class="u_rtwo_2_1_1"><b>订单时间:</b> {$rm[addtime]}</div>
+              <div class="u_rtwo_2_1_1"><p><b>{$rm[areaid]}{$rm[buyer_name]}<br/></b> <a href="{$CFG[url]}/mall/order.php?itemid={$rm[mallid]}">({$rm[title]})</a></p></div>
+            </div>
+            <div class="u_rtwo_2_2 u_fl u_pt10"><span>{$rm[amount]}元<br/><i>{$rm[fapiao_yz]}</i></span></div>
+            <div class="u_rtwo_2_3 u_fl u_pt10"><span>{$rm[pay]}</span></div>
+            <div class="u_rtwo_2_4 u_fl u_pt10"><span><p>{$rm[ready_money]}元</p></span></div>
+            <div class="u_rtwo_2_5 u_fl u_pt10"><span>{$rm[status_zt]}<br/><a href="trade.php?itemid={$rm[itemid]}&action=update&step=upload_5&forward={$MODULE[2][linkurl]}">订单详情</a></span></div>
+            <div class="u_rtwo_2_6 u_fl u_pt10"><span>
+            {if $rm[pay_style]==0 && $rm[status]==0}
+		    <input type="submit" value="立即付款" class="u_btn" onclick="Go('trade.php?itemid={$rm[itemid]}&action=update&step=pay&forward={$MODULE[2][linkurl]}');">
+	    	{elseif $rm[pay_style]==1 && $rm[status]==0}
+	     	<input type="submit" value="首付款操作" class="u_btn" onclick="Go('trade.php?itemid={$rm[itemid]}&action=update&step=pay_1&forward={$MODULE[2][linkurl]}');"/>
+	     	{elseif $rm[status]==1 && $rm[vcheck]==0}
+	     	
+	     	{if $rm[catid]==27 || $rm[catid]==32 }
+	     		<input type="submit" value="提交需求" class="u_btn" onclick="Go('trade.php?itemid={$rm[itemid]}&action=update&step=logo&forward={$MODULE[2][linkurl]}');"/>
+	     	{else}
+	     		<input type="submit" value="提交需求" class="u_btn" onclick="Go('trade.php?itemid={$rm[itemid]}&action=update&step=upload_5&forward={$MODULE[2][linkurl]}');"/>
+	 	 
+	     	{/if}
+	        {elseif $rm[status]==1 && $rm[vcheck]==1}
+	     	<input type="submit" value="等待审核需求" class="gaoliangG"/>
+	 	   {elseif $rm[status]==1 && $rm[vcheck]==2}
+	     	<input type="submit" value="等待首页" class="gaoliangG"/>
+	     	  {elseif $rm[status]==2 }
+	    	{if $rm[catid]==27 || $rm[catid]==32 }
+	     		<input type="submit" value="入围作品" class="u_btn" onclick="Go('trade.php?itemid={$rm[itemid]}&action=update&step=logo_index&forward={$MODULE[2][linkurl]}');"/>
+	     	{else}
+	     	<input type="submit" value="入围作品" class="u_btn" onclick="Go('trade.php?itemid={$rm[itemid]}&action=update&step=index&forward={$MODULE[2][linkurl]}');"/>
+	     	{/if}
+	 	     {elseif $rm[status]==3 }
+	     {if $rm[catid]==27 || $rm[catid]==32 }
+	     		<input type="submit" value="确定首页" class="u_btn" onclick="Go('trade.php?itemid={$rm[itemid]}&action=update&step=logo_index&forward={$MODULE[2][linkurl]}');"/>
+	     	{else}
+	     	<input type="submit" value="确定首页" class="u_btn" onclick="Go('trade.php?itemid={$rm[itemid]}&action=update&step=index&forward={$MODULE[2][linkurl]}');"/>
+	     	{/if}  {elseif $rm[status]==4 }
+	     	<input type="submit" value="二次付款" class="u_btn" onclick="Go('trade.php?itemid={$rm[itemid]}&action=update&step=pay_2&forward={$MODULE[2][linkurl]}');"/>
+	 	     {elseif $rm[status]==5 }
+	     	<input type="submit" value="选择作品" class="u_btn" onclick="Go('trade.php?itemid={$rm[itemid]}&action=update&step=lm&forward={$MODULE[2][linkurl]}');"/>
+	 	   {elseif $rm[status]==6 }
+	     	<input type="submit" value="程序开发" class="u_btn" onclick="Go('trade.php?itemid={$rm[itemid]}&action=update&step=design&forward={$forward}');"/>
+	 	    {elseif $rm[status]==7 }
+	     	<input type="submit" value="确认完成" class="u_btn" onclick="if(confirm('确认项目已制作完成么？\n\n请注意:确认后您的钱将直接支付给卖家')) Go('trade.php?itemid={$rm[itemid]}&action=update&step=receive_goods&forward={$forward}');"/>
+
+	 	   {elseif $rm[status]==8 }
+	 	   	{if $rm[seller_star]}
+			<input type="submit" value="评价详情" class="u_btn" onclick="Go('trade.php?itemid={$rm[itemid]}&action=update&step=comment_detail&forward={$forward}');"/>
+			{else}
+			<input type="submit" value="评 价" class="u_btn" onclick="Go('trade.php?itemid={$rm[itemid]}&action=update&step=comment&forward={$forward}');"/>
+			{/if}
+	 	    {else}
+	 	    <input type="button" value="等待中" class="gaoliangG" />
+	 	    {/if}
+              
+          </span>
+            </div>
+          </div>
+          <div class="u_wdxm_lb"></div>
+          {/loop}
+        {else}
+           <div class="u_rtwo" style="height:40px;">
+          <div class="u_rtwo_t"><b>定制套餐项目 &nbsp;></b>
+            <span>
+              <form action="" name="" id="" method="post">
+              <input type="text" class="u_spmc_ddh" name="item" palceholder="订单编号  订单日期" onFocus="if (this.value==this.defaultValue) this.value='';" 
+onblur="if (this.value=='') this.value=this.defaultValue;">
+              <input type="submit" id="wdxmmc" class="u_btn" value="查询">
+              </form>
+              </span>
+          </div>
+           <div class="u_rtwo_2_big">
+            <div class="u_rtwo_2">
+              <div class="u_rtwo_2_1 u_fl u_pt10"  style='width:804px;height:30px;line-height:30px;font-size:20px;border-right: 1px solid #ccc;'><span>您没有订单信息</span></div>
+              
+            </div>
+        
+        
+        {/if}</div></div>
+        </div>
+              {if $list}
+             <div class="u_rtwo">
+          <div class="u_rtwo_t"><b>模版套餐项目 &nbsp;></b>
+            <span>
+              <form action="?" name="" id="" method="post">
+              <input type="text" class="u_spmc_ddh" name="item" palceholder="订单编号 订单日期 " onFocus="if (this.value==this.defaultValue) this.value='';" 
+onblur="if (this.value=='') this.value=this.defaultValue;">
+              <input type="submit" id="wdxmmc" class="u_btn" value="查询">
+              </form>
+              </span>
+          </div>
+          {loop $list $i $rm}
+          <div class="u_rtwo_2_big">
+            <div class="u_rtwo_2">
+              <div class="u_rtwo_2_1 u_fl u_pt10"><span>项目信息</span></div>
+              <div class="u_rtwo_2_2 u_fl u_pt10"><span>项目价格</span></div>
+              <div class="u_rtwo_2_3 u_fl u_pt10"><span>付款方式</span></div>
+              <div class="u_rtwo_2_4 u_fl u_pt10"><span>实付款</span></div>
+              <div class="u_rtwo_2_5 u_fl u_pt10"><span>项目状态</span></div>
+              <div class="u_rtwo_2_6 u_fl u_pt10"><span>交易操作</span></div>
+            </div>
+          <div class="u_rtwo_3 u_clear_d">
+            <div class="u_rtwo_2_1 u_fl u_pt10">
+              <div class="u_rtwo_2_1_1"><b>订单编号:</b> {$rm[itemid]}</div>
+              <div class="u_rtwo_2_1_1"><b>订单时间:</b> {$rm[addtime]}</div>
+              <div class="u_rtwo_2_1_1"><p><b>{$rm[areaid]}{$rm[buyer_name]}<br/></b> <a href="{$CFG[url]}/mall/order.php?itemid={$rm[mallid]}">({$rm[title]})</a></p></div>
+            </div>
+            <div class="u_rtwo_2_2 u_fl u_pt10"><span>{$rm[amount]}元<br/><i>{$rm[fapiao_yz]}</i></span></div>
+            <div class="u_rtwo_2_3 u_fl u_pt10"><span>{$rm[pay]}</span></div>
+            <div class="u_rtwo_2_4 u_fl u_pt10"><span><p>{$rm[ready_money]}元</p></span></div>
+            <div class="u_rtwo_2_5 u_fl u_pt10"><span>{$rm[status_zt]}<br/><a href="trade.php?itemid={$rm[itemid]}&action=update&step=upload_5&forward={$MODULE[2][linkurl]}">订单详情</a></span></div>
+            <div class="u_rtwo_2_6 u_fl u_pt10"><span>
+            {if $rm[pay_style]==0 && $rm[status]==0}
+		    <input type="submit" value="立即付款" class="u_btn" onclick="Go('trade.php?itemid={$rm[itemid]}&action=update&step=pay&forward={$MODULE[2][linkurl]}');">
+	    	{elseif $rm[pay_style]==1 && $rm[status]==0}
+	     	<input type="submit" value="首付款操作" class="u_btn" onclick="Go('trade.php?itemid={$rm[itemid]}&action=update&step=pay_1&forward={$MODULE[2][linkurl]}');"/>
+	     	{elseif $rm[status]==1 && $rm[vcheck]==0}
+	     	
+	     	{if $rm[catid]==27 || $rm[catid]==32 }
+	     		<input type="submit" value="提交需求" class="u_btn" onclick="Go('trade.php?itemid={$rm[itemid]}&action=update&step=logo&forward={$MODULE[2][linkurl]}');"/>
+	     	{else}
+	     		<input type="submit" value="提交需求" class="u_btn" onclick="Go('trade.php?itemid={$rm[itemid]}&action=update&step=upload_5&forward={$MODULE[2][linkurl]}');"/>
+	 	 
+	     	{/if}
+	        {elseif $rm[status]==1 && $rm[vcheck]==1}
+	     	<input type="submit" value="等待审核需求" class="gaoliangG"/>
+	 	   {elseif $rm[status]==1 && $rm[vcheck]==2}
+	     	<input type="submit" value="等待首页" class="gaoliangG"/>
+	     	  {elseif $rm[status]==2 }
+	    	{if $rm[catid]==27 || $rm[catid]==32 }
+	     		<input type="submit" value="入围作品" class="u_btn" onclick="Go('trade.php?itemid={$rm[itemid]}&action=update&step=logo_index&forward={$MODULE[2][linkurl]}');"/>
+	     	{else}
+	     	<input type="submit" value="入围作品" class="u_btn" onclick="Go('trade.php?itemid={$rm[itemid]}&action=update&step=index&forward={$MODULE[2][linkurl]}');"/>
+	     	{/if}
+	 	     {elseif $rm[status]==3 }
+	     {if $rm[catid]==27 || $rm[catid]==32 }
+	     		<input type="submit" value="确定首页" class="u_btn" onclick="Go('trade.php?itemid={$rm[itemid]}&action=update&step=logo_index&forward={$MODULE[2][linkurl]}');"/>
+	     	{else}
+	     	<input type="submit" value="确定首页" class="u_btn" onclick="Go('trade.php?itemid={$rm[itemid]}&action=update&step=index&forward={$MODULE[2][linkurl]}');"/>
+	     	{/if}  {elseif $rm[status]==4 }
+	     	<input type="submit" value="二次付款" class="u_btn" onclick="Go('trade.php?itemid={$rm[itemid]}&action=update&step=pay_2&forward={$MODULE[2][linkurl]}');"/>
+	 	     {elseif $rm[status]==5 }
+	     	<input type="submit" value="选择作品" class="u_btn" onclick="Go('trade.php?itemid={$rm[itemid]}&action=update&step=lm&forward={$MODULE[2][linkurl]}');"/>
+	 	   {elseif $rm[status]==6 }
+	     	<input type="submit" value="程序开发" class="u_btn" onclick="Go('trade.php?itemid={$rm[itemid]}&action=update&step=design&forward={$forward}');"/>
+	 	    {elseif $rm[status]==7 }
+	     	<input type="submit" value="确认完成" class="u_btn" onclick="if(confirm('确认项目已制作完成么？\n\n请注意:确认后您的钱将直接支付给卖家')) Go('trade.php?itemid={$rm[itemid]}&action=update&step=receive_goods&forward={$forward}');"/>
+
+	 	   {elseif $rm[status]==8 }
+	 	   	{if $rm[seller_star]}
+			<input type="submit" value="评价详情" class="u_btn" onclick="Go('trade.php?itemid={$rm[itemid]}&action=update&step=comment_detail&forward={$forward}');"/>
+			{else}
+			<input type="submit" value="评 价" class="u_btn" onclick="Go('trade.php?itemid={$rm[itemid]}&action=update&step=comment&forward={$forward}');"/>
+			{/if}
+	 	    {else}
+	 	    <input type="button" value="等待中" class="gaoliangG" />
+	 	    {/if}
+              
+          </span>
+            </div>
+          </div>
+          <div class="u_wdxm_lb"></div>
+          {/loop}
+        {else}
+           <div class="u_rtwo" style="height:40px;">
+          <div class="u_rtwo_t"><b>定制套餐项目 &nbsp;></b>
+            <span>
+              <form action="" name="" id="" method="post">
+              <input type="text" class="u_spmc_ddh" name="item" palceholder="订单编号  订单日期" onFocus="if (this.value==this.defaultValue) this.value='';" 
+onblur="if (this.value=='') this.value=this.defaultValue;">
+              <input type="submit" id="wdxmmc" class="u_btn" value="查询">
+              </form>
+              </span>
+          </div>
+           <div class="u_rtwo_2_big">
+            <div class="u_rtwo_2">
+              <div class="u_rtwo_2_1 u_fl u_pt10"  style='width:804px;height:30px;line-height:30px;font-size:20px;border-right: 1px solid #ccc;'><span>您没有订单信息</span></div>
+              
+            </div>
+        
+        
+        {/if}</div></div></div></div>
+        
+    </div>
+<div class="clear"></div>

@@ -1,0 +1,447 @@
+{template 'header'}
+ <script  src="{$CFG[url]}/file/script/Maya.MessageBox/Maya.MessageBox.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="{$CFG[url]}/file/script/Maya.MessageBox/Maya.MessageBox.css">
+
+    <form action="{$DT[file_register]}" id="register" name="register" method="post" target="send" >
+<!-- 会员注册页面 -->
+<div class="u_regist_box">
+<!-- 纯DIV+CSS简单实现Tab选项卡左右切换 -->
+ 
+   <div id="content_wrapper">
+    
+    <div id="u_example">
+           
+			<input name="action" type="hidden" id="action" value="{crypt_action('register')}"/>
+			<input name="forward" type="hidden" value="{$forward}"/>
+			<input name="submit_register" type="hidden" value="1"/>
+			<input name="post[regid]" type="hidden" value="5"/>
+            <ul class="u_regist_nav">
+                <li class="u_current"><a href="{$MODULE[2][linkurl]}{$DT[file_register]}?r=0" class="current" >客户注册</a></li>
+                <li class=""><a href="{$MODULE[2][linkurl]}{$DT[file_register]}?r=1">设计师注册</a></li>
+               
+            </ul>
+            
+            <div class="list-wrap">
+            
+                <div id="featured">
+                    
+                      <div class="u_regist_kehu">
+                          <div class="u_regist_kehu_lf">
+                              <div class="u_regist_kehu_lf_img">
+                                <img src="{DT_SKIN}/image/u_regist_img1.gif" alt="">
+                              </div>
+                              <div class="u_regist_kehu_lf_from">
+                                <p> 会 员 名  : <i>*</i> <input type="text" class="reg_inp" style="width:220px"name="post[username]" id="username" onblur="validator('username');" autocomplete="off" {if $username} value="{$username}" readonly{/if}/><span id="dusername" class="f_red" style="vertical-align: absmiddle;"></span>&nbsp;</p>
+                                <p> 密 &nbsp;&nbsp; 码 : <i>*</i> <input type="password" class="reg_inp"style="width:220px" name="post[password]" id="password" onblur="validator('password');" autocomplete="off"{if $password} value="{$password}" readonly{/if}/><span id="dpassword" class="f_red"></span>&nbsp;</p>
+                                <p> 确认密码 : <i>*</i> <input type="password" class="reg_inp"  style="width:220px"name="post[cpassword]" id="cpassword" onblur="validate('cpassword');" autocomplete="off"{if $password} value="{$password}" readonly{/if}/><span id="dcpassword" class="f_red"></span>&nbsp;</p>
+                                {if $MOD[captcha_register]}<p> 验 证 码  : <i>*</i> {template 'captcha', 'chip'}<span id="dcaptcha" class="f_red"></span>&nbsp;{/if}
+                                <span></span></p>
+                                <div class="u_regist_kehu_lf_zcbt">
+                                  <input type="button" value="下 &nbsp;&nbsp;&nbsp;一&nbsp;&nbsp;&nbsp;步" name="" class="" onclick="check()">
+                                </div>
+                                <div class="u_regist_kehu_lf_xy">
+                                    <input type="checkbox" value="1" name="xy" id="xy" onblur="validate('xy')" checked>我已阅读并同意 <a href="#" onclick="netxy()"><i>欧易网络协议</i></a><span id="dxy" class="f_red"></span>&nbsp;
+                                </div>
+                              </div>
+                          </div>
+                          <div class="u_regist_kehu_rt">
+                            <div class="u_regist_kehu_rt1">>>已经是会员？<a href="{$DT[file_login]}">请登录</a></div>
+                            <div class="u_regist_kehu_rt2">
+                              <input type="button" value="登录"  onclick="Go('{$DT[file_login]}');"class="">
+                            </div>
+                            <div class="u_regist_kehu_rt3">>>忘记密码？请点击 <a href="send.php"><i>这里找回</i></a></div>
+                          </div>
+                      </div>
+                    
+                  
+                  
+                </div>
+                 
+                 <div id="featured_1" class="hide">
+                    
+                      <div class="u_regist_kehu">
+                          <div class="u_regist_kehu_lf">
+                              <div class="u_regist_kehu_lf_img">
+                                <img src="{DT_SKIN}/image/u_regist_img2.gif" alt="">
+                              </div>
+                              <div class="u_regist_kehu_lf_from">
+		
+		
+                                <p> 真实姓名  : <i>*</i> <input type="text" class="reg_inp" style="width:220px;" name="post[truename]" id="truename" onblur="validate('truename');"/>
+			<input type="radio" name="post[gender]" value="1" style="height: auto;width: auto;line-height: auto;" checked id="gender_1"/><label for="gender_1"> 先生</label>
+			<input type="radio" name="post[gender]" value="2" style="height: auto;width: auto;line-height: auto;" id="gender_2"/><label for="gender_2"> 女士</label>	<span id="dtruename" class="f_red"></span>&nbsp;</p>
+                              <p> 手机号码 : <i>*</i> 
+                               <input type="text" class="reg_inp"  name="post[mobile]" id="mobile"{if $could_mobilecode} onblur="validator('mobile');"{/if}/>
+                               <span id="dmobile" class="f_red"></span></p>
+                                 	{if $could_mobilecode}<p> 验&nbsp;证&nbsp;码 : <i>*</i> 
+                               <input type="text" class="reg_inp" style="width:80px;" name="post[mobilecode]" id="mobilecode" onblur="validator('mobilecode');"/>
+			<input type="button" value="立即发送" id="send_scode"style="width:100px;" onclick="SendSCode();"/>
+                              <span id="dmobilecode" class="f_red"></span>&nbsp;	</p> 	
+                                	{/if}
+                        <p>电子邮箱 : <i>&nbsp;</i> <input type="text" class="reg_inp" style="width:220px;" name="post[email]" id="email" onblur="validator('email');"{if $email} value="{$email}" readonly{/if}/><span id="demail" class="f_red"></span></p>
+                                	
+                                	{if $could_emailcode}<p> 验&nbsp;证&nbsp;码 : <i>*</i> <input type="text" class="reg_inp" style="width:100px;" name="post[emailcode]" id="emailcode" onblur="validator('emailcode');"/><input type="button" value="立即发送" style="width:120px;" id="send_code" onclick="SendCode();"/>
+		    	<span id="demailcode" class="f_red"></span>&nbsp;	</p>
+			  {/if}
+                                <p> 所在地区 :  <i>*</i> 
+                               {ajax_area_select('post[areaid]', '请选择', $areaid, '', 2)}
+                                <span id="dareaid" class="f_red"></span></p>
+                                <p>Q Q 号码 : <i>&nbsp;</i>&nbsp;<input type="text" value="" name="post[qq]"><span></span></p>
+                            
+                                <div class="u_regist_kehu_lf_zcbt">
+                                  <input type="button" value="提交" name="" onclick="check1()" class="">
+                                </div>
+                               
+                              </div>
+                          </div>
+                           <div class="u_regist_kehu_rt">
+                            <div class="u_regist_kehu_rt1">>>已经是会员？<a href="{$DT[file_login]}">请登录</a></div>
+                            <div class="u_regist_kehu_rt2">
+                              <input type="button" value="登录"  onclick="Go('{$DT[file_login]}');"class="">
+                            </div>
+                            <div class="u_regist_kehu_rt3">>>忘记密码？请点击 <a href="send.php"><i>这里找回</i></a></div>
+                          </div>
+                      </div>
+                 
+  
+             </div> 
+         
+         </div> <!-- END Tabs (Example) -->
+
+  
+    
+    </div>
+</div>
+</div>
+</form>
+
+
+<!-- 会员注册页面结束 -->
+<script type="text/javascript" src="{DT_STATIC}file/script/guest.js"></script>
+<script>
+window.onload = function ()
+{
+     document.body.onkeydown=function(event)
+    {
+        if(event.keyCode==13)
+        {
+            
+            return false;
+        }
+    }
+}
+</script>
+<script type="text/javascript">
+
+
+if(Dd('username').value == '') Dd('username').focus();
+var vid = '';
+function validator(id) {
+	vid = id;
+	makeRequest('moduleid={$moduleid}&action=member&job='+id+'&value='+Dd(id).value, AJPath, '_validator');
+}
+function _validator() {
+	if(xmlHttp.readyState==4 && xmlHttp.status==200) {
+		Dd('d'+vid).innerHTML = xmlHttp.responseText ? '<img src="{DT_SKIN}image/check_error.gif" align="absmiddle"/> '+xmlHttp.responseText : '<img src="{DT_SKIN}image/check_right.gif" align="absmiddle"/> ';
+	}
+}
+function err_msg(str, id) {
+	Dd('d'+id).innerHTML = '<img src="{DT_SKIN}image/check_'+(str ? 'error' : 'right')+'.gif" align="absmiddle"/> '+str;
+}
+function validate(type) {
+	if(type == 'cpassword') {
+		if(Dd('cpassword').value != Dd('password').value) {
+			err_msg('两次输入的密码不一致', type);
+		} else {
+			err_msg('', type);
+		}
+	}
+	if(type == 'truename') {
+		if(Dd('truename').value.length < 2) {
+			err_msg('请输入真实姓名', type);
+		} else {
+			err_msg('', type);
+		}
+	}
+	if(type == 'idcard') {
+		if(Dd('idcard').value.match(/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/)) {
+			err_msg('', type);
+		} else {
+			err_msg('请输入正确的身份证号码', type);
+		}
+	}
+	if(type == 'telephone') {
+		if(Dd('telephone').value.match(/^[0-9\-\(\)\+\.]{7,}$/)) {
+			err_msg('', type);
+		} else {
+			err_msg('请输入联系电话', type);
+		}
+	}
+	if(type == 'xy') {
+		if(Dd('xy').checked ==true) {
+			err_msg('', type);
+		} else {
+			err_msg('请勾选', type);
+		}
+	}
+}
+function reg(type) {
+	if(type) {
+	$("#featured").addClass("hide");
+	$("#core").removeClass("hide");
+	} else {
+	$("#core").addClass("hide");
+	$("#featured").removeClass("hide");
+	}
+}
+function Df(ID) {
+	Dd(ID).focus();
+}
+function check() {
+	var f,p;
+	f = 'username';
+	if(Dd(f).value == '') {
+		err_msg('请填写会员登录名', f);
+		Df(f);
+		return false;
+	}
+	if(Dd('d'+f).innerHTML.indexOf('error') != -1) {
+		Df(f);
+		return false;
+	}
+	f = 'password';
+	if(Dd(f).value.length < 6) {
+		err_msg('请填写会员登录密码', f);
+		Df(f);
+		return false;
+	}
+	if(Dd('d'+f).innerHTML.indexOf('error') != -1) {
+		Df(f);
+		return false;
+	}
+	f = 'cpassword';
+	if(Dd(f).value == '') {
+		err_msg('请重复输入密码', f);
+		Df(f);
+		return false;
+	}
+	if(Dd('password').value != Dd(f).value) {
+		err_msg('两次输入的密码不一致', f);
+		Df(f);
+		return false;
+	}
+	{if $MOD[captcha_register]}
+	f = 'captcha';
+	if(!is_captcha(Dd(f).value)) {
+		Dmsg('请填写验证码', f);
+		return false;
+	}
+	{/if}
+	if(Dd('truename').value.length !=11111){
+		$("#featured").addClass("hide");
+		$("#featured_1").removeClass('hide');
+	}else{
+		return false;
+	}
+
+}
+function check1(){
+	f = 'truename';
+	if(Dd(f).value == '') {
+		err_msg('请填写真实姓名', f);
+		Df(f);
+		return false;
+	}
+	f = 'password';
+	if(Dd(f).value.length < 6) {
+		err_msg('请填写会员登录密码', f);
+		Df(f);
+		return false;
+	}
+	if(Dd('d'+f).innerHTML.indexOf('error') != -1) {
+		Df(f);
+		return false;
+	}
+	if(Dd('areaid_1').value == 0) {
+		Dmsg('请选择所在地', 'areaid');
+		return false;
+	}
+
+
+	{if $MOD[question_register]}
+	f = 'answer';
+	if(Dd(f).value == '') {
+		Dmsg('请回答验证问题', f);
+		return false;
+	}
+	{/if}
+	{if $MOD[captcha_register]}
+	f = 'captcha';
+	if(!is_captcha(Dd(f).value)) {
+		Dmsg('请填写验证码', f);
+		return false;
+	}
+	{/if}
+	submitForm1();
+  function submitForm1(){
+	        var username=$("#username").val();
+			var register_yz=$("#register").serialize();
+					$.ajax({
+						url:"{$CFG[url]}/member/register_yz.php",
+
+						type: 'POST',
+
+						data:register_yz,
+						dataType: 'html',
+						timeout: 1000,
+
+						error: function(){
+							alert('Error loading PHP document');
+							
+						},
+						success: function(result){
+					
+							if(result=='success')
+								{
+								Maya.MessageBox("尊敬的"+username+",恭喜您注册成功");
+								
+								location.href="{$CFG[url]}/member/welcome.php";
+								}else{
+					
+								document.write(result);
+								location.href="{$CFG[url]}/member/register.php?r=0";
+								}
+							}
+
+						});		
+		
+		}
+	
+}
+function SendCode() {
+	if(Dd('demail').innerHTML.indexOf('right') == -1) {
+		Dd('email').focus();
+		return;
+	}
+	makeRequest('action={$action_sendcode}&value='+Dd('email').value, '{$DT[file_register]}', '_SendCode');
+	Dh('sendok');
+	Dd('send_code').value = '正在发送';
+	Dd('send_code').disabled = true;
+}
+function _SendCode() {
+	var f = 'email';
+	if(xmlHttp.readyState==4 && xmlHttp.status==200) {			
+		Dd('send_code').value = xmlHttp.responseText == 1 ? '发送成功' : '立即发送';
+		Dd('send_code').disabled = xmlHttp.responseText == 1 ? true : false;
+		if(xmlHttp.responseText == 1) {
+			Ds('sendok');
+			Dd('dsendok').innerHTML = '<img src="{DT_STATIC}{$MODULE[2][moduledir]}/image/ico_mailok.gif" align="absmiddle"/> <span class="f_green">邮件发送成功，</span> <a href="goto.php?action=emailcode&email='+Dd(f).value+'" target="_blank">立即查收</a>';
+			StopCode();
+		} else if(xmlHttp.responseText == 2) {
+			err_msg('邮件格式错误，请检查', f);
+			Df(f);
+		} else if(xmlHttp.responseText == 3) {
+			err_msg('邮件地址已存在，请更换', f);
+			Df(f);
+		} else if(xmlHttp.responseText == 4) {
+			err_msg('此邮件域名已经被禁止注册，请更换', f);
+			Df(f);
+		} else if(xmlHttp.responseText == 5) {
+			alert('邮件发送过快，请稍后再试');
+		} else if(xmlHttp.responseText == 6) {
+			alert('尝试发送次数太多，请稍后再试');
+		} else {
+			alert('未知错误，请重试');
+		}
+	}
+}
+function StopCode() {
+	Dd('send_code').disabled = true;
+	var i = 60;
+	var interval=window.setInterval(
+		function() {
+			if(i == 0) {
+				Dd('send_code').value = '立即发送';
+				Dd('send_code').disabled = false;
+				clearInterval(interval);
+			} else {
+				Dd('send_code').value = '重新发送('+i+')';
+				i--;
+			}
+		},
+	1000);
+}
+
+function SendSCode() {
+	if(Dd('dmobile').innerHTML.indexOf('right') == -1) {
+		Dd('mobile').focus();
+		return;
+	}
+	makeRequest('action={$action_sendscode}&value='+Dd('mobile').value, '{$DT[file_register]}', '_SendSCode');
+	Dh('sendsok');
+	Dd('send_scode').value = '正在发送';
+	Dd('send_scode').disabled = true;
+}
+function _SendSCode() {
+	var f = 'mobile';
+	if(xmlHttp.readyState==4 && xmlHttp.status==200) {			
+		Dd('send_scode').value = xmlHttp.responseText == 1 ? '发送成功' : '立即发送';
+		Dd('send_scode').disabled = xmlHttp.responseText == 1 ? true : false;
+		if(xmlHttp.responseText == 1) {
+			Ds('sendsok');
+			Dd('dsendsok').innerHTML = '<img src="{DT_STATIC}{$MODULE[2][moduledir]}/image/ico_mailok.gif" align="absmiddle"/> <span class="f_green">短信发送成功</span>';
+			StopSCode();
+		} else if(xmlHttp.responseText == 2) {
+			err_msg('手机号码格式错误，请检查', f);
+			Df(f);
+		} else if(xmlHttp.responseText == 3) {
+			err_msg('手机号码已存在，请更换', f);
+			Df(f);
+		} else if(xmlHttp.responseText == 5) {
+			alert('短信发送过快，请稍后再试');
+		} else if(xmlHttp.responseText == 6) {
+			alert('尝试发送次数太多，请稍后再试');
+		} else {
+			alert('未知错误，请重试');
+		}
+	}
+}
+function StopSCode() {
+	Dd('send_scode').disabled = true;
+	var i = 180;
+	var interval=window.setInterval(
+		function() {
+			if(i == 0) {
+				Dd('send_scode').value = '立即发送';
+				Dd('send_scode').disabled = false;
+				clearInterval(interval);
+			} else {
+				Dd('send_scode').value = '重新发送('+i+')';
+				i--;
+			}
+		},
+	1000);
+}
+
+
+function netxy(){
+	new Maya.Box({
+		text : "欧易服务协议",
+		url : "{$CFG[url]}/member/agreement.php",
+		width :670,
+		height : 200,
+		btns : [
+    	
+			
+			{
+				text : "    确定     ",
+				onClick : function(w){
+    				w.close();
+				}	
+			}
+		]
+	});	
+}
+</script>
+
+{template 'footer'}

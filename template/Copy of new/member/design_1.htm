@@ -1,0 +1,186 @@
+{template 'header2'}
+
+<div class="u_wsxq">
+	<div class="u_wsxq_baner">
+		<img src="{DT_SKIN}/image/u_wsxq_ban.jpg" alt="">
+	</div>
+	<div class="u_mbxdh">
+		<span>·您的位置：<a href="">首页</a> > <a href="">商城</a> > <a href="">提交订单</a> > <a href="">完善网站需求</a></span>
+	</div>
+	<!-- 订单详情 -->
+
+
+
+	<div class="u_ddxqsw">
+		<div class="u_ddxqsw_t"><span>订单详情</span></div>
+		<div class="u_ddxqsw_con">
+			<div class="u_ddxqsw_con_l">
+				<span><b>公司名称：</b>{$td[buyer_name]}（{$td[title]}）</span>
+				<span><b>订单编号：</b>{$td[itemid]}</span>
+				<span><b>所在地区：</b>{$td[areaid]}</span>
+			
+				<span><b><i>项目状态：</i></b>{$td[status_zt]}（<i>已付款{$td[ready_money]}元  </i>）</span>
+			</div>
+			<div class="u_ddxqsw_con_r">
+				<span><b>订单总金额：</b><i><b>{$td[amount]}元</b></i></span>
+				<span><b>订单时间：</b>{$td['adddate']}</span>
+				<span><b>行业：</b>{$td[hy_sort]}</span>
+			<span><a href="message.php?action=send&touser={$td[buyer]}" target="_blank"><img src="{DT_SKIN}/image/fasongzhanneixin.gif" alt=""></a>&nbsp;<a href="chat.php?touser={$td[buyer]}&mid=16&itemid={$td[itemid]}"  target="_blank"><img src="{DT_SKIN}/image/onlingoutong.gif" alt=""></a></span>
+			</div>
+		</div>
+	</div>
+	<!-- 订单详情 结束-->
+	<!-- 建站资料开始 -->
+
+	<!-- 建站资料选项卡 -->
+	
+	
+  <div class="js_case clear">
+    <div class="js_title cf">
+	
+      <ul class="js_title-list cf">
+     <li><a href="design.php?itemid={$itemid}&action=update&step=logo&forward={$_GET[forward]}">建站资料</a></li>
+        <li class="on"><a href="design.php?itemid={$itemid}&action=update&step=index&forward={$_GET[forward]}">首页设计</a></li>
+        <li><a href="design.php?itemid={$itemid}&action=update&step=design&forward={$_GET[forward]}">PSD上传</a></li>
+      </ul>
+    </div>
+    <div class="product-wrap">
+     <!--建站资料-->
+     <div class="js_product" >
+
+     </div>
+<div class="js_product show">
+
+<form method="post" action="design.php" id="dform">
+	<input type="hidden" name="forward" value="{$forward}"/>
+	<input type="hidden" name="action" value="{$action}"/>
+	<input type="hidden" name="step" value="{$step}"/>
+	<input type="hidden" name="itemid" value="{$itemid}"/>
+	<input type="hidden" value="" name="picid" id="picid">
+	<input type="hidden" name="confirm_order" value="1"/>
+<div class="u_jzzl_index_sj" id="u_jzzl_index_sj">
+        	<div class="u_jzzl_index_sj_k" id="u_jzzl_index_sj_k">
+        		<div class="u_shejisTiJ_ZuoPin_show">
+                    <div class="u_jzzl_index_sj_cont6_lf">
+                            <p>
+                                <b>已经提交的首页设计稿：</b><br /><br /><br /><i> 注：未审核前仅能预览小图，不可以点击浏览。</i>
+                            </p>
+                    </div>
+                    <div class="u_jzzl_index_sj_cont6_rt">
+                            <ul>
+                            {loop $index_alls $i $k}
+                             {if $k[checked]==1}
+                             
+                                 <li> <div class="">
+                                    <a href="{$CFG[url]}extend/view_pic.php?img={$k[upload]}" target="_blank"><img src="{$k[upload]}" alt=""></a>
+                                    <span>{$k[designer]}</span>
+                                    </div>
+                                   </li>   
+                             
+                             {else}
+                             
+                                 <li> <div class="">
+                                    <a href="#"><img src="{$k[upload]}"  alt=""></a>
+                                    <span>{$k[designer]}</span>
+                                    </div>
+                                   </li>   
+                             
+                             {/if}
+                                    
+                              
+                            {/loop}
+                             
+                                
+                            </ul>
+                    </div>
+                </div>
+                <div class="u_shejisTiJ_ZuoPin_show_1">
+                    <div class="u_jzzl_index_sj_cont6_lf">
+                            <p>
+                                <b>首页稿件提交：(点击图片下链接可以模拟网页浏览)</b><br /><br /><br /><i> 注：未审核前作品可以点击图片修改</i>
+                            </p>
+                    </div>
+                    <div class="u_jzzl_index_sj_cont6_rt">
+                            <ul>
+
+                            {loop $my_indexs $i $v}
+                            
+                                  {if $v[checked]==1}
+                                <li>
+                                    <div class="">
+                                   <img src="{$v[upload]}" alt="" id="showthumb{$v[id]}"/>
+                                    <span>{$v[addtime]}</span>
+                                    </div>
+                                   <p><a href="{$CFG[url]}extend/view_pic.php?img={$v[upload]}" target="_blank" >模拟网页浏览>></a></p>
+                                </li>
+                                
+                                {else}
+                                   <li>
+                                    <div class="">
+                           
+                                    <input type="hidden" name="pot[thumb{$v[id]}]" id="thumb{$v[id]}" value="1"/>
+                                   <img src="{$v[upload]}" alt="" id="showthumb{$v[id]}" onclick="Dalbum('{$v[id]}',{$moduleid},{$MOD[thumb_width]},{$MOD[thumb_height]}, Dd('showthumb{$v[id]}').value, true);"/>
+                                    <span>{$v[addtime]}</span>
+                                    </div>
+                                   <p><a href="{$CFG[url]}extend/view_pic.php?img={$v[upload]}" target="_blank" >模拟网页浏览>></a></p>
+                                </li>
+                                
+                                {/if}
+                             {/loop}
+                            </ul>
+                    </div>
+                </div>
+                <div class="u_shejisTiJ_ZuoPin_time">
+                	<div class="u_shejisTiJ_ZuoPin_time_t"><b>提交首页或修稿稿件：<i>首页提交倒计时：4天11小时13分05秒</i></b></div>
+                	<div class="u_shejisTiJ_ZuoPin_time_cont">
+                	{if $td[status]==3 && $td[y]==1}
+                			
+	                		<div class="u_shejisTiJ_ZuoPin_time_lf">
+	                			<b>新上传<input type="hidden" name="post[upload]" id="thumb" value="{$thumb}"/></b><span><img src="{if $thumb}{$thumb}{else}{DT_SKIN}image/waitpic.gif{/if}" width="100" height="100" id="showthumb" title="预览图片" alt="" onclick="if(this.src.indexOf('waitpic.gif') == -1){_preview(Dd('showthumb').src, 1);}else{Dalbum('',{$moduleid},{$MOD[thumb_width]},{$MOD[thumb_height]}, Dd('thumb').value, true);}"/>
+	                     <div style='height: 10px;line-height: 20px;padding-left: 16px;'><img src="{DT_STATIC}{$MODULE[2][moduledir]}/image/img_upload.gif" width="12" height="12" title="上传" onclick="Dalbum('',{$moduleid},{$MOD[thumb_width]},{$MOD[thumb_height]}, Dd('thumb').value, true);"/>&nbsp;&nbsp;<img src="{DT_STATIC}{$MODULE[2][moduledir]}/image/img_select.gif" width="12" height="12" title="选择" onclick="selAlbum('');"/>&nbsp;&nbsp;<img src="{DT_STATIC}{$MODULE[2][moduledir]}/image/img_delete.gif" width="12" height="12" title="删除" onclick="delAlbum('','wait');"/></div>
+	                          </span>
+	                		</div>
+	                		<div class="u_shejisTiJ_ZuoPin_time_min">
+	                			<p> <input type="checkbox" value="1" name="sendsms" >短信通知客户 (我的可用短信 <i> {$_sms} </i>条)</p>
+	                			<p> 支持文件格式：jpg</p>
+	                		</div>
+	                		<div class="u_shejisTiJ_ZuoPin_time_btn">
+	                			<input type="submit" value="提交" name="submit">
+	                		</div>
+	                		
+	                {elseif $td[status]==2 }
+	                	<p> 
+	                		<div class="u_shejisTiJ_ZuoPin_time_lf">
+	                			<b>新上传<input type="hidden" name="post[upload]" id="thumb" value="{$thumb}"/></b><span><img src="{if $thumb}{$thumb}{else}{DT_SKIN}image/waitpic.gif{/if}" width="100" height="100" id="showthumb" title="预览图片" alt="" onclick="if(this.src.indexOf('waitpic.gif') == -1){_preview(Dd('showthumb').src, 1);}else{Dalbum('',{$moduleid},{$MOD[thumb_width]},{$MOD[thumb_height]}, Dd('thumb').value, true);}"/>
+	                     <div style='height: 10px;line-height: 20px;padding-left: 16px;'><img src="{DT_STATIC}{$MODULE[2][moduledir]}/image/img_upload.gif" width="12" height="12" title="上传" onclick="Dalbum('',{$moduleid},{$MOD[thumb_width]},{$MOD[thumb_height]}, Dd('thumb').value, true);"/>&nbsp;&nbsp;<img src="{DT_STATIC}{$MODULE[2][moduledir]}/image/img_select.gif" width="12" height="12" title="选择" onclick="selAlbum('');"/>&nbsp;&nbsp;<img src="{DT_STATIC}{$MODULE[2][moduledir]}/image/img_delete.gif" width="12" height="12" title="删除" onclick="delAlbum('','wait');"/></div>
+	                          </span>
+	                		</div>
+	                		<div class="u_shejisTiJ_ZuoPin_time_min">
+	                			
+	                			<p> 支持文件格式：jpg</p>
+	                		</div>
+	                		<div class="u_shejisTiJ_ZuoPin_time_btn">
+	                			<input type="submit" value="提交" name="submit">
+	                		</div>
+	               {else}
+	               
+	                {/if}		
+                	</div>
+                </div>
+               
+              
+        	</div>
+        </div>
+</form>
+</div>
+<div class="js_product"></div>
+<div class="js_product"></div>
+<div class="js_product"></div>
+     
+    </div>
+  </div>
+		<!-- 建站资料选项卡 结束-->
+</div>
+	<!-- 建站资料结束 -->
+
+{template 'footer'}

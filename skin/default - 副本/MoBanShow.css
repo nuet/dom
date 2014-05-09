@@ -1,0 +1,381 @@
+@charset "utf-8";
+/*模版显示页*/
+.MYanshi{
+	height: auto;
+	width: 100%;
+	
+	background: #F9F4F4;
+	
+	border-bottom: 1px solid #ccc;
+}
+.MYanshi_LOGO{
+	padding: 10px 0;
+	height: 31px;
+	background: #F9F4F4;
+	line-height: 31px;
+}
+.MYanshi span{
+	float: left;
+}
+.MYanshi_L_span0{
+	margin: 0 10px; 
+}
+.MYanshi_L_span1{
+	font-size: 14px;
+	font-family: "微软雅黑";
+	margin-right: 10px;
+
+
+}
+.MYanshi_L_span2 i{
+	color: #0092D2;
+}
+.MYanshi_L_span3{
+	background: url(./image//MB_show_qxz.jpg) no-repeat -2px 5px;
+	display: block;
+	width: 150px;
+	height: 26px;
+	margin-left: 10px;
+	padding-left: 5px;
+	color: #fff;
+}
+.MYanshi_L_span4 ul li{
+	float: left;
+	margin-right: 10px;
+}
+.MYanshi_L_span4 ul li a{
+	display: block;
+	width: 68px;
+	height: 26px;
+	text-align: center;
+	background: url(./image//MB_show_Yello_bg.jpg) no-repeat -1px 5px;
+	color: #fff;
+}
+.MYanshi_L_span4 ul li a:hover{
+	background: url(./image//MB_show_Blue_bg.jpg) no-repeat -1px 5px;
+	color: #fff;
+}
+.MYanshi_L_span4 ul li a.Blue{
+	background: url(./image//MB_show_Blue_bg.jpg) no-repeat -1px 5px;
+	color: #fff;
+}
+.MYanshi_L_span4 ul li a.Yello{
+	background: url(./image//MB_show_Yello_bg.jpg) no-repeat -1px 5px;
+	color: #fff;
+}
+.MYanshi_L_span5{
+	float: right;
+	margin-right: 10px;
+}
+.MYanshi_L_span5 i{
+	color: #FF794C;
+	display: block;
+	float: left;
+}
+.MYanshi_L_span5 a{
+	display: block;
+	background: #FF6D12;
+	width: 113px;
+	height: 29px;
+	line-height: 29px;
+	text-align: center;
+	font-style: 14px;
+	font-weight: bold;
+	color: #fff;
+	float: left;
+}
+/*下拉*/
+.MYanshi_heder{
+	width: 100%;
+	position: relative;
+	margin: 0 auto;
+}
+.tplpreview-w-handler {
+
+width: 100%;
+
+}
+.tplpreview-handler {
+position: absolute;
+top: 0px;
+right: 30px;
+}
+.tplpreview-handler .expand a.open {
+background-position: 0 -100px;
+}
+.tplpreview-handler .expand a {
+width: 53px;
+height: 40px;
+background-position: 0 0;
+}
+.tplpreview-handler a {
+display: block;
+background: url(./image//alpha.png) no-repeat 0 -9999px;
+text-indent: -9999px;
+_background-image: url(./image//btns.png);
+}
+.tplpreview-handler .order {
+padding: 8px 0 0 4px;
+}
+.hide {
+display: none;
+}
+.tplpreview-handler .order a {
+width: 45px;
+height: 45px;
+background-position: -4px -48px;
+}
+.tplpreview-handler a {
+display: block;
+background: url(./image//alpha.png) no-repeat 0 -9999px;
+text-indent: -9999px;
+_background-image: url(./image//btns.png);
+}
+/*模版显示页面img*/
+.MYanshi_page{
+	width: 1000px;
+	margin:3px auto;
+	height: auto;
+}
+/*工具*/
+.tool-wrap {
+font-size: 12px;
+font-weight: normal;
+position: absolute;
+right: 0;
+top: 130px;
+z-index: 40;
+}
+/*= -----------------------------------------------
+    Tool
+    ----------------------------------------------- =*/
+.tool-wrap {
+	font-size:12px;
+	font-weight:normal;
+	position:absolute;
+	right:0;
+	top:130px;
+	z-index:40;
+}
+.float-tool-mini {
+	display:none;
+	width:45px;
+	background:#eee;
+}
+.float-tool-mini .link-open {
+	background:#eee url(./image//tool-btn.png) no-repeat -160px 0;
+	border:1px solid #ddd;
+}
+.float-tool-mini .link-open a {
+	display:block;
+	padding:30px 4px 10px;
+	width:37px;
+	color:#333 !important;
+	line-height:14px;
+	text-align:center;
+}
+.float-tool-mini .link-open a:hover {
+	text-decoration:none;
+}
+.float-tool {
+	width:58px;
+	background:#fff;
+	border:1px solid #ddd;
+}
+.float-tool .link-close {
+	background:#eee;
+}
+.float-tool .link-close a {
+	display:block;
+	width:58px;
+	height:38px;
+	background:#eee url(./image//tool-btn.png) no-repeat -50px 6px;
+	text-indent:-9999px;
+}
+.float-tool .tool-list li {
+	*float:left;
+	*width:100%;
+	border-top:1px solid #eee;
+}
+.float-tool .tool-list li a {
+	display:block;
+	color:#333;
+	text-decoration:none;
+}
+.float-tool .tool-list li .tool-btn {
+	height:16px;
+	line-height:16px;
+	padding:33px 0 8px;
+	overflow:hidden;
+	text-align:center;
+	background:url(./image//tool-icon.png) no-repeat 0 -9999px;
+}
+.float-tool .tool-list li .tool-btn:hover {
+	text-decoration:none;
+	background-color:#ddd;
+}
+.float-tool .tool-list li.cart .tool-btn {
+	background-position:20px -411px;
+}
+.float-tool .tool-list li.chat .tool-btn {
+	background-position:20px 14px;
+}
+.float-tool .tool-list li.fav .tool-btn {
+	background-position:21px -42px;
+}
+.float-tool .tool-list li.setindex .tool-btn {
+	background-position:21px -94px;
+}
+.float-tool .tool-list li.follow .tool-btn {
+	background-position:19px -147px;
+}
+.float-tool .tool-list li.share .tool-btn {
+	background-position:21px -205px;
+}
+.float-tool .tool-list li.member .tool-btn {
+	background-position:21px -546px;
+}
+.float-tool .tool-list li.cart,.float-tool .tool-list li.box {
+	position:relative;
+}
+.float-tool .tool-list li.cart .total {
+	position:absolute;
+	right:5px;
+	top:5px;
+	display:block;
+	width:17px;
+	height:19px;
+	background:url(./image//tool-icon.png) no-repeat 0 -480px;
+	font-family:Arial,Helvetica,sans-serif;
+	font-size:10px;
+	font-weight:bold;
+	color:#fff;
+	line-height:16px;
+}
+.float-tool .tool-list li.cart .tool-btn:hover .total {
+	background-position:0 -499px;
+}
+.float-tool .tool-list li.box .more {
+	display:block;
+	position:absolute;
+	left:1px;
+	top:1px;
+	width:4px;
+	height:4px;
+	overflow:hidden;
+	background:url(./image//tool-btn.png) no-repeat -230px -13px;
+}
+.float-tool .tool-list li.operate {
+	_position:relative;
+	margin-bottom:-1px;
+	background:#ddd;
+	height:8px;
+	overflow:hidden;
+	border-top:1px solid #c9c9c9;
+	border-bottom:1px solid #c9c9c9;
+}
+.float-tool .tool-list li.operate a {
+	display:block;
+	height:8px;
+	padding:0;
+	background:url(./image//tool-btn.png) no-repeat 0 -9999px;
+	text-indent:-9999px;
+}
+.float-tool .tool-list li.operate .openbtn {
+	background-position:-203px 2px;
+}
+.float-tool .tool-list li.operate .closebtn {
+	background-position:-203px -33px;
+}
+.float-tool .child {
+	position:absolute;
+	left:-120px;
+	top:0;
+	display:none;
+	width:119px;
+	background:#f8f8f8;
+	border:1px solid #d7d7d7;
+	border-right:none;
+}
+.float-tool .child .title {
+	color:#666;
+	font-weight:bold;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+	overflow:hidden;
+	background:#eee;
+	border-bottom:1px solid #e4e4e4;
+}
+.float-tool li.chat .child .choise {
+	background-position:51px 14px;
+}
+.float-tool li.follow .child .choise {
+	background-position:49px -147px;
+}
+.float-tool li.share .child .choise {
+	background-position:51px -205px;
+}
+.float-tool .child-list li {
+	border:none;
+}
+.float-tool .child-list li a {
+	color:#333;
+	height:24px;
+	line-height:24px;
+	overflow:hidden;
+	padding:0 10px 0 30px;
+	text-align:left;
+	background-repeat:no-repeat;
+	background-position:5px 50%;
+}
+.float-tool .child-list li a:hover {
+	opacity:0.75;
+	_text-decoration:underline;
+}
+.float-tool li.follow .child-list li a {
+	background:url(./image//tool-icon.png) no-repeat 0 -9999px;
+}
+.float-tool li.follow .child-list li.sina a {
+	background-position:7px -316px;
+	*background-position:7px -318px;
+}
+.float-tool li.follow .child-list li.qq a {
+	background-position:7px -362px;
+	*background-position:7px -364px;
+}
+.float-tool .tool-list .bshare-custom {
+	padding:3px 7px;
+}
+.float-tool .tool-list .bshare-custom a {
+	margin:8px 0;
+}
+.tool-wrap .link-top {
+	background:#eee;
+	width:58px;
+	border:1px solid #ddd;
+	border-top:none;
+}
+.tool-wrap .link-top a {
+	display:block;
+	width:58px;
+	height:59px;
+	overflow:hidden;
+	background:#eee url(./image//tool-btn.png) no-repeat 13px 11px;
+	text-indent:-9999px;
+}
+.tool-wrap-mini .link-top {
+	width:45px;
+	border:none;
+}
+.tool-wrap-mini .link-top a {
+	display:block;
+	width:45px;
+	height:30px;
+	background:#eee url(./image//tool-btn.png) no-repeat -108px 6px;
+	text-indent:-9999px;
+}
+
+
+/*= -----------------------------------------------
+/*工具 end*/

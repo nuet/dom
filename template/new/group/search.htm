@@ -1,0 +1,82 @@
+{template 'header_mb'}
+<script type="text/javascript" src="{DT_STATIC}/file/script/search_mb.js"></script>
+<div class="QuanZ_An_Box">
+      <div class="QuanZ_An_S_T">
+        <div class="QuanZ_An_S_Nav"style="background:#FFF">
+          <p> <a href="{$CFG[url]}">首页</a> >  <a href="{$MOD[linkurl]}">{$MOD[name]}</a> &raquo; <a href="{$MOD[linkurl]}search.php">搜索</a></p>
+          <div class="QuanZ_An_biaoqian" id="QuanZ_An_biaoqian"style="background:#FFF">
+            <!-- get获取选择的值 -->
+            <span class="hide"><a style="cursor:pointer"></a></span>
+            <!-- get获取选择的值结束 -->
+          </div>
+        </div>
+        <div class="QuanZ_An_S_xz" id="QuanZ_An_S_xz_sq">
+          <div class="QuanZ_An_S_xz_h">
+            <div class="search_hy clear">
+             <span>套餐：</span>
+             <p></p><ul id="tc">
+             {loop $all_types $i $v}
+                   {if $v[catid]==$catid }
+                      <li><a href="?catid={$v[catid]}&color={$_GET[color]}&ks={$_GET[ks]}"  name='{$v[catid]}' id="search_icon">{set_style($v[catname],$v[style])}</a></li>
+                  {else}
+                      <li><a href="?catid={$v[catid]}&color={$_GET[color]}&ks={$_GET[ks]}" name='{$v[catid]}'>{set_style($v[catname],$v[style])}</a></li>
+                  {/if}
+              
+                  {/loop}
+              </ul>
+            </div>
+        
+          <!-- 色系开始 -->
+          <div class="seach_color">
+            <span>色系：</span>
+            
+             <ul  id="QuanZ_An_color"  class="QuanZ_An_color QuanZ_An_Bq_a">
+              {loop $colors_all $i $c}
+                {if $c[key]==$_GET[color]}
+                   <li><a href="?catid={$_GET[catid]}&color={$c[key]}&ks={$_GET[ks]}" id="search_color_{$c[key]}" class="S_{$c[key]}"><i>{$c[name]}</i></a></li>
+                {else}
+                
+                    <li><a href="?catid={$_GET[catid]}&color={$c[key]}&ks={$_GET[ks]}" class="S_{$c[key]}"><i>{$c[name]}</i></a></li>
+                {/if}
+           
+              {/loop}
+               
+              </ul>
+           
+          </div>
+          </div>
+
+          <!-- 色系结束 -->
+          <!-- 套餐选择开始 -->
+         
+          <!-- 套餐选择结束 -->
+        </div>
+        <div class="search_tc clear">
+           </div>
+      </div>
+      <div class="Q_toggle">
+      <div class="Q_bar clear"></div>
+            <div class="quan_nav nav1" id="JS_shouqi_fliter"></div>
+      </div>
+     
+      <!-- 全站搜索条件选择结束 -->
+  <!-- 搜索排序开始 -->
+  <div class="QuanZ_An_Pai">
+    <div class="QuanZ_An_Pai_t">
+      <p><span>案例排序：</span><a href="?catid={$_GET[catid]}&color={$_GET[color]}">默认</a> <a href="?catid={$_GET[catid]}&color={$_GET[color]}&o=1">更新</a> <a href="?catid={$_GET[catid]}&color={$_GET[color]}&o=2">人气</a></p>
+      <span>共找到<i>{$items}</i>个案例</span>
+    </div>
+  </div>
+  <div class="QuanZ_An_List"> 
+    {if $tags}{template 'list-'.$module, 'tag'}{/if}      
+  </div>
+  <!-- 搜索排序结束 -->
+  <div class="QuanZ_An_Next">
+  {$pages}
+
+  </div>
+<!-- 全站搜素案例结果结束 -->
+  </div></div>
+  
+
+{template 'footer'}

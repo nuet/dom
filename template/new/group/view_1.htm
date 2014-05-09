@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$item[title]}</title>
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<script type="text/javascript" src="{DT_STATIC}/file/script/jquery-1.8.1.min.js"></script>
+<link href="{DT_SKIN}/global.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="{DT_STATIC}file/script/view_mb.js"></script>
+<link rel="stylesheet" type="text/css" href="{DT_SKIN}MoBanShow.css"/>
+
+
+</head>
+<body>
+<!-- 模版展示 -->
+<div class="MYanshi" id="MYanshi_s">
+  <div class="MYanshi_LOGO">
+    <span class="MYanshi_L_span0"><img src="{DT_SKIN}image/MYanshi_LOGO2.gif" alt=""></span>
+    <span class="MYanshi_L_span1">模版编号：{dsubstr(strip_tags($item[title]),5,'')}</span>
+    <span class="MYanshi_L_span2">设计师：<i>{$item[company]}</i></span>
+    <span class="MYanshi_L_span3">请选择要查看的页面演示</span>
+    <span class="MYanshi_L_span4">
+       <ul>
+       {loop $view_pics $i $k}
+     
+         <li><a href="{$CFG[url]}/group/view.php?itemid={$k[itemid]}&pic={$k[id]}"  
+       
+         {if $k[id]==$_GET[pic] } 
+         class="Blue"
+         {elseif !$_GET[pic] }
+          {if $i==0} class="Blue" {else}  class="Yellow"  {/if}
+         {else} 
+         class="Yellow"
+         {/if} 
+        >{$k[title]}</a></li>
+        {/loop}
+        <li class="Blue"><a href="{$CFG[url]}/group/view.php?itemid={$k[itemid]}&pic={$k[id]}&t=1">模版特色 </a>
+       </ul>
+    </span>
+    <div class="MYanshi_L_span5">
+      <i>温馨提示：网站截屏演示，模板与图片效果一样，可以放心购买。</i>
+      <a href="{$CFG[url]}/group/show.php?itemid={$item[itemid]}">立即订购</a>
+    </div>
+  </div>
+  <div class="MYanshi_heder">
+    <div class="tplpreview-w-handler">
+    <div id="j-tplpreview-handler" class="tplpreview-handler">
+      <div class="expand"><a id="j-tplpreview-expand" class="close" href="javascript:void(0);" title="收缩">收缩</a></div>
+      <div class="MB_Sh_LJGM order hide"><a id="j-tplpreview-order2" href="{$CFG[url]}/group/show.php?itemid={$item[itemid]}" title="立即购买">立即购买</a></div>
+    </div>
+  </div>
+  </div>
+</div>
+<div class="MYanshi_page">
+
+{if $item[ys]==1}
+<iframe id="ss" src="http://demo.8555.net/3177_5574/" scrolling="no" frameborder="0" onload="this.height=1000px"></iframe>
+{else}
+{if $_GET[t]==1 }
+{$item[content]}
+{else}
+ <img src="{$pic[pic]}" alt="">
+{/if}
+{/if}
+</div>
+
+<script type="text/javascript">
+function reinitIframe(){
+var iframe = document.getElementById("frame_content");
+try{
+var bHeight = iframe.contentWindow.document.body.scrollHeight;
+var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
+var height = Math.max(bHeight, dHeight);
+iframe.height =  height;
+}catch (ex){}
+}
+window.setInterval("reinitIframe()", 200);
+</script>
+
+
+
+</body>
+</html>

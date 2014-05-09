@@ -1,0 +1,1481 @@
+@charset "utf-8";
+/*展示网站页面*/
+.M_YQiYe_Bg .SGreen {
+background: #60B698;
+}
+.ZhanShi_G_Box{
+	width: 1000px;
+	margin: 10px auto;
+}
+/*展示页面套餐选择*/
+.ZhanShi_G_tc{
+	width: 998px;
+	height: 275px;
+	border: 1px solid #ccc;
+	background: #F9F9F9;
+}
+.malf5{
+	margin-left: 5px;
+}
+.matp5{
+	margin-top: 5px;
+}
+.matp10{
+	margin-top: 10px;
+}
+.malf10{
+	margin-left: 10px;
+}
+.malf12{
+	margin-left: 12px;
+}
+.ZhanShi_G_tc .ZhanShi_G_tc1{
+	float: left;
+	background: #fff;
+}
+.ZhanShi_G_tc .ZhanShi_G_tctop{
+	height: 251px;
+	width: 319px;
+	border: 1px solid #ccc;
+	position: relative;
+
+}
+.ZhanShi_G_tc .tuijian{
+	top: -6px;
+	left: -4px;
+	height: 90px;
+	width: 99px;
+	position: absolute;
+	z-index: 10px;
+	background: url(../images/Zhanshi_tuijian.gif) no-repeat;
+}
+.ZhanShi_G_tch2{
+	margin-top: 8px;
+	margin-left: 5px;
+	height: 46px;
+	width: 306px;
+	background: url(../images/ZhanShiTc_H2bg.jpg) no-repeat;
+	text-align: center;
+	font-size: 25px;
+	font-family: "方正兰亭中黑","Adobe 黑体 Std","微软雅黑","黑体";
+	/*font-weight: bold;*/
+}
+.ZhanShi_G_tctop .JCG{
+	color: #0AB8AD;
+}
+.ZhanShi_G_tctop .BZG{
+	color: #069F68;
+}
+.ZhanShi_G_tctop .GJG{
+	color: #064D76;
+}
+.ZhanShi_G_tcbot{
+	height: 8px;
+	width: 316px;
+	background: url(../images/ZhanShiTc_bont_yinyin.gif) no-repeat;
+}
+.ZhanShi_G_tcCont{
+	padding: 8px 18px 0 18px;
+	
+	color: #434343;
+	font-size: 14px;
+	font-family: "微软雅黑","Microsoft Yahei";
+}
+.ZhanShi_G_tcCont p span.JCTCone{
+	font-size: 20px;
+	color: #0AB8AD;
+}
+.ZhanShi_G_tcCont p span.BZTCTwo{
+	font-size: 20px;
+	color: #17694B;
+}
+.ZhanShi_G_tcCont p span.GJTCThree{
+	font-size: 20px;
+	color: #074D75;
+}
+.ZhanShi_G_tcCont p span i{
+	color: #FD6100;
+
+}
+.ZhanShi_G_tcCont p i{
+	color: #CD693F;
+}
+.ZhanShi_G_tcCont_lf{
+	width: 160px;
+	height: auto;
+	min-height: 114px;
+	margin-top: 10px;
+	float: left;
+	
+}
+.ZhanShi_G_tcCont_lf1{
+	
+}
+.ZhanShi_G_tcCont_lf1 span{
+	display: block;
+	float: left;
+	margin-right: 10px;
+}
+.ZhanShi_G_tcCont s{
+	text-decoration: none;
+	color: #0AB8AD;
+}
+.ZhanShi_G_tcCont s.Zengone{
+	color: #0AB8AD;
+}
+.ZhanShi_G_tcCont s.Zengone2{
+	color: #17694B;
+}
+.ZhanShi_G_tcCont s.Zengone3{
+	color: #074D75;
+}
+.ZhanShi_G_tcCont_rt{
+	float: left;
+	margin-top: 10px;
+}
+.ZhanShi_G_tcCont_rt p s.Tone{
+	color: #5B9E99;
+}
+.ZhanShi_G_tcCont_rt p s.Ttwo{
+	color: #17C185;
+}
+.ZhanShi_G_tcCont_rt p s.Tthiree{
+	color: #2291CD;
+}
+.ZhanShi_G_tcCont_rt p s{
+	color: #5B9E99;
+}
+.ZhanShi_G_tcCont_rt div.JCTCone{
+	color: #0AB8AE;
+}
+.ZhanShi_G_tcCont_rt div.BZTCtwo{
+	color: #055237;
+}
+.ZhanShi_G_tcCont_rt div.GJTCThree{
+	color: #0D5178;
+}
+.ZhanShi_G_tcCont_rt div i{
+	font-size: 40px;
+	font-family: "Century Gothic","微软雅黑";
+	font-weight: bold;
+}
+.ZhanShi_G_tcCont_rt div span{
+	display: block;
+	width: 109px;
+	height: 32px;
+	
+}
+.ZhanShi_G_tcCont_rt div span{
+	display: block;
+	width: 109px;
+	height: 32px;
+
+}
+.ZhanShi_G_tcCont_rt span a{
+	display: block;
+	width: 114px;
+	height: 37px;
+	color: #fff;
+	text-align: center;
+	line-height: 30px;
+	background-image: url(../images/NewGNbtn.fw.png);
+	background-repeat: no-repeat;
+}
+.ZhanShi_G_tcCont_rt span a.JCTC{
+	background-position: 0 0;
+}
+.ZhanShi_G_tcCont_rt span a.JCTC:hover{
+	background-position: -141px 0;
+}
+.ZhanShi_G_tcCont_rt span a.BZTC{
+	background-position: 0 -44px;
+}
+.ZhanShi_G_tcCont_rt span a.BZTC:hover{
+	background-position: -141px -44px;
+}
+.ZhanShi_G_tcCont_rt span a.GJTC{
+	background-position: 0 -88px;
+}
+.ZhanShi_G_tcCont_rt span a.GJTC:hover{
+	background-position: -141px -88px;
+}
+/*展示页面套餐选择 end*/
+/*展示页面套餐选择精品案例*/
+.ZhanShi_G_JPshow{
+	width: 1000px;
+	margin-top: 16px;
+}
+.ZhanShi_G_JPshowT{
+	height: 32px;
+	
+	font-family: "方正兰亭中黑","Adobe 黑体 Std","微软雅黑","黑体";
+}
+.ZhanShi_G_JPshowT .ZhanShi_JPzuanshi{
+	margin-left: 10px;
+	display: block;
+	width: 32px;
+	height: 28px;
+	background: url(../images/zuanshi.png) no-repeat;
+	float: left;
+	margin-right: 5px;
+}
+.ZhanShi_G_JPshowT i{
+	float: left;
+	font-size: 20px;
+	color: #FF6D12;
+	line-height: 30px;
+	
+}
+.ZhanShi_G_JPshowT a{
+	float: right;
+	font-size: 14px;
+	color: #D45A0D;
+	line-height: 30px;	
+}
+.ZhanShi_G_JPshowTxx{
+	height: 3px;
+	background: #FD6100;
+}
+/*精品案例轮播*/
+.ZhanShi_G_JPshowBown{
+	margin-top: 30px;
+	
+}
+.ZhanShi_G_JPshowBown_u{
+	width: 1002px;
+	
+	height: auto;
+}
+.ZhanShi_G_JPshowBown_u .Zhanshipicbox ul{
+	width: 3060px;
+	
+	height: 210px;
+}
+.ZhanShi_G_JPshowBown_u .Zhanshipicbox{
+	
+	overflow: hidden;
+	position: relative;
+}
+.Zhanswaplist{ position:absolute; left:-3000px; top:0px}
+.ZhanShi_G_JPshowBown_u ul{
+	
+	height: 210px;
+}
+.ZhanShi_G_JPshowBown_u ul li{
+	display: block;
+	height: 204px;
+	float: left;
+	
+}
+.ZhanShi_G_JPshowBown_u ul li a{
+/*	padding-right: 4px;*/
+}
+.ZhanShi_G_JPshowBown_u ul li a img{
+	border: 1px solid #ccc;
+	width: 324px;
+	height: 204px;
+	margin-right: 4px;
+
+}
+.ZhanShi_G_JPshowBown_Btn{
+	height: 20px;
+	text-align: center;
+	margin-top: 20px;
+	width: 1000px;
+	
+
+}
+.ZhanShi_G_JPshowBown_Btna{
+	width: 60px;
+	height: 16px;
+	margin: 0 auto
+}
+.ZhanShi_G_JPshowBown_Btn li{
+	float: left;
+	display: block;
+	width: 14px;
+	height: 14px;
+	margin-right: 5px;
+	background: url(../images/ZhanShi_G_BtnHui.gif) no-repeat;
+}
+.ZhanShi_G_JPshowBown_Btn li:hover{
+	cursor: pointer;
+	background: url(../images/ZhanShi_G_BtnGreen.gif) no-repeat;
+}
+.ZhanShi_G_JPshowBown_Btn li.on{
+	background: url(../images/ZhanShi_G_BtnGreen.gif) no-repeat;
+}
+/*精品案例轮播 end*/
+/*展示页面套餐选择精品案例 end*/
+/*展示首页步骤*/
+.ZhanShi_G_Step{
+	margin-top: 20px;
+	padding: 30px 15px;
+	width: 968px;
+	position: relative;
+	height: auto;
+	border: 1px solid #ccc;
+	background: #F9F9F9;
+	font-family: "微软雅黑","Microsoft Yahei","黑体"; 
+
+}
+.ZhanShi_G_Step1{
+	margin-bottom: 20px;
+	
+	height: 290px;
+}
+.ZhanShi_G_Step1 .ZhanShi_G_Step1_lf{
+	width: 460px;
+	font-family: "方正兰亭中黑","微软雅黑","黑体";
+	float: left;
+	height: 270px;
+		
+}
+.ZhanShi_G_Step1_lf_title{
+	position: relative;
+	margin-left: 10px;
+	height: 52px;
+	
+}
+.ZhanShi_G_Step1_lf_title span{
+	padding-left: 60px;
+	padding-right: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	display: block;
+	border: 1px dotted #d9d9d9;
+	font-family: "微软雅黑","Microsoft Yahei","黑体";
+	font-size: 24px;
+	color: #5FB597;
+	width: auto;
+	float: left;
+}
+.ZhanShi_G_StepImgBg1{
+	position: absolute;
+	top:-5px;
+	left: -10px;
+	width: 52px;
+	height:52px;
+	background-image: url(../images/ZhanShi_G_StepImgBg1.fw.png);
+	background-repeat: no-repeat;
+}
+.ZhanShi_G_Step1_lf_title .BgOne{
+	background-position: 0 0;
+}
+.ZhanShi_G_Step1_lf_title .Bgtwo{
+	background-position: 0 -59px;
+}
+.ZhanShi_G_Step1_lf_title .Bgthree{
+	background-position: 0 -118px;
+}
+.ZhanShi_G_Step1_lf_title .Bgfour{
+	background-position: 0 -177px;
+}
+.ZhanShi_G_Step1_lf_title .Bgfive{
+	background-position: 0 -236px;
+}
+.ZhanShi_G_Step1_lf_title .Bgsix{
+	background-position: 0 -295px;
+}
+.ZhanShi_G_Step1_lf_Cont .INdex1{
+	width: 96px;
+}
+.ZhanShi_G_Step1_lf_Cont{
+	margin-top: 20px;
+	margin-left: 40px;
+	height: auto;
+	
+	height: 180px;
+}
+.ZhanShi_G_Step1_lf_Cont .INdex1{
+	float: left;
+	height: auto;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+}
+.ZhanShi_G_Step1_lf_Cont .INdex1 span{
+	padding-left: 5px;
+	display: block;
+	border-bottom: 1px solid #ccc;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-size: 15px;
+	background: url(../images/INdex1_black.fw.png) no-repeat right;
+}
+.ZhanShi_G_Step1_lf_Cont .INdex1 .GGHEi{
+	line-height: 40px;
+}
+.ZhanShi_G_Step1_lf_Cont .INdex1 div{
+	padding-left: 5px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 15px;
+	color: #fff;
+	background: #BA8C54 url(../images/INdex1_while.fw.png) no-repeat right;
+}
+.ZhanShi_G_Step1_lf_Cont i{
+	color: #CC1E07;
+}
+.ZhanShi_G_Step1_lf_Cont .INdex2{
+	float: left;
+	height: auto;
+	width: 88px;
+	border-right: 1px solid #ccc;
+}
+.ZhanShi_G_Step1_lf_Cont .GGHEi{
+	height: 40px;
+	line-height: 40px;
+}
+.ZhanShi_G_Step1_lf_Cont .INdex2 span{
+	padding-left: 5px;
+	display: block;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	font-size: 15px;
+	border-bottom: 1px solid #ccc;
+	
+	
+}
+.ZhanShi_G_Step1_lf_Cont .INdex2 div{
+	padding-left: 5px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 15px;
+	color: #fff;
+}
+.ZhanShi_G_Step1_lf_Cont .INdex2 div.JCX{
+	background: #2F9F97 url(../images/INdex1_while.fw.png) no-repeat right;
+	
+}
+.ZhanShi_G_Step1_lf_Cont .INdex2 div.BZX{
+	background: #2C8867 url(../images/INdex1_while.fw.png) no-repeat right;
+	
+}
+.ZhanShi_G_Step1_lf_Cont .INdex2 div.GJX{
+	background: #2C7399 url(../images/INdex1_while.fw.png) no-repeat right;
+	
+}
+/*首页设计右边*/
+.ZhanShi_G_Step1_rt{
+	width: 490px;
+	height: 270px;
+	float: right;
+}
+.ZS_Index_sj_picbox{
+	width: 376px;
+	height: 251px;
+	overflow:hidden;
+	position:relative;
+}
+.ZSINpiclist{ 
+	height:251px;
+	position:absolute;
+	left:0px;
+	top:0px;
+}
+.ZSINpiclist li{ 
+	background:#eee;
+	float:left;
+}
+.ZSINswaplist{ 
+	position:absolute;
+	left:-3000px; 
+	top:0px;
+}
+.ZhanShi_G_Step1_rt_img{
+	padding: 6px;
+	width: 380px;
+	margin: 2px auto;
+	background: url(../images/BGY.fw.png) no-repeat;
+	position: relative;
+}
+.ZhanShi_G_Step1_rt_img img{
+	width: 376px;
+	height: 251px;
+}
+.ZhanShi_G_Step1_rt_img .Zhanshi_last{
+	cursor: pointer;
+	display: block;
+	width: 26px;
+	height: 38px;
+	background-image: url(../images/ZhanShi_G_StepImgBg1.fw.png);
+	background-repeat: no-repeat;
+	background-position: 0 -397px;
+	position: absolute;
+	left: -25px;
+	top:100px;
+}
+.ZhanShi_G_Step1_rt_img .Zhanshi_next{
+	cursor: pointer;
+	display: block;
+	width: 26px;
+	height: 38px;
+	background-image: url(../images/ZhanShi_G_StepImgBg1.fw.png);
+	background-repeat: no-repeat;
+	background-position: -12px -452px;
+	position: absolute;
+	right: -22px;
+	top:100px;
+}
+/*线*/
+.ZhanShi_G_Step_xian{
+	height: 5px;
+	
+	border-bottom: 1px solid #CDCDCD;
+	margin-bottom: 40px;
+}
+/*主题广告设计*/
+.ZhanShi_G_Step_zhuti{
+	height: auto;
+}
+.ZhanShi_G_Step_zhuti .ZhanShi_G_Step_zhuti_lf{
+	width: 329px;
+	min-height: 270px;
+	float: left;
+	
+}
+.ZhanShi_G_Step_zhuti_lf .ZhanShi_G_Step_zhuti_cont{
+	margin-top: 20px;
+	margin-left: 30px;
+}
+.ZhanShi_G_Step_zhuti_lf .ZhanShi_G_Step_zhuti_cont i{
+	margin-right: 10px;
+	width: 28px;
+	height: 28px;
+	display: block;
+	background-image: url(../images/ZhanShi_G_StepImgBg1.fw.png);
+	background-repeat: no-repeat;
+	background-position: -8px -359px;
+	float: left;
+}
+.ZhanShi_G_Step_zhuti_lf p{
+	font-size: 16px;
+	line-height: 30px;
+	font-family: "微软雅黑","Microsoft Yahei","黑体";
+	color: #676767;
+
+}
+/*右边*/
+.ZhanShi_G_Step_zhuti_rt{
+	width: 613px;
+	height: 230px;
+	
+	float: right;
+}
+/*主题广告设计 end*/
+
+/*设计风格*/
+.ZhanShi_G_Step_fengge{
+	margin-bottom: 30px;
+	position: relative;
+}
+
+.ZhanShi_G_Step_fengge .ZhanShi_G_Step1_lf_title p{
+	line-height: 55px;
+	font-size: 16px;
+	padding-left: 240px;
+	display: block;
+	
+}
+.ZhanShi_G_Step_fengge_h2{
+	margin-top: 20px;
+	height: 40px;
+	
+	font-size: 16px;
+	padding-left: 30px;
+	color: #2C2C2B;
+}
+.ZhanShi_G_Step_fengge_h2 span{
+	width: 278px;
+	text-align: center;
+	display: block;
+	float: left;
+	height: 30px;
+}
+.ZhanShi_G_Step_fengge_h2 i{
+	width: 24px;
+	display: block;
+	float: left;
+	height: 24px;
+	background:url(../images/ZhanShi_G_StepImgBg1.fw.png) no-repeat -1px -503px;
+}
+/*风格列表*/
+.ZhanShi_G_Step_fengge_list{
+	height: auto;
+	min-height: 756px;
+	overflow: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	position: relative;
+}
+.ZhanShi_G_Step_fengge_list ul{
+	
+	height: 348px;
+}
+.ZhanShi_G_Step_fengge_list ul li{
+	width: 279px;
+	height: 348px;
+	display: block;
+	float: left;
+	margin-left: 27px;
+	margin-bottom: 30px;
+	position:relative; 
+	background-position: 
+	
+}
+.ZhanShi_G_Step_fengge_list ul li:hover{
+	cursor: pointer;
+}
+.ZhanShi_G_Step_fengge_list .ZSFUredone{
+
+	padding: 5px;
+	text-align: center;
+	position: absolute;
+	width: 90px;
+	height: 40px;
+	top: 95px;
+	left: 274px;
+	color: #fff;
+	background-image: url(../images/ZhanShi_G_StepImgBg1.fw.png);
+	background-repeat: no-repeat;
+	background-position:  -74px -2px;
+	z-index:400;
+}
+.ZhanShi_G_Step_fengge_list .ZSFUredone2{
+
+	padding: 5px;
+	text-align: center;
+	position: absolute;
+	width: 90px;
+	height: 40px;
+	top: 95px;
+	left: 574px;
+	color: #fff;
+	background-image: url(../images/ZhanShi_G_StepImgBg1.fw.png);
+	background-repeat: no-repeat;
+	background-position:  -74px -2px;
+	z-index:400;
+}
+.ZhanShi_G_Step_fengge_list .ZSFUredone3{
+
+	padding: 5px;
+	text-align: center;
+	position: absolute;
+	width: 90px;
+	height: 40px;
+	top: 470px;
+	left: 274px;
+	color: #fff;
+	background-image: url(../images/ZhanShi_G_StepImgBg1.fw.png);
+	background-repeat: no-repeat;
+	background-position:  -74px -2px;
+	z-index:400;
+}
+.ZhanShi_G_Step_fengge_list .ZSFUredone4{
+
+	padding: 5px;
+	text-align: center;
+	position: absolute;
+	width: 90px;
+	height: 40px;
+	top: 470px;
+	left: 574px;
+	color: #fff;
+	background-image: url(../images/ZhanShi_G_StepImgBg1.fw.png);
+	background-repeat: no-repeat;
+	background-position:  -74px -2px;
+	z-index:400;
+}
+.clearfix {
+    zoom: 1;
+}
+.ZhanShi_G_Step_fengge_list_D:hover{
+	cursor: pointer;
+}
+.ZhanShi_G_Step_fengge_list .ZhanShi_G_Step_fengge_list_D{
+position: absolute;
+width: 279px;
+height: 348px;
+
+}
+.ZhanShi_G_Step_fengge_list .ZhanShi_G_Step_fengge_list_Yin{
+position: absolute;
+width: 279px;
+height: 348px;
+left: 0;
+bottom: 0;
+background: #2C2C2B;
+filter: alpha(opacity=40);
+-moz-opacity: 0.40;
+opacity: 0.40;
+display: none;
+}
+.ZhanShi_G_Step_fengge_list_Yin .list_YinIe6{
+/*background: #2C2C2B;
+filter: alpha(opacity=40);
+-moz-opacity: 0.40;
+opacity: 0.40;*/
+}
+.bd_caseList{
+
+}
+.bd_caseList li:hover{
+	cursor: pointer;
+}
+.bd_caseList li span {
+	display: none;
+	width: 279px;
+	height: 348px;
+	background: rgba(0,0,0,0.5);
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.ZhanShi_G_Step_fengge_list .toumingduIE6{
+background: #2C2C2B;
+filter: alpha(opacity=40);
+-moz-opacity: 0.40;
+opacity: 0.40;
+}
+.ZhanShi_G_Step_fengge_list .ZhanShi_G_Step_fengge_list_Yin.on{
+ display: block;
+}
+.bd_caseList .yuanS{
+	/*width: 52px;
+	height: 52px;
+	display: block;
+	margin: 160px auto;
+	background-image: url(../images/ZhanShi_G_StepImgBg1.fw.png);
+	background-repeat: no-repeat;
+	background-position: -4px -557px;
+	cursor: pointer;*/
+width: 60px;
+height: 60px;
+background: rgba(255,255,255,0.5);
+position: relative;
+z-index: 10;
+left: 40%;
+top: 40%;
+behavior: url("http://www.55like.com/css/pie.php");
+border-radius: 50%;
+}
+.bd_caseList .yuanS img{
+display: inline;
+float: left;
+margin: 9px 0 0 13px;
+padding: 0;
+border: none;
+}
+.BGbodybg{
+/*background: #555;
+filter: alpha(opacity=70);
+-moz-opacity: 0.70;
+opacity: 0.70;
+z-index: 888;*/
+-moz-opacity: 0.3; /* FF 3.5以下 */  
+opacity: 0.3; /* FF 3.5及以上 */  
+ ilter: alpha(opacity=30); /* IE6及以上 */  
+ background: #000;  
+width: 100%;
+ height: 100%;
+}
+/*弹出大图层*/
+.ZhanShi_G_Step_fengge_BigImg{
+	width: 1000px;
+	height: auto;
+	margin: 0 auto;
+		z-index: 10600;
+		position: relative;
+}
+.ZhanShi_G_Step_fengge_BigImg li{
+	
+	width: 100%;
+	min-height: 600px;
+	height: auto;
+	
+	
+	margin: 0 auto;
+	top:70px;
+	left: -16px;
+	text-align: center;
+	display: none;
+	position: fixed;
+	top: 10%;	
+z-index: 10600;
+
+-webkit-border-radius: 6px;
+-moz-border-radius: 6px;
+border-radius: 6px;
+outline: 0;
+/*-webkit-box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+-moz-box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+box-shadow: 0 3px 7px rgba(0,0,0,0.3);*/
+-webkit-background-clip: padding-box;
+-moz-background-clip: padding-box;
+background-clip: padding-box;
+}
+.ZhanShi_G_Step_fengge_BigImg .ZSImgh{
+	position: relative;
+	width: 790px;
+	min-height: 300px;
+	background: #fff;
+	text-align: center;
+	margin: 0 auto;
+	border: 5px solid #ddd;
+}
+.ZhanShi_G_Step_fengge_BigImg .ZSImgh img{
+	margin-top: 30px;
+	max-width: 790px;
+
+}
+.ZhanShi_G_Step_fengge_BigImg .DivZSXXX{
+	
+	position: absolute;
+	top: 0px;
+	height: 20px;
+	background: #B9B9B6;
+	width: 790px;
+	z-index: 9999999；
+}
+.ZhanShi_G_Step_fengge_BigImg .DivZSXXX .ZSXXX{
+	/*position: absolute;
+	top: 0;
+	right: 0;
+	color: red;
+	font-size: 30px;
+	cursor: pointer;*/
+cursor: pointer;
+float: right;
+margin-top: 3px;
+margin-right: 5px;
+display: block;
+height: 15px;
+width: 14px;
+background: url(../images/xxliulan.fw.png) no-repeat;
+}
+
+/*弹出大图层 end*/
+/*风格列表 end*/
+/*设计风格 end*/
+/*网站栏目导航及功能*/
+.ZhanShi_G_Step_nav{
+	width: 967px;
+	
+}
+.ZhanShi_G_Step_nav .ZhanShi_G_Step1_lf_title p {
+line-height: 55px;
+font-size: 16px;
+padding-left: 300px;
+display: block;
+}
+.ZhanShi_G_Step_nav_lf{
+	width: 744px;
+	height: 386px;
+	
+	margin-left: 26px;
+	margin-top: 30px;
+	float: left;
+}
+.ZhanShi_G_Step_nav_pro{
+	position: relative;
+	width: 142px;
+	height: 182px;
+	background:url(../images/ZhanShi_G_Step_nav_pro_bg.fw.png) no-repeat;
+	float: left;
+	margin-left: 5px;
+}
+.ZhanShi_G_Step_nav_pro i{
+	position: absolute;
+	left: 0;
+	top: 1px;
+	display: block;
+	width: 23px;
+	height: 40px;
+	background: url(../images/ZhanShi_G_StepImgBg1.fw.png) no-repeat -91px -157px;
+}
+.ZhanShi_G_Step_nav_pro h2{
+	font-size: 21px;
+	color: #044520;
+	text-align: center;
+	padding-top: 6px;
+
+}
+.ZhanShi_G_Step_nav_pro h2.font17{
+	font-size: 17px;
+
+	padding-top: 11px;
+
+}
+.ZhanShi_G_Step_nav_pro .ZhanShi_G_Step_nav_pro_yBg{
+	width: 139px;
+	height: 116px;
+	margin: 2px auto;
+	padding-top: 23px;
+	position: relative;
+}
+.ZhanShi_G_Step_nav_pro .ZhanShi_G_Step_nav_pro_yBg .ZhanShi_liulan{
+	display: none;
+	width: 139px;
+	height: 96px;
+	padding-top: 43px;
+	text-align: center;	
+	font-size: 15px;
+	color: #405E4F;
+	top: 0;
+	left: 0;
+	position: absolute;
+	background: url(../images/ZhanShi_G_Step_nav_pro_yBg_ov.fw.png) no-repeat;
+}
+.ZhanShi_liulan a:hover{
+	color: #405E4F;
+}
+.ZhanShi_G_Step_nav_pro .ZhanShi_G_Step_nav_pro_yBg:hover{
+	cursor: pointer;
+	/*background: url(../images/ZhanShi_G_Step_nav_pro_yBg_ov.fw.png) no-repeat;*/
+}
+.ZhanShi_G_Step_nav_pro .ZhanShi_G_Step_nav_pro_yBg p{
+	text-align: center;
+	width: 100px;
+	font-size: 15px;
+	color: #fff;
+	padding-bottom: 15px;
+	margin: 0 auto;
+}
+.ZhanShi_G_Step_nav_pro .ZhanShi_G_Step_nav_pro_yBg p.Green{
+	
+	color: #80CE85;
+}
+/*右边*/
+.ZhanShi_G_Step_nav_rt{
+	width: 190px;
+	height: 357px;
+	
+	margin-top: 30px;
+	float: right;
+}
+.ZhanShi_G_Step_nav_rt1{
+	position: relative;
+	margin: 35px auto;
+	padding: 12px 8px;
+	width: 135px;
+	height: 59px;
+	background: url(../images/ZhanShi_G_Step_nav_rt1.gif) no-repeat;
+}
+.ZhanShi_G_Step_nav_rt1 i{
+	width: 52px;
+	height: 27px;
+	position: absolute;
+	top: -19px;
+	left: 50px;
+	background: url(../images/ZhanShi_G_StepImgBg1.fw.png) no-repeat -73px -366px;
+}
+.ZhanShi_G_Step_nav_rt1 p{
+
+	font-size: 13px;
+	color: #7F0627;
+}
+.ZhanShi_G_Step_nav_rt2{
+	padding: 12px 8px;
+	width: 135px;
+	height: 160px;
+	position: relative;
+}
+.ZhanShi_G_Step_nav_rt2 span{
+	background-image: url(../images/ZhanShi_G_StepImgBg1.fw.png);
+	background-repeat: no-repeat;
+	display: block;
+
+}
+.ZhanShi_G_Step_nav_rt2  p{
+	text-align: center;
+	font-size: 15px;
+	color: #166A4C;
+	display: block;
+	height: 30px;
+	margin-top: 10px;
+}
+.ZhanShi_G_Step_nav_rt2 span.rt1{
+	width: 53px;
+	height: 28px;
+	margin-left: 60px;
+	background-position: -73px -315px;
+}
+.ZhanShi_G_Step_nav_rt2 span.rt2{
+	width: 79px;
+	height: 79px;
+	margin-left: 50px;
+	background-position: -82px -494px;
+	padding-top: 5px;
+	
+}
+.ZhanShi_G_Step_nav_rt2 span.rt2 h2{
+	text-align: center;
+	font-size: 13px;
+	color: #fff;
+}
+/*栏目功能浏览*/
+.ZhanShi_G_Step_nav_liulan .LIUlanzhan_Box{
+	width: 1000px;
+	margin:  0 auto;
+	min-height: 600px;
+	position: relative;
+}
+.ZhanShi_G_Step_nav_liulan ul li{
+	
+	z-index: 999999;
+	
+	display: none;
+	width: 100%;
+	min-height: 600px;
+	height: auto;
+	
+	
+	margin: 0 auto;
+	top:70px;
+	left: -16px;
+	
+	display: none;
+	position: fixed;
+	top: 10%;	
+z-index: 10600;
+
+
+
+}
+.ZSnav_liulanB{
+	width: 1000px;
+	border: 1px solid #363535;
+	height: 600px;
+	overflow: auto;
+	
+	position: relative;
+	background: #fff;
+	
+}
+
+ .ZSnav_liulanBtop{
+	height: 20px;
+	background: #B9B9B6;
+	width: 1000px;
+	position: relative;
+	margin: 0 auto;
+	z-index: 999;
+	
+}
+ .ZSnav_liulanBtop span{
+	cursor: pointer;
+	float: right;
+	margin-top: 3px;
+	margin-right: 5px;
+	display: block;
+	height: 15px;
+	width: 14px;
+	background: url(../images/xxliulan.fw.png) no-repeat;
+}
+.ZSnav_liulanB .ZSnav_liulanBTitle{
+	width: 910px;
+	height: 36px;
+	border-bottom: 2px solid #00712F;
+	margin: 0 auto;
+	font-family: "微软雅黑";
+	font-size: 15px;
+	color: #00712F;
+}
+.ZSnav_liulanB .ZSnav_liulanBTitle h2{
+	line-height: 36px;
+	font-family: "微软雅黑";
+	font-size: 15px;
+	color: #00712F;
+}
+.ZSnav_liulanB .ZSnav_liulanBImg{
+	width: 910px;
+	margin: 20px auto;
+}
+.ZSnav_liulanB .ZSnav_liulanBImg img{
+	max-width: 910px;
+}
+/*切换按钮*/
+.ZSnav_liulanQHTQh{
+	position: absolute;
+	width: 32px;
+	height: 114px;
+	z-index: 9999;
+	top: 120px;
+	left: 0;
+}
+.ZSnav_liulanQHTQh span{
+	background-image: url(../images/ZhanShi_G_StepImgBg1.fw.png);
+	background-position: -68px -1147px;
+	background-repeat: no-repeat;
+	width: 26px;
+	height: 53px;
+	display: block;
+	text-align: center;
+	font-size: 15px;
+	font-family: "微软雅黑";
+	color: #fff;
+	line-height: 26px;
+	z-index: 9999999999;
+}
+.ZSnav_liulanQHTQh span.on{
+	background-position: -28px -1147px;
+}
+.ZSnav_liulanQHTQh span:hover{
+	cursor: pointer;
+	background-position: -28px -1147px;
+}
+/*切换按钮 end*/
+/*栏目功能浏览 end*/
+/*右边 end*/
+/*网站栏目导航及功能 end*/
+/*域名主机空间*/
+.ZhanShi_G_Step_www{
+	height: 270px;
+	
+}
+.ZhanShi_G_Step_www .ZhanShi_G_Step1_lf_title p{
+line-height: 55px;
+font-size: 16px;
+padding-left: 300px;
+display: block;
+}
+.ZhanShi_G_Step_www .ZhanShi_G_Step1_lf_title p i{
+color: #FD6100;
+}
+.ZhanShi_G_Step_www_cont{
+	width: 950px;
+	height: 180px;
+
+}
+.ZhanShi_G_Step_www_lf{
+	margin-top: 30px;
+	margin-left: 26px;
+	width: 500px;
+	
+	height: 180px;
+	float: left;
+}
+.ZhanShi_G_Step_www_lf .www_img1{
+	float: left;
+	width: 175px;
+	height: 149px;
+	margin-right: 20px;
+
+}
+.ZhanShi_G_Step_www_lf .www_img1 img{
+	width: 173px;
+	height: 149px;
+	display: block;
+}
+.ZhanShi_G_Step_www_lf .www_regist{
+	margin-left: 10px;
+	
+	
+}
+.ZhanShi_G_Step_www_lf .www_regist1{
+	height: 56px;
+}
+.font18{
+	font-size: 18px;
+}
+.font14{
+	font-size: 14px;
+}
+.font13{
+	font-size: 13px;
+}
+.ZhanShi_G_Step_www_lf .www_regist2{
+	line-height: 26px;
+}
+.ZhanShi_G_Step_www_lf input {
+padding: 0px;
+margin: 0px;
+}
+.ZhanShi_G_Step_www_lf .zheightinput{
+	height: 30px;
+	margin-top: 10px;
+}
+.ZhanShi_G_Step_www_lf .Zchaxun{
+	
+	font-size: 13px;
+	color: #fff;
+	padding: 3px 8px;
+	width: 50px;
+	
+	border: 0;
+	background:url(../images/ZhanShi_G_StepImgBg1.fw.png) no-repeat -140px -315px;
+}
+.ZhanShi_G_Step_www_lf .Zchaxun:hover{
+	cursor: pointer;
+}
+.ZhanShi_G_Step_www_lf .W_Rigis{
+	width: 180px;
+	height: 18px;
+}
+.ZhanShi_G_Step_www_xxx{
+	width: 2px;
+	height: 163px;
+	margin-top: 15px;
+	float: left;
+	background: url(../images/ZhanShi_G_StepImgBg1.fw.png) no-repeat -5px -1015px;
+}
+.ZhanShi_G_Step_www_zhu{
+	float: left;
+	margin-left: 20px;
+	margin-top: 30px;
+	width: 393px;
+}
+.ZhanShi_G_Step_www_zhu .ZhanShi_G_Step_www_zhuImg{
+	float: left;
+	width: 197px;
+	height: 139px;
+}
+.ZhanShi_G_Step_www_zhu .ZhanShi_G_Step_www_zhuTT{
+	margin-left: 10px;
+	width: 142px;
+	float: right;
+}
+.ZhanShi_G_Step_www_zhu .ZhanShi_G_Step_www_zhuTT span{
+	margin-bottom: 10px;
+	height: 49px;
+	display: block;
+}
+.ZhanShi_G_Step_www_zhu .ZhanShi_G_Step_www_zhuTT p{
+	margin-bottom: 10px;
+	
+	color: #5F5F5F;
+}
+/*域名主机空间 end*/
+/*网站维护服务*/
+.ZhanShi_G_Step_fuwu .ZhanShi_G_Step1_lf_title p {
+line-height: 55px;
+font-size: 18px;
+padding-left: 240px;
+display: block;
+text-decoration: underline;
+color: #E33231
+}
+.ZhanShi_G_Step_fuwu_cont{
+	padding-left: 30px;
+	margin-top: 20px;
+	width: 938px;
+	height: 240px;
+	
+	font-size: 14px;
+}
+.ZhanShi_G_Step_fuwu_cont h2 {
+	font-size: 14px;
+	color: #679700;
+	height: 30px;
+}
+.ZhanShi_G_Step_fuwu_cont h2 i{
+	margin-top: 2px;
+	margin-right: 10px;
+	height: 17px;
+	width: 17px;
+	display: block;
+	float: left;
+	background: url(../images/ZhanShi_G_StepImgBg1.fw.png) no-repeat -183px -1182px;
+}
+.ZhanShi_G_Step_fuwu_cont .fuwu_G_l{
+	width: 262px;
+	float: left;
+	margin-right: 60px;	
+}
+.ZhanShi_G_Step_fuwu_cont .fuwu_G_r{
+	
+	float: left;	
+}
+/*网站维护服务*/
+/*底部常见问题*/
+.ZhanShi_Ghelp{
+	margin-top: 30px;
+	width: 1000px;
+	height: 370px;
+	
+	font-family: "微软雅黑","Microsoft Yahei";
+}
+/*新手视频*/
+.ZhanShi_Ghelp .ZhanShi_Ghelp_video{
+	width: 364px;
+	height: 348px;
+	float: left;
+	background: url(../images/ZhanShi_Ghelp_video_boxBg.fw.png) no-repeat;
+}
+.ZhanShi_Ghelp .ZhanShi_Tit{
+	width: 364px;
+	height: 59px;
+}
+.ZhanShi_Ghelp .ZhanShi_Tudou{
+	width: 364px;
+	height: 289px;
+	
+}
+/*新手视频 end*/
+.ZhanShi_Ghelp a:hover{
+	text-decoration: underline;
+}
+.ZhanShi_Ghelp .ZhanShi_Ghelp_QA{
+	width: 340px;
+	height: 348px;
+	float: left;
+	margin-left: 25px;
+}
+.ZhanShi_Ghelp_QA .H33{
+	width: 340px;
+}
+.ZhanShi_Ghelp_QA .H33 a{
+	float: right;
+	color: #A03F03;
+	padding-top: 7px;
+	
+}
+
+.ZhanShi_Ghelp_QA .H33 span{
+	font-size: 19px;
+	text-align: center;
+	color: #178460;
+	padding-left: 100px;
+}
+.ZhanShi_Ghelp .ZhanShi_QAA{
+	margin-top: 10px;
+}
+.ZhanShi_QAA .ZhanShi_Q{
+	height: 30px;
+	color: #229656;
+
+}
+.ZhanShi_QAA .ZhanShi_Q span{
+	display: block;
+	float: left;
+	width: 29px;
+	height: 30px;
+	font-size: 21px;
+}
+.ZhanShi_QAA .ZhanShi_Q p{
+	padding-top: 5px;
+	font-size: 15px;
+}
+.ZhanShi_QAA .ZhanShi_A{
+	height: 60px;
+	margin-top: 6px;
+
+}
+.ZhanShi_QAA .ZhanShi_A span{
+	display: block;
+	float: left;
+	width: 29px;
+
+	height: auto;
+	font-size: 19px;
+	color: #95E0B6;
+}
+.ZhanShi_QAA .ZhanShi_A p{
+	float: left;
+	font-size: 12px;
+	float: left;
+	color: #595757;
+	display: block;
+	width: 305px;
+	background: #F1F7EB;
+}
+/*评价*/
+.ZhanShi_Ghelp .ZhanShi_Ghelp_ping{
+	width: 246px;
+	height: 348px;
+	background: #1F441D;
+	float: right;
+	background: #ddd url(../images/ZhanShi_Ghelp_ping.fw.png) repeat-x;
+}
+.ZhanShi_Ghelp .ZhanShi_Ghelp_pingTitle{
+	width: 246px;
+	height: 43px;
+	background: url(../images/ZhanShi_Ghelp_pingTitle.fw.png);
+	font-size: 19px;
+	text-align: center;
+	line-height: 43px;
+	color: #fff;
+}
+.ZhanShi_Ghelp .ZhanShi_Ghelp_pingcont{
+	width: 226px;
+	height: 281px;
+	padding: 12px 10px;
+	
+}
+.ZhanShi_Ghelp .ZhanShi_Ghelp_pingcont p{
+	border-bottom: 1px solid #303030;
+	line-height: 28px;
+}
+.ZhanShi_Ghelp .ZhanShi_Ghelp_pingcont p.ZHred{
+	color: #B8481B;
+}
+/*评价 end*/
+/*底部常见问题 end*/
+/*弹出层背景*/
+.TanchuCBg{
+	display: none;
+	z-index: 500;
+}
+.modal-backdrop, .modal-backdrop.fade.in {
+opacity: 0.75;
+filter: alpha(opacity=75);
+}
+.modal-backdrop, .modal-backdrop.fade.in {
+opacity: .8;
+filter: alpha(opacity=80);
+}
+.modal-backdrop.fade {
+opacity: 0;
+}
+.modal-backdrop {
+background-color: #ffffff;
+}
+.modal-backdrop {
+position: fixed;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+
+background-color: #000;
+}
+.fade {
+opacity: 0;
+-webkit-transition: opacity .15s linear;
+-moz-transition: opacity .15s linear;
+-o-transition: opacity .15s linear;
+transition: opacity .15s linear;
+}
+/*弹出层背景 end*/
+/*圆角*/
+.ZhanShi_G_Step1_rt_img .b1,.ZhanShi_G_Step1_rt_img .b2,.ZhanShi_G_Step1_rt_img .b3,.ZhanShi_G_Step1_rt_img .b4,.ZhanShi_G_Step1_rt_img .b1b,.ZhanShi_G_Step1_rt_img .b2b,.ZhanShi_G_Step1_rt_img .b3b,.ZhanShi_G_Step1_rt_img .b4b,.ZhanShi_G_Step1_rt_img .b{
+	display:block;
+	overflow:hidden;
+}
+.ZhanShi_G_Step1_rt_img .b1,.ZhanShi_G_Step1_rt_img .b2,.ZhanShi_G_Step1_rt_img .b3,.ZhanShi_G_Step1_rt_img .b1b,.ZhanShi_G_Step1_rt_img .b2b,.ZhanShi_G_Step1_rt_img .b3b{
+	height:3px;
+}
+.ZhanShi_G_Step1_rt_img .b2,.ZhanShi_G_Step1_rt_img .b3,.ZhanShi_G_Step1_rt_img .b4,.ZhanShi_G_Step1_rt_img .b2b,.ZhanShi_G_Step1_rt_img .b3b,.ZhanShi_G_Step1_rt_img .b4b,.ZhanShi_G_Step1_rt_img .b{
+	border-left:5px solid #999;
+	border-right:5px solid #999;
+}
+.ZhanShi_G_Step1_rt_img .b1,.ZhanShi_G_Step1_rt_img .b1b{margin:0 7px;background:#999;}
+.ZhanShi_G_Step1_rt_img .b2,.ZhanShi_G_Step1_rt_img .b2b{margin:0 5px;border-width:5px;}
+.ZhanShi_G_Step1_rt_img .b3,.ZhanShi_G_Step1_rt_img .b3b{margin:0 4px;}
+.ZhanShi_G_Step1_rt_img .b4,.ZhanShi_G_Step1_rt_img .b4b{height:5px;margin:0 1px;}
+.ZhanShi_G_Step1_rt_img .d1{background:#F7F8F9;}
+.ZhanShi_G_Step1_rt_img .k {height:246px;}
+/*圆角 end*/
+/*展示首页步骤 end*/
+/*代码全局*/
+input[type=text]:focus,input[type=password]:focus,textarea:focus,textarea:hover,input:hover{
+transition:border linear .2s,box-shadow linear .5s;
+-moz-transition:border linear .2s,-moz-box-shadow linear .5s;
+-webkit-transition:border linear .2s,-webkit-box-shadow linear .5s;
+-o-transition:border linear .2s,-webkit-box-shadow linear .5s;
+outline:none;border-color:rgba(24, 160, 215, 0.74);
+box-shadow:0 0 8px rgba(24, 160, 215, 0.74);
+-moz-box-shadow:0 0 8px rgba(24, 160, 215, 0.74);
+-webkit-box-shadow:0 0 8px rgba(24, 160, 215, 0.74);
+-o-box-shadow:0 0 8px rgba(24, 160, 215, 0.74);
+}

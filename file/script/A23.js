@@ -1,0 +1,1 @@
+document.write('<a href="http://www.d.com/extend/redirect-htm-aid-12.html" target="_blank"><img src="http://www.d.com/file/upload/201404/08/11-19-36-84-1.jpg" width="250" height="228" alt=""/></a>');

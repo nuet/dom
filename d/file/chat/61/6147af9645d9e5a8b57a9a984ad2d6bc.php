@@ -1,0 +1,3 @@
+<?php exit;?>1394758674|bing123|dsdsdd
+1394758786|bing123|sd
+1394760924|bing123|sa

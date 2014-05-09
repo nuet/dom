@@ -1,0 +1,1 @@
+if(window.location.href.indexOf("d.com") != -1){document.domain = "d.com";}var DTPath = "http://www.d.com/";var SKPath = "http://www.d.com/skin/default/";var MEPath = "http://sh.d.com/member/";var EXPath = "http://sh.d.com/extend/";var CKDomain = ".d.com";var CKPath = "/";var CKPrex = "DzN_";

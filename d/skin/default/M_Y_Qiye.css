@@ -1,0 +1,156 @@
+@charset "utf-8";
+/*企业模版页*/
+.M_YQiYe_Box{
+	width: 100%;
+	height: 200px;
+	margin-top: 1px;
+
+}
+.M_YQiYe_Bg .Blue{
+	background: #0081CC;
+}
+.M_YQiYe_Bg .black{
+	background: #333333;
+}
+.M_YQiYe_Bg .Brown{
+	background: #856F62;
+}
+.M_YQiYe_Box .M_YQiYe{
+	width: 1000px;
+	height: 200px;
+	margin: 0 auto;
+}
+.M_YQiYe_Bg .ShenBlue {
+background: #424E59;
+}
+.M_YQiYe_Box .M_YQiYe_login_box{
+	position: relative;
+	width: 1000px;
+	margin: 0 auto;
+}
+.M_YQiYe_Box .M_YQiYe_login{
+	background: #000;
+	width: 264px;
+	height: 178px;
+	position: absolute;
+	top: -189px;
+	right: 0;
+	z-index: 30;
+	filter: alpha(opacity=30);
+	-moz-opacity: 0.30;
+	opacity: 0.30;
+}
+.M_YQiYe_Box .M_YQiYe_login_Tm{
+	width: 234px;
+	height: 158px;
+	position: absolute;
+	top: -189px;
+	right: 0;
+	z-index: 40;
+	color: #fff;
+	padding: 10px 15px;
+}
+.M_YQiYe_Box .M_YQiYe_login_Tm a:hover{
+	text-decoration: underline;
+}
+.M_YQiYe_Box .M_YQiYe_login_Tm_1 {
+height: 24px;
+border-bottom: 1px solid #D3D3D3;
+margin-bottom: 10px;
+}
+.M_YQiYe_Box .M_YQiYe_login_Tm_1 .H18 {
+font-size: 18px;
+line-height: 24px;
+font-family: "微软雅黑";
+float: left;
+}
+.M_YQiYe_Box .M_YQiYe_login_Tm_1 .H12 {
+font-size: 18px;
+float: right;
+font-size: 12px;
+padding-top: 8px;
+}
+.M_YQiYe_Box .M_YQiYe_login_Tm_2{
+height: 30px;
+}
+.M_YQiYe_login_Tm_2 span {
+width: 60px;
+font-family: "微软雅黑";
+font-size: 15px;
+float: left;
+line-height: 30px;
+}
+.M_YQiYe_login_Tm_2 input {
+width: 170px;
+height: 21px;
+line-height: 21px;
+_width: 164px;
+}
+.M_YQiYe_login_Tm_3 {
+height: 25px;
+}
+.M_YQiYe_login_Tm_3 p a {
+color: #fff;
+}
+.M_YQiYe_login_Tm_3 span {
+width: 60px;
+height: 20px;
+display: block;
+float: left;
+}
+.M_YQiYe_login_Tm_3 p {
+line-height: 26px;
+height: 26px;
+display: block;
+float: left;
+}
+.M_YQiYe_login_Tm_4 {
+height: 36px;
+margin-top: 5px;
+}
+.M_YQiYe_login_Tm_4 .Mgui {
+background: #9B9B9B;
+margin-right: 14px;
+}
+.M_YQiYe_login_Tm_4 .Mgui:hover{
+	background: #A1A0A0;
+	-moz-box-shadow: 1px 1px 2px #ccc;
+    -webkit-box-shadow: 1px 1px 2px #ccc;
+    box-shadow: 1px 1px 2px #ccc;
+}
+.M_YQiYe_login_Tm_4 input {
+width: 110px;
+height: 28px;
+display: block;
+float: left;
+color: #fff;
+font-size: 15px;
+font-family: "微软雅黑";
+border: 0;
+cursor: pointer;
+}
+.M_YQiYe_login_Tm_4 .MyellB {
+background: #FDBD00;
+}
+.M_YQiYe_login_Tm_4 .MyellB:hover{
+	background: #FCC525;
+	-moz-box-shadow: 1px 1px 2px #ccc;
+    -webkit-box-shadow: 1px 1px 2px #ccc;
+    box-shadow: 1px 1px 2px #ccc;
+}
+/*企业模版页 end*/
+
+/*flash模版*/
+.M_YQiYe_login_Tm_4 .FlashYbtn{
+	background: #FF6C11;
+}
+.M_YQiYe_login_Tm_4 .FlashYbtn:hover{
+	background: #FC7521;
+	-moz-box-shadow: 1px 1px 2px #ccc;
+    -webkit-box-shadow: 1px 1px 2px #ccc;
+    box-shadow: 1px 1px 2px #ccc;
+}
+.M_YQiYe_login_Tm .M_LoginA_Y{
+	color: #FEEF01;
+}
+/*flash模版 end*/

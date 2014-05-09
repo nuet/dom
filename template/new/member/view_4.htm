@@ -1,0 +1,171 @@
+{template 'header2'}
+<link rel="stylesheet" type="text/css" href="{DT_STATIC}{$MODULE[2][moduledir]}/image/style.css"/>
+<script type="text/javascript">c(2);var errimg = '{DT_SKIN}image/nopic50.gif';</script>
+<div class="u_wsxq">
+	
+	<div class="u_mbxdh">
+		<span>·您的位置：<a href="">首页</a> > <a href="">商城</a> > <a href="">提交订单</a> > <a href="">完善网站需求</a></span>
+	</div>
+	<!-- 订单详情 -->
+
+
+
+	<div class="u_ddxqsw">
+		<div class="u_ddxqsw_t"><span>订单详情</span></div>
+		<div class="u_ddxqsw_con">
+			<div class="u_ddxqsw_con_l">
+				<span><b>公司名称：</b>{$td[buyer_name]}（{$td[title]}）</span>
+				<span><b>订单编号：</b>{$td[itemid]}</span>
+				<span><b>所在地区：</b>{$td[areaid]}</span>
+				<span><b><i>项目状态：</i></b>{$td[status_zt]}（<i>已付款{$td[ready_money]}元  </i>）</span>
+			</div>
+			<div class="u_ddxqsw_con_r">
+				<span><b>订单总金额：</b><i><b>{$td[amount]}元</b></i></span>
+				<span><b>订单时间：</b>{$td['adddate']}</span>
+				<span><b>行业：</b>{$td[hy_sort]}</span>
+			</div>
+		</div>
+	</div>
+	
+	<!-- 订单详情 结束-->
+	<!-- 建站资料开始 -->
+  <div class="N_DdyLc">
+    <img src="{DT_SKIN}/image/N_DdyLc_baner.jpg" alt="">
+  </div>
+	<!-- 建站资料选项卡 -->
+
+  <div class="js_case clear">
+    <div class="js_title cf">
+	
+      <ul class="js_title-list cf">
+        <li class="on"><a href="trade.php?itemid={$itemid}&action=update&step=upload_5&forward={$_GET[forward]}">建站资料</a></li>
+        <li><a href="trade.php?itemid={$itemid}&action=update&step=index&forward={$_GET[forward]}">首页设计</a></li>
+        <li><a href="trade.php?itemid={$itemid}&action=update&step=lm&forward={$_GET[forward]}">栏目页及内页设计</a></li>
+        <li><a href="trade.php?itemid={$itemid}&action=update&step=design&forward={$_GET[forward]}">程序开发</a></li>
+        <li><a href="trade.php?itemid={$itemid}&action=update&step=last&forward={$_GET[forward]}">网站上线</a></li>
+    
+      </ul>
+    </div>
+    <div class="product-wrap">
+     <!--建站资料-->
+     <div class="js_product show" >
+    <div class="u_jzzl" id="u_jzzl">
+        	<!-- 资料提交后页面显示开始 -->
+        	<div class="u_jzzl_tjhshow">
+        		<div class="u_jzzl_tjhshow_1">
+        			<b>网站语种：</b>{$td[language_style]}
+        		</div>
+        		<div class="u_jzzl_tjhshow_1">
+        			<b>网站域名默认的着陆页面：</b>{$xq[language]}
+        		</div>
+        		<div class="u_jzzl_tjhshow_1">
+        			<b>网站颜色：</b><img src="{DT_SKIN}/image/color/{$xq[color_1]}.jpg" alt=""> {$xq[color_1]}  网站搭配色：<img src="{DT_SKIN}/image/color/{$xq[color_2]}.jpg" alt="">{$xq[color_2]}
+        		</div>
+        		<div class="u_jzzl_tjhshow_1"><span><b>网站框架设定和选择</b></span></div>
+        		<div class="u_jzzl_tjhshow_1"><b>网页宽度</b>  {$xq[webwd]}px</div>
+        		<div class="u_jzzl_tjhshow_1">
+        			<b>网站首页结构：</b> {$xq[indexjg]} 
+        			<a href=""><img src="{DT_SKIN}/image/ind_jiagou_4.gif" alt=""></a> <a href="">(点击放大)</a>
+        		</div>
+        		{if $xq[kj]!=""}
+        		<div class="u_jzzl_tjhshow_1">
+        			<b>自己手写或工具制作的首页及其他页面框架图片：</b>
+        			 <a href="{$xq[kj]}" target="_blank"><img src="{$CFG[url]}/member/image/{$xq[pic_kj]}.ico" alt=""onerror="nofind();"><img src="{DT_SKIN}/image/zipdown.jpg" alt="">主站下载</a>
+        		</div>
+        		{/if}
+        		<div class="u_jzzl_tjhshow_1">
+        			<span><b>参考网站</b></span>
+        		</div>
+        		<div class="u_jzzl_tjhshow_1">可参考配色网站地址：<i>{$xq[psweb]}</i></div>
+        		<div class="u_jzzl_tjhshow_1">可参考布局网站地址：<i>{$xq[bjweb]}</i></div>
+        		<div class="u_jzzl_tjhshow_1">可参考栏目网站地址：<i>{$xq[lmweb]}</i></div>
+        		<div class="u_jzzl_tjhshow_1">现有网站地址：<i>{$xq[web]}</i></div>
+        		<div class="u_jzzl_tjhshow_1">其他：<i>{$xq[other]}</i></div>
+        		<div class="u_jzzl_tjhshow_1"><span><b>建站所需资料</b></span></div>
+        		<div class="u_jzzl_tjhshow_2">
+        			<div class="u_jzzl_tjhshow_logo">
+        				<span>
+        				<span>公司LOGO图片上传:</span>
+        				<img src="{$CFG[url]}/member/image/{$xq[pic_logo]}.ico" class="ico_img" onerror="nofind();"  alt=""><i>
+        				<img src="{DT_SKIN}/image/zipdown.jpg" alt=""><a href="{$xq[logo]}">主站下载</a></i>
+        				</span>
+        				<span>
+        				<span>公司介绍及联系方式文档：</span> 
+        				<img src="{$CFG[url]}/member/image/{$xq[pic_contact]}.ico"onerror="nofind();" class="ico_img" alt=""><i>
+        				<img src="{DT_SKIN}/image/zipdown.jpg" alt=""><a href="{$xq[contact]}">主站下载</a>
+        				</span>
+        			</div>
+        			<div class="u_jzzl_tjhshow_logo">
+        				<span><span>
+        				网站栏目结构: </span>
+        				<img src="{$CFG[url]}/member/image/{$xq[pic_lm]}.ico" onerror="nofind();"class="ico_img" alt=""><i>
+        				<img src="{DT_SKIN}/image/zipdown.jpg" alt=""><a href="{$xq[lm]}">主站下载</a></i>
+        				</span>
+        				<span><span>
+        				网站主题图片及广告语:  </span>	
+        				<img src="{$CFG[url]}/member/image/{$xq[pic_ad]}.ico" onerror="nofind();"class="ico_img" alt=""><i>
+        				<img src="{DT_SKIN}/image/zipdown.jpg" alt=""><a href="{$xq[ad]}">主站下载</a></i>
+        				</span>
+        			</div>
+        			<div class="u_jzzl_tjhshow_bc1 clear">
+        				<i>产品、服务、新闻、案例等资料(此项可后期补充)：</i>
+        				{if $zl!=""}
+        				{loop $zl $i $v}
+        				{php $v[pic_zl]=pic_add($v[zl]);}
+        				<span>
+        					<img src="{$CFG[url]}/member/image/{$v[pic_zl]}.ico" onerror="nofind();"class="ico_img" alt=""><br/>
+        					<i><img src="{DT_SKIN}/image/zipdown.jpg" alt="">
+        					<a href="{$v[zl]}">主站下载</a></i>
+        				</span>
+        				{/loop}
+        				{/if}
+        				
+        			
+        			</div>
+        			<div class="u_jzzl_tjhshow_bc2 clear">
+        			  <form action="trade.php" method="post" enctype="multipart/form-data" class="file-box">
+        				<i>产品、服务、新闻、案例等资料补充：</i>
+        				<input type="hidden" name="forward" value="{$CFG[url]}/member/trade.php?itemid={$itemid}&action={$action}&step={$step}"/>
+					<input type="hidden" name="action" value="{$action}"/>
+					<input type="hidden" name="step" value="{$step}"/>
+					<input type="hidden" name="itemid" value="{$itemid}"/>
+					<input type="hidden" name="confirm_order" value="2"/>
+                     	<input name="zl" id="fileurl1" type="text" class='txt' size="50" value="{$fileurl1}"/>       
+                          <input type='button' class='btn1' value='选择文件' />            
+                         
+                          {if $MG[upload] && check_group($_groupid, $MOD[group_upload])}&nbsp;&nbsp;    <input type="text" name="fileField" class="file" id="fileField" size="28" onclick="Dfile({$moduleid}, Dd('fileurl1').value, 'fileurl1', 'doc|rar|zip|docx|wps');" />{/if}    
+                      
+                          <!--<input type="submit" name="submit" class="btn" value="上传" />--> 支持文件格式：doc,rar,zip
+        				<i><a href="">例子下载>></a></i>
+        				<input type="submit" value="上&nbsp;&nbsp;传" class="u_jzzl_tjhshow_bc2_btn">
+                </form>
+        			</div>
+        		</div>
+        		<div class="u_jzzl_tjhshow_3">	
+        		<form method="post" action="trade.php" id="dform">
+		<input type="hidden" name="forward" value="trade.php?itemid={$itemid}&action=update&step=upload_5&"/>
+			<input type="hidden" name="action" value="{$action}"/>
+			<input type="hidden" name="step" value="{$step}"/>
+			<input type="hidden" name="itemid" value="{$itemid}"/>
+			<input type="hidden" name="confirm_order" value="1"/>
+        			<i>补充备注：</i>
+        				<textarea name="note" id="" cols="100" rows="2">{$xq[note]}</textarea>
+        			<p><input type="submit" value="提 &nbsp;&nbsp;交" name="submit"></p>
+        			</form>
+        		</div>
+        	</div>
+        	<!-- 资料提交后页面显示结束 -->
+		</div>
+          </div>
+<div class="js_product"></div>
+<div class="js_product"></div>
+<div class="js_product"></div>
+<div class="js_product"></div>
+     
+    </div>
+  </div>
+		<!-- 建站资料选项卡 结束-->
+</div>
+
+	
+{template 'footer'}

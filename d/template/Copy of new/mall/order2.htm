@@ -1,0 +1,494 @@
+{template 'header'}
+
+ <script  src="{$CFG[url]}/file/script/Maya.MessageBox/Maya.MessageBox.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="{$CFG[url]}/file/script/Maya.MessageBox/Maya.MessageBox.css">
+<form action="?f" method="post" id="order_form" name="order_form">
+<div class="oyw_content_ddy">
+    <div class="oyw_Show_ddy mt12 clearfix">
+    
+        <div class="oyw_Show_ddy_form">
+        	<div class="oyw_Show_ddy_form_top"><span><ul><li>·您的位置：</li><li>首页 </li>><li> <a href="">商城 > </a></li><li><a href="">提交订单</a></li></ul></span></div>
+        
+        <!--欧意订单表单填写第一排-->
+        <div class="clear"></div>
+        <div class="oyw_Show_ddy_form_one">
+            <!--欧意订单表单填写左面-->
+            <div class="oyw_Show_ddy_form_left oy_floatlf">
+            	<div class="oyw_Show_ddy_form_left_tc">
+                	<div class="oyw_Show_ddy_form_left_tc_img">
+                    	<img src="{DT_SKIN}/image/oy_queren_info.gif">
+                    </div>
+                    <div class="oyw_Show_ddy_form_left_tc_info">
+                      <div class="oyw_Show_ddy_form_left_tc_info1">
+                      	<div class="oyw_Show_ddy_form_left_tc_info_1 oy_floatlf mgtp10"><b>您选择的套餐：</b></div>
+                        <div class="oyw_Show_ddy_form_left_tc_info_2 oy_floatlf mgtp10"><div style="height:30px;">{$item[title]}<br/></div>
+                        
+                        </div>
+                        </div>
+                      <div class="oyw_Show_ddy_tcnr clear">
+                        <div class="oyw_Show_ddy_form_left_tc_info_1 oy_floatlf "><b>套餐内容:</b></div>
+                        <div class="oyw_Show_ddy_form_left_tc_info_2 oy_floatlf ">
+                        {$item[content]}
+                        </div>
+                      </div>
+                    </div>
+                
+                </div>
+                          <!-- 语言版本选择 -->
+                <div class="oyw_Show_ddy_form_left_lanuge mgtp10">
+                    <div class="oyw_Show_ddy_form_left_zf_img">
+                      <img src="{DT_SKIN}/image/oy_is_wap.gif">
+                    </div>
+                    <div class="oyw_Show_ddy_form_left_lanuge_bg mgtp10">
+                        <div class="oyw_Show_ddy_form_left_lanuge_1">
+                          <b>中文版本:</b>
+                          <input type="checkbox" name="language" id="language0" value="简体中文" checked >中文简体
+                          <input type="checkbox" name="language" id="language1" value="繁体中文" >中文繁体
+                          （中文增加一个版本增加 <i>20%</i>费用）
+                        </div>
+                        <div class="oyw_Show_ddy_form_left_lanuge_2">
+                          <b>外语版本:</b>
+                          <input type="checkbox" name="language" id="language2" value="英文">英文版本
+                          <input type="checkbox" name="language"id="language3" value="日文" >日文版本
+                          <input type="checkbox" name="language" id="language4"value="俄文" >俄文版本
+                          <input type="checkbox" name="language" id="language5"value="其他" >其他版本<br/>
+                          （外语增加一个版本增加 <i>50%</i>费用,不含翻译，如需要翻译请联系客户经理）
+                        </div>
+                        <div class="oyw_Show_ddy_form_left_lanuge_1">
+                          <i>注：在此选择的所有语言版本页面设计和功能要完全一致，否则请勿选择，请联系客户经理商谈。</i>
+                        </div>
+                        
+                    </div>
+                </div>
+                <!-- 选择移动网站 -->
+                <div class="oyw_Show_ddy_form_left_wap mgtp10">
+                    <div class="oyw_Show_ddy_form_left_zf_img">
+                      <img src="{DT_SKIN}/image/oy_is_wap.gif">
+                      </div>
+                      <div class="oyw_Show_ddy_form_left_wap_bg">
+                          <div class="oyw_Show_ddy_form_left_wap_l oy_floatlf">
+                              <div class="oyw_Show_ddy_form_left_wap_l_t">
+                                <input type="radio" value="nowap" name="iswap" onclick="alter('0', '0')" checked>不需要
+                              </div>
+                              <div class="oyw_Show_ddy_form_left_wap_l_sh">
+                                  <span><br>&nbsp;所有设备访问PC站</span><br/><br>
+                                  <img src="{DT_SKIN}/image/oy_wap_img_pc.gif" alt=""></span>
+                              </div>
+                          </div>
+                              <div class="oyw_Show_ddy_form_left_wap_b oy_floatlf">
+                              <div class="oyw_Show_ddy_form_left_wap_b_t">
+                                <input type="radio" value=mob1 name="iswap"  onclick="alter('{$item[mobprice]}', 'mob1')">手机站(+<b id="m_lang">{$item[mobprice]}</b>元)
+                              </div>
+                              <div class="oyw_Show_ddy_form_left_wap_b_sh">
+                                  <span><br>&nbsp;&nbsp;PC站+手机站<br/><br>
+                                  <img src="{DT_SKIN}/image/oy_wap_img_pc.gif" alt=""> <img src="{DT_SKIN}/image/oy_wap_img_phone.gif" alt=""></span>
+                              </div>
+                          </div>
+                              <div class="oyw_Show_ddy_form_left_wap_r oy_floatlf">
+                              <div class="oyw_Show_ddy_form_left_wap_r_t">
+                                <input type="radio" value="mob2" name="iswap" onclick="alter('{$item[resprice]}', 'mob2')"><span>响应试网站(+<b id="r_lang">{$item[resprice]}</b>元)</span>
+                              </div>
+                              <div class="oyw_Show_ddy_form_left_wap_r_sh">
+                                  <span><br/>&nbsp;&nbsp;PC站+平板+手机<br/><br>
+                                  <img src="{DT_SKIN}/image/oy_wap_img_pc.gif" alt=""><img src="{DT_SKIN}/image/oy_wap_img_pad.gif" alt=""><img src="{DT_SKIN}/image/oy_wap_img_phone.gif" alt=""></span>
+                              </div>
+                          </div>
+                      </div>
+                </div>
+                <!-- 支付方式 -->
+                <div class="oyw_Show_ddy_form_left_zf mgtp10">
+                		<div class="oyw_Show_ddy_form_left_zf_img">
+                    	<img src="{DT_SKIN}/image/oy_is_fapiao.gif">
+                    </div>
+                    <div class="oyw_Show_ddy_form_left_zf_info">
+                    	<div class="oyw_Show_ddy_form_left_zf_info_1">支付方式：
+                          <span>         
+                              <input type="radio" name="playxz" value="0" onclick="fk('0')" checked/>一次性付款&nbsp;
+                              <input type="radio" name="playxz" value="1"  onclick="fk('1')"/>阶段性付款（50%首付款，30%首页确认款，20%尾款）
+                          </span>
+                      </div>
+                      <div class="oyw_Show_ddy_form_left_zf_info_2">发票申请：
+                          <span>         
+                              <input type="radio" name="fapiaosq" value="1" onclick="bill('1')"checked/>需要发票&nbsp;&nbsp;&nbsp;&nbsp;
+                              <input type="radio" name="fapiaosq" value="0" onclick="bill('0')"/>不需要发票（套餐价即减8%的税额）
+                          </span>
+                      </div>
+                      <div class="oy_fp_sm">注：申请发票客户，一次性付款后即可开具发票，阶段性付款则需付清所有款项再一次性开具发票。</div>
+                    </div>
+                </div>
+               
+            </div>
+            <!--欧意订单表单填写右面-->
+             <div class="oyw_Show_ddy_form_right oy_floatlf">
+                <div class="oyw_Show_ddy_form_right_x">
+                  <div class="oyw_Show_ddy_form_right_x_t">
+                    <span>您所购买的套餐的价格</span>
+                  </div>
+                  <div class="oyw_Show_ddy_form_right_x_t2">
+                    <span>套餐原价：<b>{$item[price]}</b>元<small>（默认含税）</small></span>
+                  </div>
+                  <div class="oyw_Show_ddy_form_right_x_t3">
+                    <div class="pdtp10"><span><strong>实际付款:</strong><b id="total_amount">{$item[price]}</b>元</span></div>
+                    
+                        <div class="oyw_Show_ddy_form_right_x_t3_1 oy_floatlf pdlf20"><strong>包含:</strong></div>
+                        <div class="oyw_Show_ddy_form_right_x_t3_2 oy_floatlf">
+                          <ul>
+                              <li>首付款<span id="pay_1">0</span>&nbsp;&nbsp;元</li>
+                              <li>首页确认款<span id="pay_2">0</span>&nbsp;&nbsp;元</li>
+                              <li>余额<span>{$_money}</span>&nbsp;&nbsp;元</li>
+                              <li>含税<span id="pay_3">0</span>&nbsp;&nbsp;元</li>
+                          </ul>
+                        </div>
+                    
+                  </div>
+                </div>
+            </div>
+        </div>
+         <!--欧意订单表单填写确认客户信息-->
+       <div class="oyw_Show_ddy_form_two clear">
+        <div class="oyw_Show_ddy_form_two_img"></div>
+               <div class="oyw_Show_ddy_form_two_bg">
+           <div class="pdtp10">
+              <input type="hidden" id="fp_yz" name="fp_yz" value="1" />
+               <input type="hidden" id="language_style" name="language_style" value="简体中文" />
+              <input type="hidden" id="m_lang_value" name="m_lang_value" value="{$item[mobprice]}" />
+               <input type="hidden" id="r_lang_value" name="r_lang_value" value="{$item[resprice]}" />
+               <input type="hidden" id="fp_yz" name="fp_yz" value="1" />
+              <input type="hidden" id="language_yz" name="language_yz" value="{$item[price]}" />
+              <input type="hidden" id="price" name="price" value="{$item[price]}" />
+              <input type="hidden" id="itemid" name="itemid" value="{$item[itemid]}" />
+              <input type="hidden" name="order_yz" value="1"/>
+          
+            </div>
+          
+            <div class="pdtp10">
+              <div class="qrkh_info oy_floatlf">公司或网站名称：</div><div><input class="inputTextbk" type="text" size="55" name="post[name]" id="name" value="{$user[name]}" /><span id="dname" class="f_red"></div>
+            </div>
+
+            <div class="pdtp10">
+                <div class="qrkh_info oy_floatlf">行    业：</div><div>
+                <select name='post[hy_sort]'  classs="select_o mgtp10">
+              
+				  {loop $sorts $i $r}
+				  <option value='{$i}' {if $i==$user[hy_sort]} selected {/if}>{$r}</option>
+				    {/loop}
+				 
+                  </select>
+                </div>
+            </div>
+      
+           
+            <div class="pdtp10">
+            <div class="qrkh_info oy_floatlf">地    区：</div><div>
+              {ajax_area_select('add[areaid]', '请选择', $user[areaid])} <input type="text" size="50" style='width:233px;' name="post[address]" id="address" value="{$user[address]}"/> <span id="daddress" class="f_red"></span>
+            </div>
+            </div>
+            <div class="pdtp10">
+                <div class="qrkh_info oy_floatlf">公司电话：</div><div><input class="inputTextbk" type="text" size="55" name="post[telephone]" id="telephone" value="{$user[telephone]}" /> <span id="dtelephone" class="f_red"></span></div>
+            </div>
+            <div class="pdtp10">
+                <div class="qrkh_info oy_floatlf">联系人：</div><div><input class="inputTextbk" type="text" size="55" name="post[truename]"  id="truename" value="{$user[truename]}" /> <span id="dtruename" class="f_red"></span></div>
+            </div>
+            <div class="pdtp10">
+                <div class="qrkh_info oy_floatlf">联系方式:</div><div><input class="inputTextbk" type="text" size="55" name="post[mobile]" id="mobile"  value="{$user[mobile]}" /> <span id="dmobile" class="f_red"></span></div>
+            </div>
+         </div>
+          <div> <div class="oyw_Show_ddy_form_left_zf_info_3">订单完成后是否允许在案例区展示：
+                 <span>         
+                    <input type="radio" name="allow" value="1" checked/>允许&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="allow" value="0" />不允许
+                   </span><div class="oy_fp_sm1">注：建议允许，让更多的客户了解您；选择不允许则在最终生成订单时费用会增加200元。</div>
+                  </div>
+            </div>
+       </div>
+         <!--欧意订单表单填写客户备注信息-->
+            <!-- 提交前显示构造内容 -->
+        <div class="oy_bhinfo">
+          <span>订单包含：套餐费：<i>{$item[price]}</i>元  增加语言版本费用： <i id="language_fee">0</i>元   移动网站费用：<i id="mob_fee">0</i>元   税费：<i id="shui_fee">0</i>元 </span>
+          <b>订单总价：<i id="amount">￥{$item[price]}</i>   本次支付：<i id="pay_4">￥2300.00</i></b>
+        </div>
+        <!-- 提交前显示构造内容结束 -->
+        <!--提交区域-->
+        <div class="oy_tj clear">
+          <div class="oy_tj_l">
+             <p> <a href="#" onclick="check();"><img src="{DT_SKIN}/image/oy_tijiao_dd.gif" ></a>
+            </p>
+            
+          </div><div class="clear">
+          <div class="oy_tj_l oy_floatlf"><p>提交订单卖家确认后，支付费用</p></div>
+          </div>
+        </div>
+        
+    </div>
+    </div>
+</div>
+</form>
+{load('guest.js')}
+<script type="text/javascript">
+function check() {
+
+	var l;
+	var f;
+	f = 'name';
+	l = Dd(f).value.length;
+	if(l < 2) {
+		Dmsg('请填写公司名称', f);
+		return false;
+	}
+	f = 'address';
+	l = Dd(f).value.length;
+	if(l < 2) {
+		Dmsg('请填写街道地址', f);
+		return false;
+	}
+
+	f = 'truename';
+	l = Dd(f).value.length;
+	if(l < 2) {
+		Dmsg('请填写联系人', f);
+		return false;
+	}
+	f = 'mobile';
+	l = Dd(f).value.length;
+	if(l < 11) {
+		Dmsg('请填写手机号码', f);
+		return false;
+	}
+//	$("#order_form").submit();
+
+	  if (confirm("您确认填写信息无误，提交此订单吗？")) {  
+
+		 var params=$('#order_form').serialize(); 
+
+
+ 	$.ajax({
+	    type: "POST",
+	    url: "order.php",
+	    data:params,
+	    beforeSend: function(){
+	    Maya.MessageBox("订单创建中......");
+	    },
+	    success: function(msg){
+	    if(msg == "success"){
+	        Maya.MessageBox("恭喜您，订单创建成功");
+	    	self.location='{$MODULE[2][linkurl]}';
+			w.close();
+			freshIframe();	       
+	    }else {
+	    	Maya.MessageBox("很遗憾，订单创建失败");
+	    }
+	    }
+	});
+
+	 } else{
+		return false;
+	}
+	
+	
+
+
+}
+
+</script>
+<script>
+$(function(){
+	$("#pay_3").text(({$item[price]}*0.08).toFixed(2));
+	$("#shui_fee").text(({$item[price]}*0.08).toFixed(2));
+	$("#pay_4").text('￥'+{$item[price]});
+    $("input[name='language']").click(function(){
+      var language_all = [];
+      var x=document.getElementsByName("language");
+	    for (var i=0;i<x.length;i++)
+	    	{
+	    		if(x[i].checked==true){
+	    			language_all.push(x[i].value);
+	    	     }
+	     	}
+    	
+     	money=0;
+	    if(language_all.length<1){
+	    	alert('至少需要选择一个');
+	    	return false;
+	    }else if(language_all.length>=1){
+	    	
+	    	var jt0=$.inArray('简体中文',language_all);
+	    	var jt1=$.inArray('繁体中文',language_all);  
+	    	var jt2=$.inArray('英文',language_all);  
+	    	var jt3=$.inArray('日文',language_all);  
+	    	var jt4=$.inArray('俄文',language_all);  
+	     	var jt5=$.inArray('其他',language_all);  
+	    
+	    	if(jt0>=0){
+	    		money=parseFloat(money)+parseFloat({$item[price]}*0.2);
+	    	}
+	    	if(jt1>=0){
+	    		money=parseFloat(money)+parseFloat({$item[price]}*0.2);
+	    		
+	    	}
+	    	if(jt2>=0){
+	    		money=parseFloat(money)+parseFloat({$item[price]}*0.5);
+	    	}
+	    	if(jt3>=0){
+	    		money=parseFloat(money)+parseFloat({$item[price]}*0.5);
+	    	}if(jt4>=0){
+	    		money=parseFloat(money)+parseFloat({$item[price]}*0.5);
+	    	}
+	    	if(jt5>=0){
+	    		money=parseFloat(money)+parseFloat({$item[price]}*0.5);
+	    	}
+	    	
+	    	if(language_all[0]=='简体中文' || language_all[0]=='繁体中文' ){
+	    		
+	    		money=parseFloat(money)-parseFloat({$item[price]}*0.2);
+	    	}else if(language_all[0]=='英文' || language_all[0]=='日文' || language_all[0]=='俄文' || language_all[0]=='其他'){
+	    	    money=parseFloat(money)-parseFloat({$item[price]}*0.5);
+	    	}
+	      
+	       var l_style =language_all.join(",");
+	         console.log(l_style);
+	         $("#language_style").val(l_style);
+	    	var mount={$item[price]};
+	        language_money=parseFloat(money)+parseFloat(mount);
+	        $('#total_amount')[0].innerHTML=language_money.toFixed(2);
+			$("#language_fee").text(money.toFixed(2));
+			$("#language_yz").val(language_money.toFixed(2));
+	    	
+	    }
+
+	     var m_lang=parseFloat((language_all.length-1)*{$item[mlangprice]})+parseFloat({$item[mobprice]});
+	     var r_lang=parseFloat((language_all.length-1)*{$item[rlangprice]})+parseFloat({$item[resprice]});
+	     $("#m_lang").text(m_lang.toFixed(2));
+	 	 $("#m_lang_value").val(m_lang.toFixed(2));
+	     $("#r_lang").text(r_lang.toFixed(2));
+	     $("#r_lang_value").val(r_lang.toFixed(2));
+     
+	     mob=$("input[name='iswap']:checked").val();
+	     if(mob=='noswap'){
+	 	  t=0;
+	 	 }else if(mob=='mob1'){
+	 		 t=mob;
+	 	 }else{
+	 		 t=mob;
+	 	 }
+         alter('ss',t);
+     })
+  
+
+})
+
+
+
+
+function fk(i){
+	if(i==0){
+		$("#pay_1").text(0);
+		$("#pay_2").text(0);
+		$("#pay_4").text('￥'+$("#total_amount")[0].firstChild.data);
+	}else{
+		var pay_1 =$("#total_amount")[0].firstChild.data*0.5;
+		var pay_2 =$("#total_amount")[0].firstChild.data*0.3;
+		$("#pay_1").text(pay_1.toFixed(2));
+		$("#pay_4").text('￥'+pay_1.toFixed(2));
+		$("#pay_2").text(pay_2.toFixed(2));			
+	}
+}
+
+
+
+function alter(i, t) {
+	mount=$("#language_yz").val();
+	price1=$("#m_lang_value").val();
+	price2=$("#r_lang_value").val();
+		if(t == 'mob1') {
+		 var mob_price=price1;
+		} else if(t == 'mob2'){
+		 var mob_price=  price2;
+		}else{
+	      var mob_price=0;
+		}
+		
+		$("#mob_fee").text(mob_price);
+		  mount=parseFloat(mob_price)+ parseFloat(mount);
+
+		var fapiao=$("input[name='fapiaosq']:checked").val();
+		if(fapiao=='0'){
+			mount=mount*0.92;
+			$("#pay_3").text(0);
+			$("#shui_fee").text(0);
+		}else{
+			
+		$("#pay_3").text((mount*0.08).toFixed(2));
+	  $("#shui_fee").text((mount*0.08).toFixed(2));
+		}
+		
+	  $('#total_amount')[0].innerHTML =mount ;
+	  $("#price").val(mount);
+	  $("#amount").text('￥'+mount);
+	  $("#language_yz").val(language_money.toFixed(2));
+	  var style=$("input[name='playxz']:checked").val();
+	  if(style=='0'){
+		  fk('0');
+	  }else{
+		  fk('1');
+	  }
+	 
+}
+		function bill(i) {
+		var count=$('#total_amount')[0].innerHTML;
+		var mob=$("input[name='iswap']:checked").val();
+		var fapiao=$("input[name='fapiaosq']:checked").val();
+				if($("#fp_yz").val()==i){
+					return false;
+				}else{
+					if(mob=='noswap'){
+						if(i==1){
+							count={$item[price]};
+							 $("#pay_3").text((count*0.08).toFixed(2));
+							 $("#shui_fee").text((count*0.08).toFixed(2));
+						}else{
+							count={$item[price]}*0.92;
+							$("#pay_3").text(0);
+							$("#shui_fee").text(0);
+						}
+					 }else if(mob=='mob1'){
+					  if(i==1){
+						  count=count/0.92;
+						  $("#pay_3").text((count*0.08).toFixed(2));
+						  $("#shui_fee").text((count*0.08).toFixed(2));
+					  }else{
+						  count=count*0.92;
+							$("#pay_3").text(0);
+							$("#shui_fee").text(0);
+					  }
+					}else{
+						 if(i==1){
+							  count=count/0.92;
+							  $("#pay_3").text((count*0.08).toFixed(2));
+							  $("#shui_fee").text((count*0.08).toFixed(2));
+						  }else{
+							  count=count*0.92;
+								$("#pay_3").text(0);
+								$("#shui_fee").text(0);
+						  }
+					}
+				
+				
+						
+						$('#total_amount')[0].innerHTML =count.toFixed(2) ; 	
+						$("#price").val(count.toFixed(2));
+						$("#amount").text('￥'+count.toFixed(2));
+				}
+		
+			$("#fp_yz").val(fapiao);
+		
+			var style=$("input[name='playxz']:checked").val();
+				if(style=='0'){
+					  fk('0');
+				}else{
+					  fk('1');
+				}
+			}
+  </script>
+
+
+{template 'footer'}

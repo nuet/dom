@@ -1,0 +1,90 @@
+{if $_username && $_groupid <=5}
+<div class="oyw_tm"><h3 class="clearfix"><span style="font-size:14px;font-family:微软雅黑; padding:3px 0px;;" class="fl">{$_truename} {$MG[groupname]}，您好</span><span  style="padding-top:13px; margin-left:10px;">
+	<img src="{DT_STATIC}{$MODULE[2][moduledir]}/image/{if $user[vtruename]}v{else}u{/if}_truename.gif" style='padding-top: 3px;'width="16" height="16" title="{if $user[vtruename]}已通过{else}未通过{/if}真实姓名认证" align="absmiddle"/> <a href="{DT_STATIC}{$MODULE[2][moduledir]}/validate.php?action=truename" style='text-decoration: underline;'>实名</a> &nbsp;
+	
+</span></h3>
+<div class="oyw_user clear">
+  <div class="sjs_in_k">
+    <div class="sjs_in_k_1">余额:<b><big> {$_money}</big></b> 元<small>（锁定:{$user[locking]}元）</small></div>
+    
+    <div class="sjs_in_k_2">
+        <div class="sjs_in_k_2_l oy_floatlf">
+          <p>{$count2[count]}</p>
+          <span><a href="{$MODULE[2][linkurl]}">未付款项目</a></span>
+        </div>
+        <div class="sjs_in_k_2_b oy_floatlf">
+          <p>{$count1[count]}</p>
+          <span><a href="{$MODULE[2][linkurl]}">已付款项目</a></span>
+        </div>
+        <div class="sjs_in_k_2_r oy_floatlf">
+          <p>{$_credit}</p>
+          <span><a href="{$MODULE[2][linkurl]}credit.php">积分</a></span>
+        </div>
+    </div>
+  </div>
+  <div class="sjs_in_in clear">
+    <input type="submit"  onclick="Go('{$MODULE[2][linkurl]}');" id="J-login-btn" class="ui-button" style="font-size:14px;font-family:微软雅黑;" value="进入会员中心" >
+  </div>
+</div></div>
+ {elseif $_groupid >5}
+ <div class="oyw_tm"><h3 class="clearfix"><span style="font-size:14px;font-family:微软雅黑; padding:3px 0px;;" class="fl">{$_company} {$MG[groupname]}，您好</span><span  style="padding-top:13px; margin-left:10px;">
+<img src="{if $user[vcompany]}{$MODULE[2][linkurl]}/image/v_company.gif{else}{$MODULE[2][linkurl]}/image/u_company.gif{/if}" style='padding-top: 3px;'width="16" height="16" title="{if $user[vcompany]}已通过{else}未通过{/if}设计师认证" align="absmiddle"/>	{if $user[vcompany]}<img src="{DT_SKIN}image/vip_{$user[vip]}.gif" style='padding-top: 3px;'/>{else} <a href="{DT_STATIC}{$MODULE[2][moduledir]}/validate.php?action=company" style='text-decoration: underline;'>认证</a> &nbsp; {/if}
+	
+</span></h3>
+<div class="oyw_user clear">
+  <div class="sjs_in_k">
+    <div class="sjs_in_k_1">余额:<b><big> {$_money}</big></b> 元<small>（锁定:{$user[locking]}元）</small></div>
+    
+    <div class="sjs_in_k_2">
+        <div class="sjs_in_k_2_l oy_floatlf">
+          <p>{count($sj_all)}</p>
+          <span><a href="{$MODULE[2][linkurl]}">投标</a></span>
+        </div>
+        <div class="sjs_in_k_2_b oy_floatlf">
+          <p>{$sj_in[count]}</p>
+          <span><a href="{$MODULE[2][linkurl]}">入围</a></span>
+        </div>
+        <div class="sjs_in_k_2_r oy_floatlf">
+          <p>{$sj_last[count]}</p>
+          <span><a href="{$MODULE[2][linkurl]}">中标</a></span>
+        </div>
+    </div>
+  </div>
+  <div class="sjs_in_in clear">
+    <input type="submit"  onclick="Go('{$MODULE[2][linkurl]}');" id="J-login-btn" class="ui-button" style="font-size:14px;font-family:微软雅黑;" value="进入会员中心" >
+  </div>
+</div></div>
+ {else}
+   <div class="MoBan_yBn_login_tm">
+         <form method="post" action="{$MODULE[2][linkurl]}{$DT[file_login]}" id="Login" name="Login">
+		<input name="forward" type="hidden" id="forward" value="{$CFG['url']}">
+        <div class="MoBan_yBn_login_tm_1">
+          <span class="H18">欢迎登录</span><span class="H12">会员登录</span>
+        </div>
+        <div class="MoBan_yBn_login_tm_2">
+          <span>用户名:</span><input name="username" type="text" id="username" value="" placeholder="手机号/邮箱/会员名" autocomplete="off" autocorrect="off" autocapitalize="off">
+        </div>
+        <div class="MoBan_yBn_login_tm_2">
+          <span>密&nbsp;&nbsp;&nbsp;&nbsp;码:</span><input type="password" name="password" value="">
+        </div>
+        <div class="MoBan_yBn_login_tm_3">
+          <span></span>
+             <p>
+         <input type="checkbox" name="cookietime" value="1" id="cookietime" checked="">&nbsp;记住我&nbsp;&nbsp;
+         <input type="checkbox" name="goto"  value="1" id="goto">&nbsp;进入会员中心
+          </p>
+          
+        </div>
+        <div class="MoBan_yBn_login_tm_4 clear">
+       <input type="button" value="注&nbsp;&nbsp;册" class="Mgui" name=""  onclick="window.open('{$MODULE[2][linkurl]}{$DT[file_register]}')">
+          <input type="submit" value="登&nbsp;&nbsp;录" class="MREYllB" name="">
+        </div>
+        </form> 
+      
+        <div class="MoBan_yBn_login_tm_5">
+        <a href="">新手指南</a>
+        <a href="">帮助中心</a>
+        <a href="">最新案例</a>
+      </div>
+      </div>
+ {/if}

@@ -1,0 +1,266 @@
+@charset "utf-8";
+/*完善订单样式*/
+/*完善订单头部*/
+.N_DdyXQ{
+	width: 1000px;
+	height: auto;
+	margin:10px auto;
+}
+.N_DdyXQ .N_DdyXQ_nav{
+	height: 25px;
+}
+.N_DdyXQ .N_DdyXQ_nav a{
+	margin-left: 10px;
+}
+.N_DdyXQ .N_DdySX{
+	border: 1px solid #ccc;
+	height: auto;
+	width: 966px;
+	padding: 0 16px 16px 16px;
+}
+.N_DdySX .N_DdySX_t{
+	font-size: 20px;
+	font-weight: bold;
+	height: 38px;
+	line-height: 38px;
+	border-bottom: 1px solid #ccc;
+}
+.N_DdySX_cont{
+	height: auto;
+	overflow: auto;
+	padding-top: 10px;
+}
+.N_DdySX_cont p{
+	line-height: 30px;
+	font-size: 14px;
+}
+.N_DdySX_cont .N_DdySX_contlf{
+	width: 488px;
+	height: auto;
+	float: left;
+	margin-right: 10px;
+}
+.N_DdySX_cont .N_DdySX_contrt{
+	height: auto;
+	float: left;
+}
+/*完善订单头部end*/
+/*订单流程*/
+.N_DdyLc{
+margin-top: 10px;
+width: 998px;
+height: 95px;
+line-height: 90px;
+align-self: center;
+border: 1px solid #ccc;
+}
+/*订单流程 end*/
+.N_DdyXQBGt{
+	height: 33px;
+	margin-top: 17px;
+	border-bottom: 2px solid #FF9400;
+}
+.N_DdyXQBGt ul li{
+	width: 190px;
+	height: 33px;
+	line-height: 35px;
+	text-align: center;
+	background: #FF6D11;
+	font-size: 15px;
+	background:#FF9400;
+}
+.N_DdyXQBGt ul li a{
+	display: block;
+	color: #fff;
+	font-weight: bold;
+}
+/*首页最终作品*/
+.N_DdyZZSY{
+	margin-top: 20px;
+}
+.N_DdyZZSY .N_DdyZZSY_t{
+	height: 20px;
+
+}
+.N_DdyZZSY .N_DdyZZSY_cont{
+	margin-top: 10px;
+	border: 1px solid #ccc;
+	width: 998px;
+	height: 280px;
+}
+.N_DdyZZSY_contLf{
+	width: 56px;
+	height: 280px;
+	float: left;
+	background: url(./image/N_DdyZZSY_contLfImg.fw.png) no-repeat;
+}
+.N_DdyZZSY_contRt{
+	width: 56px;
+	height: 280px;
+	float: right;
+	background: url(./image/N_DdyZZSY_contRtImg.fw.png) no-repeat;
+}
+.N_DdyZZSY_contimg{
+	width: 400px;
+	height: 280px;
+	
+	margin-left: 130px;
+	float: left;
+}
+.N_DdyZZSY_contIBox{
+	width: 326px;
+	height: 206px;
+	
+	margin-top: 25px;
+	position: relative;
+}
+.N_DdyZZSY_contIBox:hover{
+	cursor: pointer;
+}
+.N_DdyZZSY_contIBox img.thimgth{
+	width: 324px;
+	height: 204px;
+	
+	border: 1px solid #ccc;
+}
+.N_DdyZZSY_contIBox span{
+	position: absolute;
+	width: 326px;
+	height: 204px;
+	background: #000;
+	left: 0;
+	top:1px;
+	filter: alpha(opacity=60);
+	-moz-opacity: 0.60;
+	opacity: 0.60;
+	display: none;
+	
+}
+.N_DdyZZSY_contIBox span div{
+	position: relative;
+	width: 326px;
+	height: 204px;
+	
+}
+.N_DdyZZSY_contIBox  .x {
+background: url("./image/zoom-icon.png");
+left: 50px;
+}
+.N_DdyZZSY_contIBox  .y {
+background: url("./image/readmore-icon.png");
+right: 50px;
+}
+.N_DdyZZSY_contIBox  .z {
+background: url("./image/zoom-icon.png");
+left: 133px;
+}
+.N_DdyZZSY_contIBox .x, .N_DdyZZSY_contIBox .y , .N_DdyZZSY_contIBox .z {
+width: 61px;
+height: 61px;
+top: 72px;
+position: absolute;
+z-index: 3;
+display: none;
+}
+.N_DdyZZSY_contIBox span div p{
+	text-align: center;
+	line-height: 60px;
+}
+.N_DdyZZSY_contIBox span div p a{
+	color: #fff;
+	font-size: 14px;
+	font-family: Arial;
+}
+.N_DdyZZSY_contIBox .dinggaozhang{
+	position: absolute;
+	top:146px;
+	right:-60px;
+}
+.N_DdyZZSY_contimg p{
+	width: 326px;
+	line-height: 42px;
+	text-align: center;
+	font-family: "微软雅黑";
+	font-size: 14px;
+}
+.N_DdyZZSY_contPingyu{
+	padding-top: 60px;
+	height: auto;
+	width: 293px;
+	float: left;
+	
+}
+.N_DdyZZSY_contPingyu p{
+	font-family: "微软雅黑";
+}
+
+.N_DdyZZSY_contPingyuX img{
+	vertical-align: baseline;
+	margin-left: 10px;
+}
+.N_DdyZZSY_contPingyu .N_DdyZZSY_contPingyuC{
+	margin-top: 20px;
+
+}
+.N_DdyZZSY_contPingyu .N_DdyZZSY_contPingyuC p{
+
+}
+/*首页最终作品end*/
+/*首页所有设计稿*/
+.N_SYSJGIndex{
+	margin-top: 20px;
+}
+.N_SYSJGIndex .DingzhiSHowZDIm{
+	width: 324px;
+	height: 206px;
+	border: 1px solid #ccc;
+	position: relative;
+}
+.N_SYSJGIndex .N_SYSJGIndTT{
+	height: 30px;
+}
+.NSKlink{
+	height: 10px;
+	border-top: 1px dashed #ccc;
+}
+.N_SYSJGIndexOne{
+	height: auto;
+	overflow: auto;
+	width: 1000px;
+}
+.N_SYSJGIndex ul li p {
+text-align: center;
+height: 30px;
+line-height: 30px;
+margin-top: 7px;
+}
+.N_SYSJGIndex ul li{
+width: 326px;
+height: 256px;
+float: left;
+margin-left: 10px;
+}
+.N_SYSJGIndex ul li a:hover{
+	cursor: pointer;
+}
+.N_SYSJGIndex ul {
+width: 1008px;
+height: auto;
+margin-left: -10px;
+}
+.N_SYSJGIndex .DingzhiSHowZDIm {
+width: 324px;
+height: 206px;
+border: 1px solid #ccc;
+position: relative;
+}
+.N_SYSJGIndex ul li a {
+display: block;
+width: 326px;
+height: 208px;
+}
+.DingzhiSHowZDIm img.sy_thumb {
+width: 324px;
+height: 204px;
+}
+/*首页所有设计稿 end*/

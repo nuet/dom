@@ -1,0 +1,238 @@
+{template 'header'}
+ <script  src="{$CFG[url]}/file/script/Maya.MessageBox/Maya.MessageBox.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="{$CFG[url]}/file/script/Maya.MessageBox/Maya.MessageBox.css">
+<!-- 设计师首页 -->
+<link rel="stylesheet" type="text/css" href="{DT_SKIN}comment_1.css"/>
+
+<script>
+
+$(document).ready(function(){
+	  $('.u_shejis_index_all_title_list li').click(function(){
+	        var liindex = $('.u_shejis_index_all_title_list li').index(this);
+	        $(this).addClass('on').siblings().removeClass('on');
+	        $('.u_shejis_index_wrap div.sjs_index_xmsh').eq(liindex).fadeIn(150).siblings('div.sjs_index_xmsh').hide();
+	        var liWidth = $('.u_shejis_index_all_title_list li').width();
+	        if(this.id){
+	  		  var n=this.id;
+	  		  i=0;
+	  	     for(t=0;t<=4;t++){
+	  	    	if (t!=n){
+	  	    		var m=$("#sjs"+t+"");
+	  	    		m.html('');
+	  	    	}else{
+	  	    		m=$("#sjs"+n+"");
+	  	    		m.html('');
+	  	    		i=0;
+	  	    		loadMore(n);
+	  	    	}
+	  	    	
+	  	     }
+	  	  
+	  	  }else{
+	  		  var n=1;
+                i++;
+	  	  }
+	        
+	  })
+	loadMore(1); 
+
+}); 
+ 
+var i=0;
+function loadMore(n)
+{
+	i++;
+
+    $.ajax({
+        url : '{$CFG[url]}/data.php?n='+n+'&i='+i+'&username={$COM[username]}&company={$COM[company]}',
+        dataType : 'json',
+        success : function(json)
+        {
+        
+            if(typeof json == 'object')
+            {
+                var oProduct, $row, iHeight, iTempHeight;
+                for(var i=0, l=json.length; i<l; i++)
+                {
+                    oProduct = json[i];
+                     
+                    // 找出当前高度最小的列, 新内容添加到该列
+                    iHeight = -1;
+                    $('#sjs'+n+'').each(function(){
+                        iTempHeight = Number( $(this).height() );
+                        if(iHeight==-1 || iHeight>iTempHeight)
+                        {
+                            iHeight = iTempHeight;
+                            $row = $(this);
+                        }
+                    });
+                     
+                 if(n==4){
+              	   $item = $('<li><div class="sjs_index_xmsh_img"><a href="{$CFG[url]}extend/view_pic.php?img='+oProduct.thumb+'" target="_blank"><img src="'+oProduct.thumb+'" alt=""></a>  <span><a href="{$CFG[url]}extend/view_pic.php?img='+oProduct.thumb+'" target="_blank">查看详情</a></span></div><span><b>作品名称：</b><i>'+oProduct.title+'</i></span> <span><b>简介：</b><i>'+oProduct.content+'</i></span></li>').hide();
+                   
+                     }else{
+                  	   $item = $('<li><div class="sjs_index_xmsh_img"><a href="{$CFG[url]}mall/search_last.php?itemid='+oProduct.itemid+'&forword={$CFG[url]}" target="_blank"><img src="{DT_SKIN}/image/xxx.jpg" alt=""></a>  <span><a href="{$CFG[url]}mall/search_last.php?itemid='+oProduct.itemid+'&forword={$CFG[url]}" target="_blank">查看详情</a></span></div><span><b>项目名称：</b><i>'+oProduct.buyer_name+'</i></span> <span><b>所属套餐：</b><i>'+oProduct.title+'</i></span></li>').hide();
+                       
+                         }
+                   $row.append($item);
+                    $('#sjs'+n+' li').hover(function(){
+                        $(this).css("border-color","#ff6600");
+                     
+                        $(this).find('div span').css('display','block');
+                      
+                      
+                    },function(){
+                        $(this).css("border-color","#ccc");
+                     
+                        $(this).find('div span').css('display','none');
+                       
+                    });
+                    $item.fadeIn();
+                }
+            }else{
+            	Maya.MessageBox("已加载 <strong>全部</strong> ");
+            }
+        }
+    });
+}
+ 
+
+</script>
+<div class="u_shejis_index" id="u_shejis_index">
+<!-- 设计师个人档 -->
+    <div class="u_shejis_index_grd">
+        <div class="u_shejis_index_grd_head">
+          <img src="{$COM[thumb]}" alt="">
+        </div>
+        <div class="u_shejis_index_grd_rt">
+            <div class="u_shejis_index_grd_top">{$COM[username]} 个人档</div>
+            <div class="u_shejis_index_grd_bon">
+              <div class="u_shejis_index_grd_bon_info">
+                  <span><b>昵称：</b>{$COM[company]}</span>
+                  <span><b>级别：</b><img src="{DT_SKIN}image/vip_{$COM[vip]}.gif" alt="{$COM[vip]}" title="{$COM[vip]}:{$COM[vip]}级"/></span>
+                  <span><b>客户好评度：</b><img src="{DT_SKIN}/image/u_sjs_pf.gif" alt=""></span>
+                  <span><b>擅长设计风格：</b></span>
+                  <span><p>{$n}</p></span>
+              </div>
+              <input type="hidden" name="sjs_yz" id="sjs_yz" value="as0"/>
+               <input type="hidden" name="sjs_n" id="sjs_n" value="as0"/>
+              <div class="u_shejis_index_grd_bon_rt">
+                  <div class="u_shejis_index_grd_cj">
+                        <div class="u_rone_xm">
+                          <div class="u_rone_xm_t">设计师成绩</div>
+                            <div class="u_rone_xm_cont">
+                              <div class="u_rone_xm_contl u_fl">
+                                <b>{count($sj_all)}</b><br>
+                                <span class="u_blue">投标</span>
+
+                              </div>
+                              <div class="u_rone_xm_xx u_fl">|</div>
+                              <div class="u_rone_xm_contl u_fl">
+                                <b>{$sj_in[count]}</b><br>
+                                  <span class="u_blue">入围</span>
+
+                              </div>
+                               <div class="u_rone_xm_xx u_fl">|</div>
+                                <div class="u_rone_xm_contl u_fl">
+                                      <b>{$sj_last[count]}</b><br>
+                                <span class="u_blue">中标</span>
+
+                                </div>
+                            </div>
+                        </div>
+                  </div>
+                  <div class="">
+                  <span><a href="{$CFG[url]}/member/message.php?action=send&touser={$COM[username]}" target="_blank"><img src="{DT_SKIN}/image/fasongzhanneixin.gif" alt=""></a></span>
+                    <span><a href="{$CFG[url]}/member/chat.php?touser={$COM[username]}&mid=16" target="_blank"><img src="{DT_SKIN}/image/onlingoutong.gif" alt=""></a></span>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <!-- 设计师首页全部项目展示 -->
+    <div class="u_shejis_index_all clear">
+        <div class="u_shejis_index_all_title">
+            <ul class="u_shejis_index_all_title_list">
+               
+                <li id="1"  class="on" >建站项目</li>
+                <li id="2">平面项目</li>
+                <li id="3">模版项目</li>
+                <li id="4">历史作品</li>
+               <li id="5">设计师简介</li>
+            </ul>
+            
+        </div>
+        <div class="u_shejis_index_wrap">
+              <!-- 全部项目 -->
+              
+              <div class="sjs_index_xmsh show">
+              <span id="sjs1"></span>
+              <span><li style="width:750px;height:30px;border:0"><P><a href="javascript:void(0);" onclick="loadMore(1)" id="pagemore" class="getmore" style="visibility: visible;">加载更多图片</a></P></li></span>
+              </div>
+               
+             
+              <div class="sjs_index_xmsh">
+               <span id="sjs2"></span>
+              <span><li style="width:750px;height:30px;border:0"><P><a href="javascript:void(0);" onclick="loadMore(2)" id="pagemore" class="getmore" style="visibility: visible;">加载更多图片</a></P></li></span>
+              </div>
+             <div class="sjs_index_xmsh">
+               <span id="sjs3"></span>
+              <span><li style="width:750px;height:30px;border:0"><P><a href="javascript:void(0);" onclick="loadMore(3)" id="pagemore" class="getmore" style="visibility: visible;">加载更多图片</a></P></li></span>
+              </div>
+           
+                <div class="sjs_index_xmsh">
+               <span id="sjs4"></span>
+              <span><li style="width:750px;height:30px;border:0"><P><a href="javascript:void(0);" onclick="loadMore(4)" id="pagemore" class="getmore" style="visibility: visible;">加载更多图片</a></P></li></span>
+              </div>
+          
+              <div class="sjs_index_xmsh" style="text-indent:2em" id="sjs5">
+                 {$COM[content]}
+              </div>
+        </div>
+        <div class="u_shejis_index_kehupj">
+            <div class="u_shejis_index_kehupj_t"><b>客户评价</b></div>
+            <div class="u_shejis_index_kehupj_fen">    
+	<a name="top"></a>
+	<div class="stat">
+	<table cellpadding="6" cellspacing="1" width="100%">
+	<tr align="center">
+	<td width="100">好评 <img src="{DT_STATIC}file/image/star3.gif" width="36" height="12" alt="" align="absmiddle"/> </td>
+	<td><div class="stat_p"><div style="width:{$stat[pc3]};"></div></div></td>
+	<td class="stat_c" width="100">{$stat[pc3]}</td>
+
+	</tr>
+	<tr align="center">
+	<td>中评 <img src="{DT_STATIC}file/image/star2.gif" width="36" height="12" alt="" align="absmiddle"/></td>
+	<td><div class="stat_p"><div style="width:{$stat[pc2]};"></div></div></td>
+	<td>{$stat[pc2]}</td>
+	</tr>
+	<tr align="center">
+	<td>差评 <img src="{DT_STATIC}file/image/star1.gif" width="36" height="12" alt="" align="absmiddle"/></td>
+	<td><div class="stat_p"><div style="width:{$stat[pc1]};"></div></div></td>
+	<td>{$stat[pc1]}</td>
+	</tr>
+	</table>
+	</div>
+
+	<a name="last"></a>
+               
+            </div>
+            <div class="u_shejis_index_kehupj_yu">
+                  <div class="u_shejis_index_kehupj_yu_t"><b>客户评价</b></div>
+                  <div class="u_shejis_index_kehupj_ul">
+                  <ul id="u_shejis_li_bg">
+                  {loop $new_comments $k}
+                   <li><b>{$k[buyer]}：</b><span>{$k[seller_comment]}</span></li>
+                 {/loop}
+                  </ul>
+                  </div>
+            </div>
+        </div>
+    </div>
+  </div>
+    </div>
+    <!-- 设计师首页全部项目展示结束 -->
+</div>
+<!-- 设计师首页结束 -->
+
+{template 'footer'}

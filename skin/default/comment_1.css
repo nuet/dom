@@ -1,0 +1,31 @@
+/*
+	[Destoon B2B System] Copyright (c) 2008-2013 Destoon.COM
+	This is NOT a freeware, use is subject to license.txt
+*/
+/* global */
+* {word-break:break-all;-webkit-text-size-adjust:none;}
+body {margin:0;font-size:12px;color:#333333;background:#FFFFFF;}
+form,input,select,textarea,td,th {font-size:12px;}
+a:link,a:visited,a:active {color:#333333;text-decoration:none;}
+a:hover {color:#FF6600;}
+.comment {padding:15px 10px 15px 10px;margin:0 15px 0 15px;border-top:#DDDDDD 1px dotted;}
+.comment table {width:100%;border-collapse:collapse;border-spacing:0;}
+.comment_l {width:53px;padding:6px 0 0 0;}
+.comment_sp {background:#F9FCFE;}
+.comment_content {color:#333333;font-size:14px;line-height:180%;clear:both;padding:5px;}
+.comment_title {height:26px;line-height:26px;color:#1B4C7A;padding:0 5px 0 5px;}
+.comment_floor {float:right;}
+.comment_info {padding:3px 5px 3px 5px;}
+.comment_vote {float:right;color:#666666;padding:3px 5px 3px 0;}
+.comment_form {margin:0 15px 0 15px;border-top:#EEEEEE 1px solid;}
+.comment_area {width:100%;height:70px;border:#7D96C4 1px solid;}
+
+.quote{border:1px solid #dcdcdc;background:#FFF;padding:10px;margin-bottom:10px;}
+.quote_title {font-size:12px;color:#1B4C7A;}
+.quote_time {font-size:11px;color:#666666;}
+.quote_floor {float:right;font-size:10px;}
+.quote_content {clear:both;}
+
+.stat_p {height:10px;width:69px;line-height:10px;background:#FFF7D2;font-size:1px;}
+.stat_p div {height:10px;line-height:10px;background:#FFA40D;border-left:#FFA40D 2px solid;float:left;}
+.c_p {cursor:pointer;}
